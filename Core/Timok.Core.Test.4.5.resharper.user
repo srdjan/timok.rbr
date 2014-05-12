@@ -1,0 +1,97 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">True</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="007C26DA-FCF1-4847-9C9E-3C8B7F703578/f:TestEmail.cs" caret="24" fromTop="1" />
+      <File id="007C26DA-FCF1-4847-9C9E-3C8B7F703578/f:TestFirewallManager.cs" caret="2979" fromTop="34" />
+      <File id="007C26DA-FCF1-4847-9C9E-3C8B7F703578/f:TestNetworkLib.cs" caret="293" fromTop="12" />
+      <File id="007C26DA-FCF1-4847-9C9E-3C8B7F703578/f:TestEmailValidator.cs" caret="2381" fromTop="37" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:TimokProcess.cs" caret="644" fromTop="20" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:ExtProcess.cs" caret="60" fromTop="3" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/f:IPAddressConverter.cs" caret="2870" fromTop="16" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:DualFileWriter.cs" caret="0" fromTop="0" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:FileHelper.cs" caret="237" fromTop="7" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:DataProtection/f:SaltHashedPwd.cs" caret="72" fromTop="3" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:ICommand.cs" caret="337" fromTop="9" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:CommandBase.cs" caret="1811" fromTop="0" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:FirewallManager.cs" caret="913" fromTop="22" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Tcp/f:IChannel.cs" caret="96" fromTop="4" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Tcp/f:TcpClient.cs" caret="314" fromTop="11" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="4070" fromTop="31" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpClient.cs" caret="7574" fromTop="22" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Email.cs" caret="2669" fromTop="20" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Utils.cs" caret="4341" fromTop="16" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:CPSMeter.cs" caret="41" fromTop="3" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Tcp/f:TcpClient.cs" caret="3445" fromTop="34" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Tcp/f:IChannel.cs" caret="95" fromTop="4" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="106" fromTop="5" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="1091" fromTop="32" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="640" fromTop="14" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="731" fromTop="26" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="1088" fromTop="33" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="1240" fromTop="37" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="1379" fromTop="37" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="1631" fromTop="38" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="1829" fromTop="39" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="1951" fromTop="37" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="2861" fromTop="38" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="3318" fromTop="37" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="3483" fromTop="38" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpServer.cs" caret="4070" fromTop="31" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpClient.cs" caret="106" fromTop="5" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpClient.cs" caret="523" fromTop="19" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpClient.cs" caret="1007" fromTop="31" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/d:NetworkLib/d:Udp/f:UdpClient.cs" caret="2369" fromTop="38" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Email.cs" caret="211" fromTop="8" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Email.cs" caret="3485" fromTop="32" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Email.cs" caret="2853" fromTop="23" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Email.cs" caret="3126" fromTop="27" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Email.cs" caret="2668" fromTop="20" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Utils.cs" caret="217" fromTop="9" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Utils.cs" caret="3788" fromTop="27" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Utils.cs" caret="4025" fromTop="33" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:Utils.cs" caret="4294" fromTop="16" />
+      <File id="60553581-F39F-4A4F-B11A-61A9E07A2ED4/f:CPSMeter.cs" caret="15" fromTop="1" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:@Timok.Core.NetworkLib.IPUtil">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="0" />
+      <Item value="delegate" priority="0" />
+      <Item value="int" priority="0" />
+      <Item value="string" priority="0" />
+      <Item value="LoggDelegate" priority="1" />
+      <Item value="log" priority="4" />
+      <Item value="pLog" priority="0" />
+      <Item value="Enums" priority="0" />
+      <Item value="LogSeverity" priority="0" />
+      <Item value="throw" priority="3" />
+      <Item value="new" priority="2" />
+      <Item value="Exception" priority="1" />
+      <Item value="LogDelegate" priority="14" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Timok.Core.Enums.LogSeverity">
+      <Item value="Status" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="InnerException" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

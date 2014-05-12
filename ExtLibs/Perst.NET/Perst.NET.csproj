@@ -1,0 +1,341 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1FF2E6AE-B540-4EA9-BD18-5F077EE61291}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Perst.NET</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Perst</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>SUPPORT_RAW_TYPE</DefineConstants>
+    <DocumentationFile>doc\perst.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>SUPPORT_RAW_TYPE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Blob.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\ClassLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\FieldIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\IFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\AltBtree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\AltBtreeFieldIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\AltBtreeMultiFieldIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\AltPersistentSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\BlobImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\Btree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\BtreeFieldIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\BtreeKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\BtreeMultiFieldIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\BtreePage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\ByteBuffer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\Bytes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\ClassDescriptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\CodeGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\DefaultPersistentComparator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\GeneratedSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\LinkImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\LRU.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\LruObjectCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\ObjectHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\OidHashTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\OSFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\Page.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\PagePool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\PersistentSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\PersistentStub.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\PerstSink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\PTrie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\Rc4File.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\RelationImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\Rtree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\RtreePage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\RtreeR2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\RtreeR2Page.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\StorageImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\StrongHashTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\TimeSeriesImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\Ttree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\TtreePage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\WeakHashTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\XMLExporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\impl\XMLImporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Index.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\IPersistent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\IResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\ISet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Key.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\L2List.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\L2ListElem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Link.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\MarshalByRefPersistent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\MemoryUsage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\NullFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\PatriciaTrie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\PatriciaTrieKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Persistent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\PersistentComparator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\PersistentContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\PersistentResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\PersistentString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Projection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Rectangle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\RectangleR2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Relation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\SortedCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\SpatialIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\SpatialIndexR2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Storage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\StorageError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\StorageFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\StorageListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\TimeSeries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\TransparentPersistenceAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\XMLImportException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

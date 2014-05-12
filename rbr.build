@@ -1,0 +1,462 @@
+<project name="Rbr Deployment Build">
+  <property name="msbuild" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\msbuild.exe" overwrite="false"/>
+  <property name="nant.settings.currentframework" value="net-3.5" />
+  <property name="default.version" value="0.0" />
+  <property name="revision" value="0"/>
+
+  <property name="common_asminfo_file_cs" value="AssemblyInfo.cs" />
+  <property name="common_asminfo_file_cpp" value="AssemblyInfo.cpp" />
+  <property name="svnrepo" value="http://mobster/svn/Rbr/SvnRepo"/>
+
+  <property name="Root" value=".\"/>
+  <property name="BuildDir" value=".\Rbr\Trunk\Build\"/>
+  <property name="ReleaseDir" value=".\Rbr\Trunk\Build\Release\"/>
+  <property name="BinDir" value=".\Rbr\Trunk\Build\Release\Bin\"/>
+  <property name="ArchiveDir" value="c:\Timok.Archive\"/>
+  <property name="TempDir" value="c:\Temp\"/>
+	
+  <property name="CoreDir" value=".\Core\"/>
+  <property name="CoreBuildDir" value=".\Core\Bin\Release\"/>
+
+  <property name="LoggerDir" value=".\Logger\"/>
+  <property name="LoggerBuildDir" value=".\Logger\Bin\Release\"/>
+
+  <property name="NetworkLibDir" value=".\NetworkLib\"/>
+  <property name="NetworkLibBuildDir" value=".\NetworkLib\Bin\Release\"/>
+
+  <property name="RbrCoreDir" value=".\Rbr\Trunk\Core\"/>
+  <property name="RbrCoreBuildDir" value=".\Rbr\Trunk\Core\Bin\Release\"/>
+
+  <property name="DALDir" value=".\Rbr\Trunk\DAL\"/>
+  <property name="DALBuildDir" value=".\Rbr\Trunk\DAL\Bin\Release\"/>
+
+  <property name="DOMDir" value=".\Rbr\Trunk\DOM\"/>
+  <property name="DOMBuildDir" value=".\Rbr\Trunk\DOM\Bin\Release\"/>
+
+  <property name="BLLDir" value=".\Rbr\Trunk\BLL\"/>
+  <property name="BLLBuildDir" value=".\Rbr\Trunk\BLL\Bin\Release\"/>
+
+  <property name="ReplicationWinServiceDir" value=".\Rbr\Trunk\ReplicationWinService\"/>
+  <property name="ReplicationWinServiceBuildDir" value=".\Rbr\Trunk\ReplicationWinService\Bin\Release\"/>
+
+  <property name="ServiceDir" value=".\Rbr\Trunk\Service\"/>
+  <property name="ServiceBuildDir" value=".\Rbr\Trunk\Service\Bin\Release\"/>
+
+  <property name="RbrServerDir" value=".\Rbr\Trunk\Server\"/>
+  <property name="RbrServerBuildDir" value=".\Rbr\Trunk\Server\Bin\Release\"/>
+
+  <property name="IVRDir" value=".\Voip\"/>
+  <property name="ScriptingDir" value=".\Voip\Scripting\"/>
+
+  <property name="RbrWinServiceDir" value=".\Rbr\Trunk\RbrWinService\"/>
+  <property name="RbrWinServiceBuildDir" value=".\Rbr\Trunk\RbrWinService\Bin\Release\"/>
+
+  <property name="WinGuiDir" value=".\Rbr\Trunk\WinGui\"/>
+  <property name="WinGuiBuildDir" value=".\Rbr\Trunk\WinGui\Bin\Release\"/>
+
+  <property name="WinFormsDir" value=".\WinForms\Trunk\"/>
+  <property name="WinFormsBuildDir" value=".\WinForms\Trunk\Bin\Release\"/>
+
+  <property name="RbrWinFormsDir" value=".\Rbr\Trunk\WinForms\"/>
+  <property name="RbrWinFormsBuildDir" value=".\Rbr\Trunk\WinForms\Bin\Release\"/>
+
+  <!-- ========================================================================================== -->
+  <target name="full" depends="pre-build, set-version, build, post-build, dist, archive" description="Compiles and produces versioned distributions" />
+  <!--target name="full" depends="build" /-->
+
+  <!-- ================================Target pre-build-clean===================================== -->
+  <target name="pre-build">
+    <!-- Make Target Dirs if not exists-->
+    <mkdir dir="${BuildDir}" />
+    <mkdir dir="${ReleaseDir}" />
+    <mkdir dir="${BinDir}" />
+
+    <!-- Clean up Target Dirs -->
+    <description>Delete *.dll, *.pdb from ReleaseDir .</description>
+    <delete>
+      <fileset basedir="${ReleaseDir}">
+        <include name="*.exe" />
+        <include name="*.dll" />
+        <include name="*.pdb" />
+        <include name="*.config" />
+      </fileset>
+    </delete>
+    <description>Delete *.dll, *.pdb from BinDir .</description>
+    <delete>
+      <fileset basedir="${BinDir}">
+        <include name="*.dll" />
+        <include name="*.pdb" />
+      </fileset>
+    </delete>
+  </target>
+
+  <!-- =================================target set-version====================================== -->
+  <target name="set-version" depends="get-version">
+    <if test="${not property::exists('version')}">
+      <property name="version" value="${default.version}.${revision}" />
+    </if>
+
+    <asminfo output="${common_asminfo_file_cs}" language="CSharp">
+      <imports>
+        <import namespace="System.Reflection" />
+      </imports>
+
+      <attributes>
+        <attribute type="AssemblyVersionAttribute" value="${version}.${revision}" />
+        <attribute type="AssemblyCopyrightAttribute" value="Copyright  2003-2009 Timok.es LLC." />
+        <attribute type="AssemblyCompanyAttribute" value="Timok.es LLC." />
+        <attribute type="AssemblyProductAttribute" value="Timok.Rbr.Softswitch" />
+      </attributes>
+    </asminfo>
+
+    <echo message="Version set to ${version}.${revision}" />
+
+    <echo message='Create cpp assemlyInfo file...'/>
+    <echo message='${timok::asminfo_cpp(Root, common_asminfo_file_cs, common_asminfo_file_cpp)}'/>
+
+    <echo message='Copy cpp assemlyInfo file...'/>
+    <copy file="${common_asminfo_file_cs}" tofile="${CoreDir}${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${LoggerDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${NetworkLibDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${RbrCoreDir}${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${DALDir}${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${DOMDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${BLLDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${ServiceDir}${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${WinGuiDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${WinFormsDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${RbrWinFormsDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${RbrServerDir}${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${RbrWinServiceDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${ReplicationWinServiceDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cs}" tofile="${ScriptingDir}Properties\${common_asminfo_file_cs}" overwrite="true"/>
+    <copy file="${common_asminfo_file_cpp}" tofile="${IVRDir}${common_asminfo_file_cpp}" overwrite="true"/>
+</target>
+
+  <!-- ==================================Target Commit======================================== -->
+  <target name="commit">
+    <exec program="svn.exe" commandline='commit -m "Assembly files change"'/>
+  </target>
+
+  <!-- ==================================Target Buid======================================== -->
+  <target name="build">
+	<!--echo message="Build Timok.Core "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${CoreDir}Timok.Core.csproj"/>
+    </exec>
+
+    <echo message="Build Timok.Logger "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${LoggerDir}Timok.Logger.csproj"/>
+    </exec>
+
+    <echo message="Build Timok.NetworkLib "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${NetworkLibDir}Timok.NetworkLib.csproj"/>
+    </exec>
+ 
+    <echo message="Build Timok.Rbr.Core "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${RbrCoreDir}Timok.Rbr.Core.csproj"/>
+    </exec>
+	
+    <echo message="Build Timok.Rbr.DAL "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${DALDir}Timok.Rbr.DAL.csproj"/>
+    </exec>
+
+    <echo message="Build Timok.Rbr.BLL "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${BLLDir}Timok.Rbr.BLL.csproj"/>
+    </exec-->
+
+    <echo message="Build Timok.Rbr.Service "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${ServiceDir}Timok.Rbr.Service.csproj"/>
+    </exec>
+
+    <echo message="Build Timok.Rbr.IVR "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${IVRDir}Timok.IVR.vcproj"/>
+    </exec>
+
+    <echo message="Build Timok.Rbr.Server "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${RbrServerDir}Timok.Rbr.Server.csproj"/>
+    </exec>
+
+	<echo message="Build Timok.Rbr.IVRScripting "/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${ScriptingDir}Timok.IVR.Scripting.csproj"/>
+    </exec>
+
+  	<echo message="Build Timok.Rbr.WinService "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:minimal"/>
+      <arg value="${RbrWinServiceDir}Timok.Rbr.WinService.csproj"/>
+    </exec>
+
+   <echo message="Build Timok.WinForms "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${WinFormsDir}Timok.WinForms.csproj"/>
+    </exec>
+
+    <echo message="Build Timok.Rbr.WinForms "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:normal"/>
+      <arg value="${RbrWinFormsDir}Timok.Rbr.WinForms.csproj"/>
+    </exec>
+
+	<echo message="Build Timok.Rbr.WinGui "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild" />
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:minimal" />
+      <arg value="${WinGuiDir}Timok.Rbr.WinGui.csproj" />
+    </exec>
+
+    <echo message="Build Timok.Rbr.ReplicationWinService "/>
+    <echo message="=========================================================="/>
+    <exec program="${msbuild}">
+      <arg value="/target:Rebuild"/>
+      <arg value="/property:Configuration=Release" />
+      <arg value="/verbosity:minimal"/>
+      <arg value="${ReplicationWinServiceDir}Timok.Rbr.ReplicationWinService.csproj"/>
+    </exec>
+
+  </target>
+  
+  <!-- =================================Target post-build-clean==================================== -->
+  <target name="post-build">
+	<copy todir="${BinDir}" overwrite="true">
+    	<fileset basedir="${CoreBuildDir}">
+     		<include name="*.dll" />
+     		<include name="*.pdb" />
+    	</fileset>
+    </copy>
+
+	<copy todir="${BinDir}" overwrite="true">
+    	<fileset basedir="${LoggerBuildDir}">
+     		<include name="*.dll" />
+     		<include name="*.pdb" />
+    	</fileset>
+    </copy>
+
+	<copy todir="${BinDir}" overwrite="true">
+    	<fileset basedir="${NetworkLibBuildDir}">
+     		<include name="*.dll" />
+     		<include name="*.pdb" />
+    	</fileset>
+    </copy>
+
+	<copy todir="${BinDir}" overwrite="true">
+    	<fileset basedir="${RbrCoreBuildDir}">
+     		<include name="*.dll" />
+     		<include name="*.pdb" />
+    	</fileset>
+    </copy>
+
+	<copy todir="${BinDir}" overwrite="true">
+    	<fileset basedir="${DALBuildDir}">
+     		<include name="*.dll" />
+     		<include name="*.pdb" />
+    	</fileset>
+    </copy>
+
+	<copy todir="${BinDir}" overwrite="true">
+    	<fileset basedir="${DOMBuildDir}">
+     		<include name="*.dll" />
+     		<include name="*.pdb" />
+    	</fileset>
+    </copy>
+
+	<copy todir="${BinDir}" overwrite="true">
+    	<fileset basedir="${BLLBuildDir}">
+     		<include name="*.dll" />
+     		<include name="*.pdb" />
+    	</fileset>
+    </copy>
+
+	<copy todir="${ReleaseDir}" overwrite="true">
+    	<fileset basedir="${WinGuiBuildDir}">
+      	<include name="Timok.Rbr.WinGui.exe" />
+       	<include name="Timok.Rbr.WinGui.exe.config"/>
+       	<include name="Timok.Rbr.WinGui.pdb" />
+    	</fileset>
+    </copy>
+	
+	<copy todir="${BinDir}" overwrite="true">
+    	<fileset basedir="${WinGuiBuildDir}">
+     		<include name="*.dll" />
+     		<include name="*.pdb" />
+     		<exclude name="Timok.Rbr.WinGui.pdb" />
+    	</fileset>
+    </copy>
+
+	<copy todir="${BinDir}" overwrite="true">
+		<fileset basedir="${RbrServerBuildDir}">
+			<include name="*.dll" />
+			<include name="*.pdb" />
+		</fileset>
+	</copy>
+
+	<copy todir="${BinDir}" overwrite="true">
+		<fileset basedir="${ServiceBuildDir}">
+			<include name="*.dll" />
+			<include name="*.pdb" />
+		</fileset>
+	</copy>
+
+    <copy todir="${ReleaseDir}" overwrite="true">
+    	<fileset basedir="${RbrWinServiceBuildDir}">
+     		<include name="Timok.Rbr.WinService.exe" />
+     		<include name="Timok.Rbr.WinService.exe.config"/>
+     		<include name="Timok.Rbr.WinService.pdb" />
+			</fileset>
+    </copy>
+	
+	<copy todir="${BinDir}" overwrite="true">
+		<fileset basedir="${RbrWinServiceBuildDir}">
+			<include name="Timok.IVR.dll" />
+			<include name="Timok.IVR.pdb" />
+			<include name="Timok.IVR.Scripting.dll" />
+			<include name="Timok.IVR.Scripting.pdb" />
+		</fileset>
+	</copy>
+
+	<copy todir="${ReleaseDir}" overwrite="true">
+		<fileset basedir="${ReplicationWinServiceBuildDir}">
+			<include name="Timok.Rbr.ReplicationWinService.exe" />
+			<include name="Timok.Rbr.ReplicationWinService.exe.config"/>
+			<include name="Timok.Rbr.ReplicationWinService.pdb" />
+		</fileset>
+	</copy>
+
+	<delete>
+		<fileset basedir="${ReleaseDir}">
+			<include name="Timok.Core.dll" />
+			<include name="Timok.Core.pdb" />
+			<include name="Indy.Sockets.dll" />
+			<include name="Mono.Security.dll" />
+			<include name="*.ilk" />
+		</fileset>
+	</delete>
+</target>
+
+  <!-- ===================================Target get-version====================================== -->
+  <target name="get-version">
+    <echo message="Retrieving Subversion revision number"/>
+    <exec program="svn.exe" commandline='log "${svnrepo}" --xml --limit 1' output="_revision.xml" failonerror="false"/>
+    <xmlpeek file="_revision.xml" xpath="/log/logentry/@revision" property="revision" failonerror="false"/>
+    <echo message="Using version number: ${version}.${revision}"/>
+  </target>
+	
+	<!-- ===================================Target dist======(exclude pdb files)==================== -->
+	<target name="dist">
+		<zip zipfile="${TempDir}Rbr.IVR-${version}.${revision}.zip">
+			<fileset basedir="${ReleaseDir}" prefix="IVR-v${version}.${revision}">
+				<include name="*.*" />
+				<include name="Bin/*" />
+				<include name="IVR/**" />
+				<exclude name="**\*.pdb" />
+			</fileset>
+		</zip>
+	</target>
+
+	<!-- ===================================Target archive===(include pdb files)======================= -->
+	<target name="archive">
+		<copy todir="${ArchiveDir}" overwrite="true">
+			<fileset basedir="${TempDir}">
+				<include name="Rbr.IVR-${version}.${revision}.zip" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- ==============================Embedeed functions============================================= -->
+  <script language="C#" prefix="timok" >
+    <code>
+      <![CDATA[
+        [Function("asminfo_cpp")]
+	      public static string AsmInfoCpp(string pPath, string pAsmInfoCsFileName, string pAsmInfoCppFileName) {
+		      try {
+			      using (StreamWriter _wr = new StreamWriter(Path.Combine(pPath, pAsmInfoCppFileName)))
+			      using (StreamReader sr = new StreamReader(Path.Combine(pPath, pAsmInfoCsFileName))) {
+				      _wr.WriteLine(@"#include ""stdafx.h""");
+				      _wr.WriteLine();
+				      _wr.WriteLine(@"#using <mscorlib.dll>");
+				      _wr.WriteLine();
+				      _wr.WriteLine(@"using namespace System::Reflection;");
+				      _wr.WriteLine(@"using namespace System::Runtime::CompilerServices;");
+				      _wr.WriteLine();
+
+					    string _line = sr.ReadLine();	//skip first line
+					    while ((_line = sr.ReadLine()) != null) {
+						    if (_line.IndexOf("assembly:") > 0) {
+							    _wr.WriteLine(_line + ";");
+						    }
+						    else {
+							    _wr.WriteLine(_line);
+						    }
+					    }			      
+            }
+		      }
+		      catch (Exception _ex) {
+			      Console.WriteLine("The file could not be read: " + _ex.Message);
+		      }
+		      return "AsmInfoCpp created...";
+	      }
+    ]]>
+    </code>
+  </script>
+
+</project>

@@ -1,0 +1,54 @@
+ Debit Set
+
+ 0 Zero
+ 1 One
+ 2 Two
+ 3 Three
+ 4 Four
+ 5 Five
+ 6 Six
+ 7 Seven
+ 8 Eight
+ 9 Nine
+ 10 Ten
+ 11 Eleven
+ 12 Twelve
+ 13 Thirteen
+ 14 Fourteen
+ 15 Fifteen
+ 16 Sixteen
+ 17 Seventeen
+ 18 Eighteen
+ 19 Nineteen
+ 20 Twenty
+ 30 Thirty
+ 40 Forty
+ 50 Fifty
+ 60 Sixty
+ 70 Seventy
+ 80 Eighty
+ 90 Ninety
+ 100 Hundred
+ 1000 Thousand
+ 102       Your balance is...
+ 105        I'm sorry, that card number has expired.
+ 106        Please enter your card number.
+ 107       Please enter phone number you wish to reach. 
+ 107a 		For international calls  start with 011.
+ 108        I'm sorry, that is not a valid card number.
+ 110        I'm sorry, that is not a valid phone number. Please try again.
+ 112        I'm sorry you're having trouble, please call customer service.
+ 115       One minute remains.
+ 116       Two minutes remain.
+ 117       You have...
+ 118S 	...minute...
+ 118P 	...minutes...
+ 120       ...followed by the pound sign...
+ 150S       ...cent...
+ 150P       ...cents...
+ 151       ...dollar...
+ 152       ...dollars...
+ 154       remaining
+ 155			unit...
+ 156			units...
+ 200      Please try again.

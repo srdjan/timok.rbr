@@ -1,0 +1,8 @@
+C:\SvnRepo\Trunk\Core\Timok.Core.Test\obj\Debug\ResolveAssemblyReference.cache
+C:\SvnRepo\Trunk\Core\Timok.Core.Test\bin\Debug\Timok.Core.Test.dll
+C:\SvnRepo\Trunk\Core\Timok.Core.Test\bin\Debug\Timok.Core.Test.pdb
+C:\SvnRepo\Trunk\Core\Timok.Core.Test\bin\Debug\nunit.framework.dll
+C:\SvnRepo\Trunk\Core\Timok.Core.Test\bin\Debug\Timok.Core.dll
+C:\SvnRepo\Trunk\Core\Timok.Core.Test\bin\Debug\Timok.Core.pdb
+C:\SvnRepo\Trunk\Core\Timok.Core.Test\obj\Debug\Timok.Core.Test.dll
+C:\SvnRepo\Trunk\Core\Timok.Core.Test\obj\Debug\Timok.Core.Test.pdb

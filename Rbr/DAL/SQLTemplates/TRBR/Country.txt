@@ -1,0 +1,226 @@
+202	Afghanistan	93	1	0
+25	Alaska	1	1	0
+96	Albania	355	1	0
+28	Algeria	213	1	0
+178	American Samoa	684	1	0
+108	Andorra	376	1	0
+55	Angola	244	1	0
+5	Anguilla	1	1	0
+6	Antigua and Barbuda	1	1	0
+144	Argentina	54	1	0
+106	Armenia	374	1	0
+83	Aruba	297	1	0
+57	Ascension	247	1	0
+160	Australia	61	1	0
+166	Australian Ext. Ter.	672	1	0
+124	Austria	43	1	0
+224	Azerbaijan	994	1	0
+3	Bahamas	1	1	0
+216	Bahrain	973	1	0
+198	Bangladesh	880	1	0
+4	Barbados and Diego Garcia	1	1	0
+107	Belarus	375	1	0
+88	Belgium	32	1	0
+132	Belize	501	1	0
+40	Benin	229	1	0
+10	Bermuda	1	1	0
+218	Bhutan	975	1	0
+150	Bolivia	591	1	0
+116	Bosnia and Herzegovina	387	1	0
+77	Botswana	267	1	0
+145	Brazil	55	1	0
+7	British Virgin Islands	1	1	0
+167	Brunei Darussalam	673	1	0
+100	Bulgaria	359	1	0
+37	Burkina Faso	226	1	0
+67	Burundi	257	1	0
+195	Cambodia	855	1	0
+48	Cameroon	237	1	0
+2	Canada	1	1	0
+49	Cape Verde	238	1	0
+9	Cayman Islands	1	1	0
+47	Central African Rep.	236	1	0
+46	Chad	235	1	0
+146	Chile	56	1	0
+197	China	86	1	0
+14	CNMI	1	1	0
+147	Colombia	57	1	0
+79	Comoros and Mayotte	269	1	0
+53	Congo Brazzaville	242	1	0
+54	Congo Kinshasa	243	1	0
+176	Cook Islands	682	1	0
+137	Costa Rica	506	1	0
+36	Cote d Ivoire	225	1	0
+114	Croatia	385	1	0
+143	Cuba	53	1	0
+98	Cyprus	357	1	0
+121	Czech Rep.	420	1	0
+126	Denmark	45	1	0
+63	Djibouti	253	1	0
+17	Dominica Rep.	1	1	0
+21	Dominican Republic	1	1	0
+192	DPR of Korea	850	1	0
+152	Ecuador	593	1	0
+26	Egypt	20	1	0
+134	El Salvador	503	1	0
+51	Equatorial Guinea	240	1	0
+82	Eritrea	291	1	0
+104	Estonia	372	1	0
+61	Ethiopia	251	1	0
+131	Falkland Islands (Malvinas)	500	1	0
+84	Faroe Islands	298	1	0
+173	Fiji	679	1	0
+99	Finland	358	1	0
+89	France	33	1	0
+183	French Polynesia	689	1	0
+52	Gabon	241	1	0
+31	Gambia	220	1	0
+225	Georgia	995	1	0
+130	Germany	49	1	0
+44	Ghana	233	1	0
+91	Gibraltar	350	1	0
+86	Greece	30	1	0
+85	Greenland	299	1	0
+11	Grenada	1	1	0
+149	Guadeloupe	590	1	0
+15	Guam	1	1	0
+133	Guatemala	502	1	0
+153	Guiana (French dept.)	594	1	0
+35	Guinea	224	1	0
+56	Guinea Bissau	245	1	0
+151	Guyana	592	1	0
+140	Haiti	509	1	0
+20	Hawaii	1	1	0
+135	Honduras	504	1	0
+193	Hongkong	852	1	0
+101	Hungary	36	1	0
+95	Iceland	354	1	0
+200	India	91	1	0
+161	Indonesia	62	1	0
+221	Iran	98	1	0
+209	Iraq	964	1	0
+94	Ireland	353	1	0
+215	Israel	972	1	0
+118	Italy	39	1	0
+24	Jamaica	1	1	0
+189	Japan	81	1	0
+207	Jordan	962	1	0
+64	Kenya	254	1	0
+180	Kiribati	686	1	0
+190	Korea South	82	1	0
+210	Kuwait	965	1	0
+226	Kyrgyzstan	996	1	0
+196	Lao P.D.R.	856	1	0
+103	Latvia	371	1	0
+206	Lebanon	961	1	0
+76	Lesotho	266	1	0
+42	Liberia	231	1	0
+30	Libya	218	1	0
+123	Liechtenstein	423	1	0
+102	Lithuania	370	1	0
+93	Luxembourg	352	1	0
+194	Macau	853	1	0
+117	Macedonia	389	1	0
+71	Madagascar	261	1	0
+75	Malawi	265	1	0
+159	Malaysia	60	1	0
+205	Maldives	960	1	0
+34	Mali	223	1	0
+97	Malta	356	1	0
+186	Marshall Islands	692	1	0
+155	Martinique	596	1	0
+33	Mauritania	222	1	0
+41	Mauritius	230	1	0
+142	Mexico	52	1	0
+185	Micronesia	691	1	0
+105	Moldova	373	1	0
+109	Monaco	377	1	0
+219	Mongolia	976	1	0
+13	Montserrat	1	1	0
+27	Morocco	212	1	0
+68	Mozambique	258	1	0
+204	Myanmar	95	1	0
+74	Namibia	264	1	0
+168	Nauru	674	1	0
+220	Nepal	977	1	0
+87	Netherlands	31	1	0
+158	Netherlands Antilles	599	1	0
+181	New Caledonia	687	1	0
+163	New Zealand	64	1	0
+136	Nicaragua	505	1	0
+38	Niger	227	1	0
+45	Nigeria	234	1	0
+177	Niue	683	1	0
+128	Norway	47	1	0
+213	Oman	968	1	0
+201	Pakistan	92	1	0
+174	Palau	680	1	0
+138	Panama	507	1	0
+169	Papua New Guinea	675	1	0
+154	Paraguay	595	1	0
+141	Peru	51	1	0
+162	Philippines	63	1	0
+129	Poland	48	1	0
+92	Portugal	351	1	0
+19	Puerto Rico	1	1	0
+217	Qatar	974	1	0
+72	Reunion	262	1	0
+119	Romania	40	1	0
+187	Russia	7	1	0
+60	Rwanda	250	1	0
+81	Saint Helena	290	1	0
+23	Saint Kitts and Nevis	1	1	0
+16	Saint Lucia	1	1	0
+139	Saint Pierre and Miquelon	508	1	0
+18	Saint Vincent and the Grenadines	1	1	0
+110	San Marino	378	1	0
+50	Sao Tome and Principe	239	1	0
+211	Saudi Arabia	966	1	0
+32	Senegal	221	1	0
+58	Seychelles	248	1	0
+43	Sierra Leone	232	1	0
+164	Singapore	65	1	0
+122	Slovakia	421	1	0
+115	Slovenia	386	1	0
+171	Solomon	677	1	0
+62	Somalia	252	1	0
+80	South Africa	27	1	0
+90	Spain	34	1	0
+203	Sri Lanka	94	1	0
+59	Sudan	249	1	0
+156	Suriname	597	1	0
+78	Swaziland	268	1	0
+127	Sweden	46	1	0
+120	Switzerland	41	1	0
+208	Syria	963	1	0
+222	Tajikistan	992	1	0
+65	Tanzania	255	1	0
+165	Thailand	66	1	0
+39	Togo	228	1	0
+184	Tokelau	690	1	0
+170	Tonga	676	1	0
+22	Trinidad and Tobago	1	1	0
+29	Tunisia	216	1	0
+199	Turkey	90	1	0
+223	Turkmenistan	993	1	0
+12	Turks and Caicos Islands	1	1	0
+182	Tuvalu	688	1	0
+66	Uganda	256	1	0
+112	Ukraine	380	1	0
+214	United Arab Emirates	971	1	0
+125	United Kingdom	44	1	0
+157	Uruguay	598	1	0
+8	US Virgin Islands	1	1	0
+1	USA	1	1	0
+227	Uzbekistan	998	1	0
+172	Vanuatu	678	1	0
+111	Vatican	379	1	0
+148	Venezuela	58	1	0
+191	Vietnam	84	1	0
+175	Wallis and Futuna	681	1	0
+179	Western Samoa	685	1	0
+212	Yemen	967	1	0
+113	Yugoslavia	381	1	0
+70	Zambia	260	1	0
+69	Zanzibar	259	1	0
+73	Zimbabwe	263	1	0

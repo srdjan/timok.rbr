@@ -1,0 +1,13 @@
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Rbr.DAL.Test.dll.config
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Rbr.DAL.Test.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Rbr.DAL.Test.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\nunit.framework.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Core.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Rbr.Core.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Rbr.DAL.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Rbr.Core.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Core.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\bin\Debug\Timok.Rbr.DAL.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\obj\Debug\ResolveAssemblyReference.cache
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\obj\Debug\Timok.Rbr.DAL.Test.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DAL\Test\obj\Debug\Timok.Rbr.DAL.Test.pdb

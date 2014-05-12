@@ -1,0 +1,9 @@
+<Assemblies Version="14">
+  <Assembly Name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="bd8b1483-6575-49ba-a389-5ec67b96925a.ReflectionCache" Timestamp="632630609360000000" />
+  <Assembly Name="System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="646a9ef0-4c36-478c-86b0-31d5645eec6e.ReflectionCache" Timestamp="632630609360000000" />
+  <Assembly Name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="185ba2a7-75f3-4664-869a-331f6a2d1880.ReflectionCache" Timestamp="632630609360000000" />
+  <Assembly Name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Cache="99fb01c1-865c-40f5-9a55-73bb40a52c59.ReflectionCache" Timestamp="632630609360000000" />
+  <Assembly Name="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="97456a6e-c444-4279-81f6-7f864202f037.ReflectionCache" Timestamp="632630609360000000" />
+  <Assembly Name="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="0d8a3bcd-15b3-42ce-8392-6d240304627a.ReflectionCache" Timestamp="632630609360000000" />
+  <Assembly Name="Framework.Controls.ProgressBar, Version=1.5.0.0, Culture=neutral" Cache="2bb48c56-624a-4743-80a0-0aa137ac05d9.ReflectionCache" Timestamp="632804683740000000" />
+</Assemblies>

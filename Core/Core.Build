@@ -1,0 +1,80 @@
+<project name="Timok.Core">
+  <!-- ============================================================================================ -->
+	<target name="full" depends="copy" description="Compiles, Tests and produces versioned distributions" />
+	<!-- ============================================================================================ -->
+
+  <!-- Compile Timok.Core.dll -->
+  <target name="compile" verbose="true" debug="true">
+     <csc target="library" rebuild="true" optimize="true" output="${CoreBuildDir}Timok.Core.dll" verbose="true">
+        <arg line="/noconfig /debug+ /debug:pdbonly /unsafe+ /nowarn:1701,1702 /warn:1 /baseaddress:285212672 /filealign:4096"/>
+        <sources>
+          <include name="${CoreDir}**\*.cs"/>
+          <exclude name="${CoreDir}Timok.Core.Test\**\*.cs"/>
+        </sources>
+        <references>
+          <include name="System.dll"/>
+          <include name="Microsoft.VisualBasic.dll"/>
+          <include name="System.Data.dll"/>
+          <include name="System.Configuration.dll"/>
+          <include name="System.Drawing.dll"/>
+          <include name="System.Runtime.Serialization.Formatters.Soap.dll"/>
+          <include name="System.Web.dll"/>
+          <include name="System.Web.Services.dll"/>
+          <include name="System.Windows.Forms.dll"/>
+          <include name="System.Xml.dll"/>
+        </references>
+      </csc>
+   </target>
+
+  <!-- Build Timok.Core.Test.dll -->
+  <target name="test.compile" verbose="true" depends="compile">
+     <csc target="library" rebuild="true" output="${CoreBuildDir}${project::get-name()}.Test.dll">
+       <sources>
+         <include name="${CoreDir}Timok.Core.Test\**\*.cs" />
+       </sources>
+       <references>
+         <include name="System.dll" />
+         <include name="System.Data.dll"/>
+         <include name="System.Xml.dll"/>
+         <include name="${CoreBuildDir}${project::get-name()}.dll" />
+         <!--include name="$(NUnitDir)nunit.framework.dll" /-->
+         <include name="ExtLibs\Trunk\NUnit\Bin\NUnit.framework.dll" />
+         <!--include name="tools\nmock\NMock2.dll" /-->
+       </references>
+     </csc>
+   </target>
+
+  <!-- Run Timok.Core.Tests -->
+  <target name="test" verbose="true" depends="test.compile">
+    <!--copy file="config\Web.Config" tofile="build\${nant.project.name}.Test.dll.config" /-->
+
+    <!--copy todir="build" flatten="true">
+      <fileset basedir="tools">
+        <include name="**\NMock2.dll" />
+      </fileset>
+    </copy-->
+
+    <copy todir="Core\Trunk\bin\Release\" flatten="true" verbose="true">
+      <fileset basedir="ExtLibs\Trunk\NUnit\Bin\">
+        <include name="*.dll" />
+      </fileset>
+    </copy>
+
+    <exec basedir="ExtLibs\Trunk\NUnit\Bin\"
+          verbose="true" 
+          useruntimeengine="true"
+          workingdir="Core\Trunk\bin\Release\"
+          program="nunit-console.exe"
+          commandline="${project::get-name()}.Test.dll /xml=${project::get-name()}.Test-Result.xml" />
+  </target>
+
+  <!-- Copy Timok.Core.dll, pdb -->
+    <target name="copy" verbose="true" depends="test">
+    <copy todir="${BinDir}" overwrite="true">
+      <fileset basedir="${CoreBuildDir}">
+        <include name="Timok.Core.dll" />
+        <include name="Timok.Core.pdb" />
+      </fileset>
+    </copy>
+  </target>
+</project>

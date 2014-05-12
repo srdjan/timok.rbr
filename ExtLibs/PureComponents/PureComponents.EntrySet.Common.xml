@@ -1,0 +1,3007 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PureComponents.EntrySet.Common</name>
+    </assembly>
+    <members>
+        <member name="T:PureComponents.EntrySet.Design.MSG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.MSG.hwnd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.MSG.message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.MSG.wParam">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.MSG.lParam">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.MSG.time">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.MSG.pt_x">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.MSG.pt_y">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.PAINTSTRUCT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.hdc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.fErase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.rcPaint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.fRestore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.fIncUpdate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.Reserved1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.Reserved2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.Reserved3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.Reserved4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.Reserved5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.Reserved6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.Reserved7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.PAINTSTRUCT.Reserved8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.RECT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.RECT.left">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.RECT.top">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.RECT.right">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.RECT.bottom">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.POINT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.POINT.x">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.POINT.y">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.SIZE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.SIZE.cx">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.SIZE.cy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.BLENDFUNCTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.BLENDFUNCTION.BlendOp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.BLENDFUNCTION.BlendFlags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.BLENDFUNCTION.SourceConstantAlpha">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.BLENDFUNCTION.AlphaFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.TRACKMOUSEEVENTS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.TRACKMOUSEEVENTS.cbSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.TRACKMOUSEEVENTS.dwFlags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.TRACKMOUSEEVENTS.hWnd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.TRACKMOUSEEVENTS.dwHoverTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.LOGBRUSH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.LOGBRUSH.lbStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.LOGBRUSH.lbColor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.LOGBRUSH.lbHatch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ActionMenuNative">
+            <summary>
+            Summary description for ActionMenuNative.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ActionMenuNative.m_bMouseOver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.AddMenuGroup(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.RemoveMenuGroup(PureComponents.EntrySet.Design.ActionMenuGroup)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.ClearMenuGroups">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.AddMenuItem(PureComponents.EntrySet.Design.ActionMenuGroup,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnItemClick(PureComponents.EntrySet.Design.ActionMenuItem)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.Show(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.UpdateLayeredWindow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.UpdateLayeredWindow(System.Byte)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.UpdateLayeredWindow(System.Drawing.Point,System.Drawing.Size,System.Byte)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.RecalcLayout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.CalcGroupHeight(PureComponents.EntrySet.Design.ActionMenuGroup)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.Invalidate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.DrawAllCommands(System.Drawing.Graphics)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.PaintGroupClosed(PureComponents.EntrySet.Design.ActionMenuGroup,System.Drawing.Graphics,System.Int32@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.DrawBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.DrawShadowVertical(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.DrawShadowHorizontal(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.Hide">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.MousePositionToClient(PureComponents.EntrySet.Design.POINT)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.MousePositionToScreen(PureComponents.EntrySet.Design.POINT)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.MousePositionToScreen(PureComponents.EntrySet.Design.MSG)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.MousePositionToScreen(System.Windows.Forms.Message)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.GetShadowCache(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.CalculateColor(System.Drawing.Color,System.Drawing.Color,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnWM_LBUTTONUP(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnWM_LBUTTONUP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnWM_MOUSEMOVE(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnWM_MOUSELEAVE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnWM_MOUSEACTIVATE(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnWM_SETCURSOR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnWM_PAINT(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ActionMenuNative.OnWM_NCHITTEST(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ActionMenuNative.Width">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ActionMenuNative.Font">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ActionMenuNative.Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ActionMenuNative.BorderColor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ActionMenuNative.SelectColor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:PureComponents.EntrySet.Design.ActionMenuNative.ItemClick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ActionMenuNative.ItemClickEventHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ActionMenuGroup">
+            <summary>
+            The action menu group object
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ActionMenuGroup.Items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ActionMenuGroup.Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ActionMenuGroup.Expanded">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ActionMenuItem">
+            <summary>
+            The action menu item object
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ActionMenuItem.Tag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ActionMenuItem.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ActionMenuItem.Selected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ActionMenuItem.MenuGroup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorChangedEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorChangedEventArgs.#ctor(PureComponents.EntrySet.Design.ColorManagerWheel.RGB,PureComponents.EntrySet.Design.ColorManagerWheel.HSV)">
+            <summary>
+            
+            </summary>
+            <param name="RGB"></param>
+            <param name="HSV"></param>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ColorChangedEventArgs.RGB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ColorChangedEventArgs.HSV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorManagerWheel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.HSVtoRGB(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="H"></param>
+            <param name="S"></param>
+            <param name="V"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.HSVtoColor(PureComponents.EntrySet.Design.ColorManagerWheel.HSV)">
+            <summary>
+            
+            </summary>
+            <param name="hsv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.HSVtoColor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="H"></param>
+            <param name="S"></param>
+            <param name="V"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.HSVtoRGB(PureComponents.EntrySet.Design.ColorManagerWheel.HSV)">
+            <summary>
+            
+            </summary>
+            <param name="HSV"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.RGBtoHSV(PureComponents.EntrySet.Design.ColorManagerWheel.RGB)">
+            <summary>
+            
+            </summary>
+            <param name="RGB"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorManagerWheel.RGB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorManagerWheel.RGB.Red">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorManagerWheel.RGB.Green">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorManagerWheel.RGB.Blue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.RGB.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.RGB.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorManagerWheel.HSV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorManagerWheel.HSV.Hue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorManagerWheel.HSV.Saturation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorManagerWheel.HSV.value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.HSV.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorManagerWheel.HSV.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditor.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditorCtrl">
+            <summary>
+            Summary description for ColorUIEditorCtrl.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorUIEditorCtrl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorCtrl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorCtrl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorCtrl.txtValue_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Key handling for the textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditorCustomCtrl">
+            <summary>
+            Summary description for ColorUIEditorCustomCtrl.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorUIEditorCustomCtrl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorCustomCtrl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorCustomCtrl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditorForm">
+            <summary>
+            ColorUIEditorForm.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorUIEditorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorForm.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ColorUIEditorForm.Color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditorHexagonCtrl">
+            <summary>
+            Summary description for ColorUIEditorHexagonCtrl.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorUIEditorHexagonCtrl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorHexagonCtrl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorHexagonCtrl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.ColorPick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.ColorPickEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorUIEditorPaletteCtrl.ColorPickEventArgs.Color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl.OnCreateControl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl.ColorPick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ColorUIEditorPaletteLightCtrl.Color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.ColorUIEditorWheelCtrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.ColorUIEditorWheelCtrl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorWheelCtrl.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorWheelCtrl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.ColorUIEditorWheelCtrl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Design.ColorUIEditorWheelCtrl.Color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:PureComponents.EntrySet.Design.ColorUIEditorWheelCtrl.ColorChanged">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.FillStyleEditor">
+            <summary>
+            The editor for fill style
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.FillStyleEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            We will draw the item by ourselves, so we will return true here
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.FillStyleEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)">
+            <summary>
+            The painting function, gets the imagelist and the image object, the image index and draws the inner part of the item
+            in the property window
+            </summary>
+            <param name="pe"></param>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.SliderUIEditorCtrl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.SliderUIEditorCtrl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.SliderUIEditorCtrl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.StringCollectionUIEditor">
+            <summary>
+            StringCollectionUIEditor.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.StringCollectionUIEditor.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.StringCollectionUIEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.StringCollectionUIEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Design.StringCollectionUIEditorCtrl">
+            <summary>
+            StringCollectionUIEditorCtrl.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Design.StringCollectionUIEditorCtrl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.StringCollectionUIEditorCtrl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Design.StringCollectionUIEditorCtrl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.ColorManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.SetBrightness(System.Drawing.Color,System.Double)">
+            <summary> 
+            Sets the absolute brightness of a colour 
+            </summary> 
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.ModifyBrightness(System.Drawing.Color,System.Double)">
+            <summary> 
+            Modifies an existing brightness level 
+            </summary> 
+            <remarks> 
+            To reduce brightness use a number smaller than 1. To increase brightness use a number larger tnan 1 
+            </remarks> 
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.SetSaturation(System.Drawing.Color,System.Double)">
+            <summary> 
+            Sets the absolute saturation level 
+            </summary> 
+            <remarks>Accepted values 0-1</remarks> 
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.ModifySaturation(System.Drawing.Color,System.Double)">
+            <summary> 
+            Modifies an existing Saturation level 
+            </summary> 
+            <remarks> 
+            To reduce Saturation use a number smaller than 1. To increase Saturation use a number larger tnan 1 
+            </remarks> 
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.SetHue(System.Drawing.Color,System.Double)">
+            <summary> 
+            Sets the absolute Hue level 
+            </summary> 
+            <remarks>Accepted values 0-1</remarks> 
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.ModifyHue(System.Drawing.Color,System.Double)">
+            <summary> 
+            Modifies an existing Hue level 
+            </summary> 
+            <remarks> 
+            To reduce Hue use a number smaller than 1. To increase Hue use a number larger tnan 1 
+            </remarks> 
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.HLS_to_RGB(PureComponents.EntrySet.ColorManager.HLS)">
+            <summary> 
+            Converts a colour from HLS to RGB 
+            </summary> 
+            <remarks>Adapted from the algoritm in Foley and Van-Dam</remarks> 
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.RGB_to_HLS(System.Drawing.Color)">
+            <summary> 
+            Converts RGB to HLS 
+            </summary> 
+        </member>
+        <member name="T:PureComponents.EntrySet.ColorManager.HLS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.ColorManager.HLS.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.ColorManager.HLS.H">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.ColorManager.HLS.S">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.ColorManager.HLS.L">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.BorderStyle">
+            <summary>
+            BorderStyle defines styles for borders for EntrySet classes
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.BorderStyle.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.BorderStyle.Solid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.BorderStyle.Dot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.BorderStyle.Double">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.BorderWidth">
+            <summary>
+            BorderWidth defines widths of border for EntrySet type classes
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.BorderWidth.Thin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.BorderWidth.Medium">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.BorderWidth.Thick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.FillStyle">
+            <summary>
+            The fill style for EntrySet classes
+            </summary>
+            <remarks>
+            <image src="ms-help://MS.VSCC/PureComponents.EntrySetExtenders/EntrySetExtendersDoc/images/ESE.VE.FillStyle.png" />
+            </remarks>
+        </member>
+        <member name="F:PureComponents.EntrySet.FillStyle.Flat">
+            <summary>
+            Flat fill style
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.FillStyle.VerticalFading">
+            <summary>
+            Vertical fading filling style
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.FillStyle.HorizontalFading">
+            <summary>
+            Horizotal fading filling style
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.FillStyle.DiagonalBackward">
+            <summary>
+            Diagonal backward filling style
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.FillStyle.DiagonalForward">
+            <summary>
+            Diagonal forward filling style
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.FillStyle.VistaFading">
+            <summary>
+            Office 2006 fading style
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.FillStyle.VerticalFading2">
+            <summary>
+            Vertical fading in different style, start form a color1 to color2 and back to color1
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.IndentConverter">
+            <summary>
+            Implements the expandable conversion functions
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.IndentConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true if the object can convert to that type.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.IndentConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the object to the requested type.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Indent">
+            <summary>
+            Indentatino definition.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Indent.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Indent.#ctor(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.Indent.OnInvalidateStyle(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.Indent.ToString">
+            <summary>
+            Overridden. Gets the string representation for the object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:PureComponents.EntrySet.Indent.InvalidateStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Indent.X">
+            <summary>
+            X value of the indentation
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Indent.Y">
+            <summary>
+            Y value of the indentation
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Margin">
+            <summary>
+            Margin defines the margin steps for controls
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Margin.#ctor">
+            <summary>
+            Construction
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Margin.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            Construction
+            </summary>
+            <param name="Parent"></param>
+        </member>
+        <member name="P:PureComponents.EntrySet.Margin.Left">
+            <summary>
+            Left margin
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Margin.Top">
+            <summary>
+            Top margin
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Margin.Right">
+            <summary>
+            Right margin
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Margin.Bottom">
+            <summary>
+            Bottom margin
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.ESMarginConverter">
+            <summary>
+            Implements the conversion functions for the ESMargin
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.ESMarginConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true if the object can convert to that type.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.ESMarginConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the object to the requested type.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Mark">
+            <summary>
+            Mark class represents a mark area in a control.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Mark.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.Mark.ToString">
+            <summary>
+            Overriden.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.Mark.ApplyStyle(PureComponents.EntrySet.Mark)">
+            <summary>
+            
+            </summary>
+            <param name="mark"></param>
+        </member>
+        <member name="E:PureComponents.EntrySet.Mark.Invalidate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Mark.Visible">
+            <summary>
+            Gets or sets whether the Mark is visible control.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Mark.Style">
+            <summary>
+            Gets or sets the style for the Mark object.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Mark.Tag">
+            <summary>
+            Gets or sets the tag associated with the mark
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.Mark.Tooltip">
+            <summary>
+            Tooltip associated with the mark
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.MarkConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true if the object can convert to that type.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.MarkConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the object to the requested type.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.MarkStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.MarkStyle.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.MarkStyle.#ctor(PureComponents.EntrySet.MarkAlignment,System.Drawing.Color)">
+            <summary>
+            
+            </summary>
+            <param name="alignment"></param>
+            <param name="color"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.MarkStyle.ToString">
+            <summary>
+            Overriden.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.MarkStyle.ApplyStyle(PureComponents.EntrySet.MarkStyle)">
+            <summary>
+            
+            </summary>
+            <param name="style"></param>
+        </member>
+        <member name="E:PureComponents.EntrySet.MarkStyle.Invalidate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.MarkStyle.Alignment">
+            <summary>
+            Gets or sets the mark alignment.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.MarkStyle.Color">
+            <summary>
+            Gets or sets the color of the mark.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.MarkStyle.TooltipForeColor">
+            <summary>
+            Gets or sets the color of the tooltip fore color.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.MarkStyle.TooltipBackColor">
+            <summary>
+            Gets or sets the color of the tooltip back color.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.MarkStyle.TooltipBorderColor">
+            <summary>
+            Gets or sets the color of the tooltip border color.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.MarkStyleConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true if the object can convert to that type.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.MarkStyleConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the object to the requested type.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.MarkAlignment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.MarkAlignment.UpperCorner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.MarkAlignment.Strip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.MarkAlignment.LowerCorner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.NotifyThread">
+            <summary>
+            NotifyThread.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.NotifyThread.#ctor(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.NotifyThread.Start">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.NotifyThread.StartImpl">
+            <summary>
+            Start the thread
+            </summary>
+        </member>
+        <member name="E:PureComponents.EntrySet.NotifyThread.OnTick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:PureComponents.EntrySet.NotifyThread.OnTickEnd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Shape">
+            <summary>
+            Shape defines shapes for EntrySet title styles
+            </summary>
+            <remarks>
+            <image src="ms-help://MS.VSCC/PureComponents.EntrySetExtenders/EntrySetExtendersDoc/images/ESE.VE.Shapes.png" />
+            </remarks>
+        </member>
+        <member name="F:PureComponents.EntrySet.Shape.Classic">
+            <summary>
+            Classic rectangular shape
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Shape.Rounded">
+            <summary>
+            Shape with rounded borders
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Shape.Vista">
+            <summary>
+            Rounded corners like in Office2006
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Shape.Chamfered">
+            <summary>
+            Shape with chamfered borders
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.Theme">
+            <summary>
+            Theme.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Theme.Classic">
+            <summary>
+            Classic theme of controls
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.Theme.Vista">
+            <summary>
+            Windows vista like theme
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.UnderlineStyle">
+            <summary>
+            Underlining style enumeration. Defines styles for underlining painting.
+            </summary>
+            <remarks>
+            <image src="ms-help://MS.VSCC/PureComponents.EntrySetExtenders/EntrySetExtendersDoc/images/ESE.VE.UnderlineStyle.png" />
+            </remarks>	
+        </member>
+        <member name="F:PureComponents.EntrySet.UnderlineStyle.Solid">
+            <summary>
+            Solid underlining
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.UnderlineStyle.Dot">
+            <summary>
+            Underlining painted in dots
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.UnderlineStyle.Dash">
+            <summary>
+            Dashed underlining line 
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.UnderlineStyle.Tilde">
+            <summary>
+            Tilde underlining line (default)
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.RoundRectUtils">
+            <summary>
+            Auxiliary methods for working with rounded rectangles.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.GetInstance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.AddRoundRect(System.Drawing.Drawing2D.GraphicsPath,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Adds a rounded rectangle into a given <code>GraphicsPath</code>.
+            </summary>
+            <param name="gp"><code>GraphicsPath</code> where the RoundRect will be added.</param>
+            <param name="rct">Bounds of RoundRect</param>
+            <param name="r">Radius of region's corners.</param>
+            <remarks>This is not good way of drawing RoundRects. GraphicsPaths act quite strange
+            and there are usually problems with converting these paths into regions and drawing
+            them with thicker lines. However sometimes it can be useful, eg. in 
+            <code>PathGradientBrush</code>.</remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.GetRoundRectRegion(System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Gives a RoundRect-shaped <code>Region</code>.
+            </summary>
+            <param name="rct">Region's bounds.</param>
+            <param name="r">Radius of region's corners.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRectUponDiameter(System.Drawing.Graphics,System.Drawing.Color,System.Int32,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draws rounded rectangle upon specified corner diameter. Unlike other methods which use more 
+            intuitively radius, here we use diameter because in this manner we are able to correct 
+            +-1 pixel problems.
+            </summary>
+            <param name="gr"><code>Graphics</code> object to draw into.</param>
+            <param name="clr">Color of the line.</param>
+            <param name="width">Width of the line.</param>
+            <param name="rct">Rectangle where the RoundRect will be drawn.</param>
+            <param name="d">Diameter (!!) of RoundRect's corners.</param>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRect(System.Drawing.Graphics,System.Drawing.Color,System.Int32,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draws rounded rectangle.
+            </summary>
+            <param name="gr"><code>Graphics</code> object to draw into.</param>
+            <param name="clr">Color of the line.</param>
+            <param name="width">Width of the line.</param>
+            <param name="rct">Rectangle where the RoundRect will be drawn.</param>
+            <param name="r">Radius of round rect's corners.</param>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRect(System.Drawing.Image,System.Drawing.Color,System.Int32,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draws rounded rectangle.
+            </summary>
+            <param name="img"><code>Image</code> object to draw into.</param>
+            <param name="clr">Color of the line.</param>
+            <param name="width">Width of the line.</param>
+            <param name="rct">Rectangle where the RoundRect will be drawn.</param>
+            <param name="r">Radius of round rect's corners.</param>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRect(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draws rounded rectangle.
+            </summary>
+            <param name="gr"><code>Graphics</code> object to draw into.</param>
+            <param name="pn"><code>Pen</code> object specifying how will the line look like.
+            Only Colow and Width properties are used and the Width property is rounded to integer.</param>
+            <param name="rct">Rectangle where the RoundRect will be drawn.</param>
+            <param name="r">Radius of round rect's corners.</param>
+            <remarks>This reduction of <code>Pen</code>'s abilities is because we use Win32 GDI
+            to draw rounded rectangles (as it's much better than using .NET's 
+            <code>GraphicPath</code>). </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRect(System.Drawing.Image,System.Drawing.Pen,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draws rounded rectangle.
+            </summary>
+            <param name="img"><code>Image</code> object to draw into.</param>
+            <param name="pn"><code>Pen</code> object specifying how will the line look like.
+            Only Colow and Width properties are used and the Width property is rounded to integer.</param>
+            <param name="rct">Rectangle where the RoundRect will be drawn.</param>
+            <param name="r">Radius of round rect's corners.</param>
+            <remarks>This reduction of <code>Pen</code>'s abilities is because we use Win32 GDI
+            to draw rounded rectangles (as it's much better than using .NET's 
+            <code>GraphicPath</code>). </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRect(System.Drawing.Color,System.Int32,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Returns image with specified rounded rectangle drawn.
+            </summary>
+            <param name="clr">Color of the line.</param>
+            <param name="width">Width of the line.</param>
+            <param name="rct">Rectangle where the RoundRect will be drawn.</param>
+            <param name="r">Radius of round rect's corners.</param>
+            <returns>Returns image with specified rounded rectangle drawn.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRect(System.Drawing.Pen,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Returns image with specified rounded rectangle drawn.
+            </summary>
+            <param name="pn"><code>Pen</code> object specifying how will the line look like.
+            Only Colow and Width properties are used and the Width property is rounded to integer.</param>
+            <param name="rct">Rectangle where the RoundRect will be drawn.</param>
+            <param name="r">Radius of round rect's corners.</param>
+            <returns>Returns image with specified rounded rectangle drawn.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.SetRoundRectControlRegion(System.Windows.Forms.Control,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Sets <code>Control</code>'s region to rounded rectangle.
+            </summary>
+            <param name="ctl"><code>Control</code> to be altered.</param>
+            <param name="rct">Bounds of RoundRect. Point [0, 0] is at top-left of the
+            control (not only its client area).</param>
+            <param name="r">Radius of RoundRect's corners</param>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.SetRoundRectControlRegion(System.Windows.Forms.Control,System.Int32,System.Boolean)">
+            <summary>
+            Sets <code>Control</code>'s region to rounded rectangle.
+            </summary>
+            <param name="ctl"><code>Control</code> to be altered.</param>
+            <param name="r">Radius of RoundRect's corners</param>
+            <param name="clientAreaOnly">If <code>true</code> only control's client 
+            area is included in the region. Otherwise region contains whole control
+            (excluding its corners, of course).</param>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawInnerRoundRectFrame(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            This method draws an inner round rectangle frame around a control. This control
+            should have its' region set to round rectangle by <code>SetRoundRectRegion</code>. It's 
+            optimized that way and otherwise it might look not well.
+            </summary>
+            <param name="gr"><code>Graphics</code> object to draw into.</param>
+            <param name="pn"><code>Pen</code> object specifying how will the line look like.
+            Only Colow and Width properties are used and the Width property is rounded to 
+            integer.</param>
+            <param name="bounds"><code>Rectangle</code> that was used in <code>SetRoundRectRegion</code>
+            that might be offseted depending on origin of <code>Graphics</code> object.
+            In the most common case (when we <code>Graphics gr</code> is associated with our 
+            <code>Control</code> and its <code>Region</code> contains whole client area) we use 
+            <code>Control.ClientRectangle</code> here.
+            </param>
+            <param name="r">Radius of <code>Control.Region</code>'s corners. </param>
+            <remarks>This reduction of <code>Pen</code>'s abilities is because we use Win32 GDI
+            to draw rounded rectangles (as it's much better than using .NET's 
+            <code>GraphicPath</code>). </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawOuterRoundRectFrame(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            This method draws an outer round rectangle frame around a control. This control
+            should have its' region set to round rectangle by <code>SetRoundRectRegion</code>. It's 
+            optimized that way and otherwise it might look not well.
+            </summary>
+            <param name="gr"><code>Graphics</code> object to draw into.</param>
+            <param name="pn"><code>Pen</code> object specifying how will the line look like.
+            Only Colow and Width properties are used and the Width property is rounded to 
+            integer.</param>
+            <param name="bounds"><code>Rectangle</code> that was used in <code>SetRoundRectRegion</code>
+            that might be offseted depending on origin of <code>Graphics</code> object.
+            In the most common case (when we <code>Graphics gr</code> is associated with our 
+            <code>Control</code> and its <code>Region</code> contains whole client area) we use 
+            <code>Control.ClientRectangle</code> here.
+            </param>
+            <param name="r">Radius of <code>Control.Region</code>'s corners. </param>
+            <remarks>This reduction of <code>Pen</code>'s abilities is because we use Win32 GDI
+            to draw rounded rectangles (as it's much better than using .NET's 
+            <code>GraphicPath</code>). </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRectFrame(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle,System.Int32,System.Boolean)">
+            <summary>
+            This method draws a round rectangle frame around a control. This control
+            should have its' region set to round rectangle by <code>SetRoundRectRegion</code>. It's 
+            optimized that way and otherwise it might look not well.
+            </summary>
+            <param name="gr"><code>Graphics</code> object to draw into.</param>
+            <param name="pn"><code>Pen</code> object specifying how will the line look like.
+            Only Colow and Width properties are used and the Width property is rounded to 
+            integer.</param>
+            <param name="bounds"><code>Rectangle</code> that was used in <code>SetRoundRectRegion</code>
+            that might be offseted depending on origin of <code>Graphics</code> object.
+            In the most common case (when we <code>Graphics gr</code> is associated with our 
+            <code>Control</code> and its <code>Region</code> contains whole client area) we use 
+            <code>Control.ClientRectangle</code> here.
+            </param>
+            <param name="r">Radius of <code>Control.Region</code>'s corners. </param>
+            <param name="inner">If <code>true</code> frame is drawn inside round region, 
+            otherwise outside.</param>
+            <remarks>This reduction of <code>Pen</code>'s abilities is because we use Win32 GDI
+            to draw rounded rectangles (as it's much better than using .NET's 
+            <code>GraphicPath</code>). </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRectFrame(System.Drawing.Image,System.Drawing.Pen,System.Drawing.Rectangle,System.Int32,System.Boolean)">
+            <summary>
+            This method draws a round rectangle frame around a control. This control
+            should have its' region set to round rectangle by <code>SetRoundRectRegion</code>. It's 
+            optimized that way and otherwise it might look not well.
+            </summary>
+            <param name="img"><code>Image</code> object to draw into.</param>
+            <param name="pn"><code>Pen</code> object specifying how will the line look like.
+            Only Colow and Width properties are used and the Width property is rounded to 
+            integer.</param>
+            <param name="bounds"><code>Rectangle</code> that was used in <code>SetRoundRectRegion</code>
+            that might be offseted depending on origin of <code>Graphics</code> object.
+            In the most common case (when we <code>Graphics gr</code> is associated with our 
+            <code>Control</code> and its <code>Region</code> contains whole client area) we use 
+            <code>Control.ClientRectangle</code> here.
+            </param>
+            <param name="r">Radius of <code>Control.Region</code>'s corners. </param>
+            <param name="inner">If <code>true</code> frame is drawn inside round region, 
+            otherwise outside.</param>
+            <remarks>This reduction of <code>Pen</code>'s abilities is because we use Win32 GDI
+            to draw rounded rectangles (as it's much better than using .NET's 
+            <code>GraphicPath</code>). </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.DrawRoundRectFrame(System.Drawing.Pen,System.Drawing.Rectangle,System.Int32,System.Boolean)">
+            <summary>
+            This method draws a round rectangle frame around a control. This control
+            should have its' region set to round rectangle by <code>SetRoundRectRegion</code>. It's 
+            optimized that way and otherwise it might look not well.<br/>
+            Image with drawing is returned.
+            </summary>
+            <param name="pn"><code>Pen</code> object specifying how will the line look like.
+            Only Colow and Width properties are used and the Width property is rounded to 
+            integer.</param>
+            <param name="bounds"><code>Rectangle</code> that was used in <code>SetRoundRectRegion</code>
+            that might be offseted depending on origin of <code>Graphics</code> object.
+            In the most common case (when we <code>Graphics gr</code> is associated with our 
+            <code>Control</code> and its <code>Region</code> contains whole client area) we use 
+            <code>Control.ClientRectangle</code> here.
+            </param>
+            <param name="r">Radius of <code>Control.Region</code>'s corners. </param>
+            <param name="inner">If <code>true</code> frame is drawn inside round region, 
+            otherwise outside.</param>
+            <returns>Returns image with specified RoundRect frame drawn.</returns>
+            <remarks>This reduction of <code>Pen</code>'s abilities is because we use Win32 GDI
+            to draw rounded rectangles (as it's much better than using .NET's 
+            <code>GraphicPath</code>). </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.RoundRectUtils.StrokeOutConvexRegion(System.Drawing.Graphics,System.Drawing.Region,System.Drawing.Color,System.Boolean)">
+            <summary>
+            Draws one-pixel line around region border. As some optimalisations are used,
+            the <code>Region</code> has to be convex - otherwise the line might be drawn
+            incorrectly.
+            </summary>
+            <param name="gr"><code>Graphics</code> object to draw into.</param>
+            <param name="rgn"><code>Region</code> to stroke out. It has to be convex -
+            otherwise result might be drawn incorrectly.</param>
+            <param name="clr">Color of the line.</param>
+            <param name="inside">If <code>true</code>, pixels will be drawn inside the 
+            <code>Region</code>, otherwise outside.</param>
+            <remarks>The more rectangular shape of the region is, the faster will this
+            method work. It goes through all noncontained pixels in bounding rectangle of
+            specified region. (Because region is convex, we can easily skip the contained
+            ones.)</remarks>
+        </member>
+        <member name="T:PureComponents.EntrySet.SDUFormattedString">
+            <summary>
+            This class is being used by StringDrawUtils to draw 
+            formatted strings.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.SDUFormattedString.ellipsisString">
+            <summary>
+            String that is used where ellipsis symbol is to be placed.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.SDUFormattedString.sdu">
+            <summary>
+            Reference to StringDrawUtils object - just an acronym for
+            StringDrawUtils.GetInstance(). (And maybe a slight speedup:-)
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.SDUFormattedString.m_strings">
+            <summary>
+            This ArrayList contains the whole string divided into 
+            contiguous strings with the same formatting.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.SDUFormattedString.m_formats">
+            <summary>
+            This Arraylist contains CharacterFormat objects for strings 
+            contained in <see cref="F:PureComponents.EntrySet.SDUFormattedString.m_strings"/>.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.SDUFormattedString.m_initialFormat">
+            <summary>
+            Contains initial format specified at the construction.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.SDUFormattedString.m_softbreaks">
+            <summary>
+            Part of full-justification magic - contains Positions of soft 
+            line breaks.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.#ctor(System.String,PureComponents.EntrySet.CharacterFormat)">
+            <summary>
+            Initializes a new SDUFormattedString object with given string and
+            initial CharacterFormat.<br/>
+            Format string definition is at documentation for 
+            <see cref="F:PureComponents.EntrySet.CharacterFormat.Formatted"/> member.
+            </summary>
+            <param name="str"></param>
+            <param name="initFmt"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.WrapLines(System.Drawing.Graphics,System.Single)">
+            <summary>
+            Adds newline characters to wrap lines to fit given width.
+            </summary>
+            <param name="gr"></param>
+            <param name="width"></param>
+            <remarks>
+            This method adds characters into SDUFormattedString
+            so every Position and Interval structures becomes invalid.<br/>
+            This method is called by StringDrawUtils to wrap lines to fit a rectangle.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.WrapSingleLine(System.Drawing.Graphics,System.Single,PureComponents.EntrySet.SDUFormattedString.Interval,System.Collections.ArrayList)">
+            <summary>
+            Adds newline characters into single line to make it fit given width.
+            </summary>
+            <param name="gr"></param>
+            <param name="width"></param>
+            <param name="interval"></param>
+            <param name="changes"></param>
+            <remarks>
+            This function changes character numbers of SDUFormattedString
+            so every user Position and Interval structures becomes invalid.<br/>
+            Also as we save positions of newly added newline characters, WrapSingleLine 
+            calls must go from left to right - to not damage previously saved positions.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.DrawTrimmedLine(System.Drawing.Graphics,System.Drawing.PointF,System.Single,PureComponents.EntrySet.SDUFormattedString.Interval,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Draws trimmed line with trimming specified in ParagraphFormat.Trimming.
+            </summary>
+            <param name="gr"></param>
+            <param name="pnt"></param>
+            <param name="width"></param>
+            <param name="i"></param>
+            <param name="pf"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.GetTrimmingInfo(System.Drawing.Graphics,System.Single,PureComponents.EntrySet.SDUFormattedString.Interval,PureComponents.EntrySet.ParagraphFormat,PureComponents.EntrySet.SDUFormattedString.Interval@,System.Boolean@)">
+            <summary>
+            Sets out parameters with informations needed to trim the line correctly.<br/>
+            </summary>
+            <param name="gr"></param>
+            <param name="width"></param>
+            <param name="i"></param>
+            <param name="pf"></param>
+            <param name="shownInterval"></param>
+            <param name="showEllipsis"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.MeasureTrimmedLine(System.Drawing.Graphics,System.Single,PureComponents.EntrySet.SDUFormattedString.Interval,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Returns size of given line if it's drawn as trimmed.
+            </summary>
+            <param name="gr"></param>
+            <param name="width"></param>
+            <param name="i"></param>
+            <param name="pf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.DrawStringInRectangle(System.Drawing.Graphics,System.Drawing.RectangleF,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Draws string into specified rectangle using given ParagraphFormat.
+            </summary>
+            <param name="gr"></param>
+            <param name="rect"></param>
+            <param name="pf"></param>
+            <remarks>
+            This is the 'main' method of the class. This one is called by StringDrawUtils
+            to draw formatted string.<br/>
+            As this class (and consequently this method) isn't to be published, there are some limitations:<br/>
+            Angle of InitialFormat (specified at construction) has to be zero.<br/>
+            BackgroundBrush
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.DrawStringLineByLine(System.Drawing.Graphics,System.Drawing.RectangleF,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            This one draws string into given rectangle with even some more limitations 
+            than DrawStringInRectangle.<br/>
+            It should not be called from anywhere else than DrawStringInRectangle.
+            </summary>
+            <param name="gr"></param>
+            <param name="rect"></param>
+            <param name="pf"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.DrawSingleLineUnaligned(System.Drawing.Graphics,System.Drawing.PointF,PureComponents.EntrySet.SDUFormattedString.Interval)">
+            <summary>
+            Draws left aligned single line with its top-left point at <paramref name="pnt"/>.
+            </summary>
+            <param name="gr"></param>
+            <param name="pnt"></param>
+            <param name="i"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.DrawSingleLineAligned(System.Drawing.Graphics,System.Drawing.PointF,System.Single,PureComponents.EntrySet.SDUFormattedString.Interval,PureComponents.EntrySet.ParagraphFormat,System.Boolean)">
+            <summary>
+            Draws single line into rectangle located at <paramref name="pnt"/> with specified width.
+            ParagraphAlignemnt is considered here.
+            </summary>
+            <param name="gr"></param>
+            <param name="pnt"></param>
+            <param name="width"></param>
+            <param name="i"></param>
+            <param name="pf"></param>
+            <param name="trimmedLine"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.DrawSingleLineFullyAligned(System.Drawing.Graphics,System.Drawing.PointF,System.Single,PureComponents.EntrySet.SDUFormattedString.Interval)">
+            <summary>
+            Draws fully aligned single line with specified width.
+            </summary>
+            <param name="gr"></param>
+            <param name="pnt"></param>
+            <param name="width"></param>
+            <param name="i"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.MeasurePiece(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Measures part of the text. This part of text must all have the same formatting
+            (ie. must be stored in the same item of m_strings).
+            </summary>
+            <param name="gr"></param>
+            <param name="piece"></param>
+            <param name="start"></param>
+            <param name="end"></param>
+            <param name="trailingSpaces"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.MeasureSingleLine(System.Drawing.Graphics,PureComponents.EntrySet.SDUFormattedString.Interval,System.Boolean)">
+            <summary>
+            Measures single line of text (ie. that given interval mustn't contain 
+            newline character).
+            </summary>
+            <param name="gr"></param>
+            <param name="i"></param>
+            <param name="trailingSpaces"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Measure(System.Drawing.Graphics,PureComponents.EntrySet.SDUFormattedString.Interval,System.Boolean)">
+            <summary>
+            Measures text contained in given interval.
+            </summary>
+            <param name="gr"></param>
+            <param name="interval"></param>
+            <param name="trailingSpaces"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Measure(System.Drawing.Graphics,PureComponents.EntrySet.SDUFormattedString.Interval)">
+            <summary>
+            Measures text contained in given interval.
+            </summary>
+            <param name="gr"></param>
+            <param name="interval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.MeasurePiece(System.Drawing.Graphics,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Measures part of the text. This part of text must all have the same formatting
+            (ie. must be stored in the same item of m_strings).
+            </summary>
+            <param name="gr"></param>
+            <param name="piece"></param>
+            <param name="start"></param>
+            <param name="trailingSpaces"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.MeasurePiece(System.Drawing.Graphics,System.Int32,System.Boolean)">
+            <summary>
+            Measures part of the text. This part of text must all have the same formatting
+            (ie. must be stored in the same item of m_strings).
+            </summary>
+            <param name="gr"></param>
+            <param name="piece"></param>
+            <param name="trailingSpaces"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Measure(System.Drawing.Graphics,System.Boolean)">
+            <summary>
+            Measures text contained in given interval.
+            </summary>
+            <param name="gr"></param>
+            <param name="trailingSpaces"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.MeasureIgnoringNewlines(System.Drawing.Graphics,PureComponents.EntrySet.SDUFormattedString.Interval)">
+            <summary>
+            Measures text contained in given interval. Newline characters 
+            are ignored and so it's measured as a long single line.
+            </summary>
+            <param name="gr"></param>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.AddFormattedPiece(System.String,PureComponents.EntrySet.CharacterFormat)">
+            <summary>
+            Adds string with given format to the end of this formatted string.
+            </summary>
+            <param name="str"></param>
+            <param name="fmt"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.BeginningOfPiece(System.Int32)">
+            <summary>
+            Returns Position struct pointing at the beginning of given piece.
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.IndexOf(System.Char,PureComponents.EntrySet.SDUFormattedString.Interval)">
+            <summary>
+            Returns position of specified character within given interval.
+            </summary>
+            <param name="ch"></param>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.GetIntervalText(PureComponents.EntrySet.SDUFormattedString.Interval)">
+            <summary>
+            Returns string containing unformatted text of specified interval.
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.SplitIntoWords(PureComponents.EntrySet.SDUFormattedString.Interval)">
+            <summary>
+            Returns array of intervals. Each of these intervals contain one of words in
+            given <paramref name="i"/>. Intervals are ordered successive.
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.IsWrappingNL(PureComponents.EntrySet.SDUFormattedString.Position)">
+            <summary>
+            True if character at given position is 'soft newline character' 
+            (ie. newline character added during word wrapping).
+            </summary>
+            <param name="pos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.IsWrapedLine(PureComponents.EntrySet.SDUFormattedString.Interval)">
+            <summary>
+            True if specified interval ends with 'soft newline character'
+            (ie. newline character added during word wrapping).
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.GetMaxVisibleLineCount(System.Drawing.Graphics,System.Single,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Returns maximum visible line count based on give height and 
+            line height of used font.
+            </summary>
+            <param name="gr"></param>
+            <param name="height"></param>
+            <param name="pf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.CountOf(PureComponents.EntrySet.SDUFormattedString.Interval,System.Char)">
+            <summary>
+            Returns count of occurrencies of given character in specified interval.
+            </summary>
+            <param name="i"></param>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.GetCharacterFormat(PureComponents.EntrySet.SDUFormattedString.Position)">
+            <summary>
+            Returns CharactedFormat of character at given position.
+            </summary>
+            <param name="pos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.GetCharacterFormat(System.Int32)">
+            <summary>
+            Returns character format of specified piece of text.
+            </summary>
+            <param name="piece"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.ToString">
+            <summary>
+            Converts object to unformatted string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Item(System.Int32)">
+            <summary>
+            Contiguous piece of text with same formatting.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Item(PureComponents.EntrySet.SDUFormattedString.Position)">
+            <summary>
+            Character at given position.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Count">
+            <summary>
+            Count of pieces with different formatting.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Length">
+            <summary>
+            Number of characters in this string.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.InitialFormat">
+            <summary>
+            Initial format specified at construction.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Begin">
+            <summary>
+            Position of first character of the object.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.End">
+            <summary>
+            Position of the end of object. (One character after the last character.)
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.SDUFormattedString.Position">
+            <summary>
+            This struct can contain a position in SDUFormattedString.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.#ctor(PureComponents.EntrySet.SDUFormattedString)">
+            <summary>
+            Initializes a new Position struct pointing to the first character 
+            of given parent SDUFormattedString object.
+            </summary>
+            <param name="parent"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.#ctor(PureComponents.EntrySet.SDUFormattedString,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new Position struct pointing to specified position
+            of given parent SDUFormattedString object.
+            </summary>
+            <param name="parent"></param>
+            <param name="piece"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.Begin(PureComponents.EntrySet.SDUFormattedString)">
+            <summary>
+            Returns a new Position struct pointing to the first character 
+            of given parent SDUFormattedString object.
+            </summary>
+            <param name="parent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.End(PureComponents.EntrySet.SDUFormattedString)">
+            <summary>
+            Returns a new Position struct pointing behind the last character 
+            of given parent SDUFormattedString object.
+            </summary>
+            <param name="parent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.IsEnd">
+            <summary>
+            Returns true if this Position struct points at the end 
+            (ie. behind the last character).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.IsBeginning">
+            <summary>
+            Returns true if this Position struct points at the first character.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.Next">
+            <summary>
+            Moves the position struct one character further.
+            </summary>
+            <returns></returns>
+            <remarks>
+            Of course this is not posible at the end of string, so in this case 
+            an exception is thrown. (Wanting to do this means there's some bug.)
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.Back">
+            <summary>
+            Moves the position struct one character backward.
+            </summary>
+            <returns></returns>
+            <remarks>
+            Of course this is not posible at the beginning of string, so in this case 
+            an exception is thrown. (Wanting to do this means there's some bug.)
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.op_Addition(PureComponents.EntrySet.SDUFormattedString.Position,System.Int32)">
+            <summary>
+            Moves the Position struct by <paramref name="ofs"/> characters forward
+            (or -ofs backward, if ofs is negative).
+            </summary>
+            <param name="p"></param>
+            <param name="ofs"></param>
+            <returns>
+            If moving out of the string margins would be result of this method,
+            an exception is thrown. (Wanting to do this means there's some bug.)
+            </returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.op_Subtraction(PureComponents.EntrySet.SDUFormattedString.Position,System.Int32)">
+            <summary>
+            Moves the Position struct by <paramref name="ofs"/> characters backward
+            (or -ofs forward, if ofs is negative).
+            </summary>
+            <param name="p"></param>
+            <param name="ofs"></param>
+            <returns>
+            If moving out of the string margins would be result of this method,
+            an exception is thrown. (Wanting to do this means there's some bug.)
+            </returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Position.op_Subtraction(PureComponents.EntrySet.SDUFormattedString.Position,PureComponents.EntrySet.SDUFormattedString.Position)">
+            <summary>
+            Returns the number of characters between given Position objects.
+            (Eg. (a+2)-a==2)
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Position.Piece">
+            <summary>
+            Index of piece in parent's array.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Position.Index">
+            <summary>
+            Index of character in piece string.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Position.Parent">
+            <summary>
+            SDUFormattedString object that this struct points into.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.SDUFormattedString.Interval">
+            <summary>
+            This struct can contain an interval in SDUFormattedString.
+            </summary>
+            <remarks>
+            The interval is represented as two positions - position of it's 
+            first character (<see cref="P:PureComponents.EntrySet.SDUFormattedString.Interval.Start"/>) and position of the first 
+            character not contained in this interval (<see cref="P:PureComponents.EntrySet.SDUFormattedString.Interval.End"/>).<br/>
+            If Start==End, the interval is empty.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Interval.#ctor(PureComponents.EntrySet.SDUFormattedString.Position,PureComponents.EntrySet.SDUFormattedString.Position)">
+            <summary>
+            Initializes a new Interval struct specified by gives starting and
+            ending Position.
+            </summary>
+            <param name="start">First character of Interval.</param>
+            <param name="end">Fisrt character not in interval. 
+            ( (end-1) is the last character.)</param>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Interval.Full(PureComponents.EntrySet.SDUFormattedString)">
+            <summary>
+            Returns interval containing full parent SDUFormattedString.
+            </summary>
+            <param name="parent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.SDUFormattedString.Interval.Split(PureComponents.EntrySet.SDUFormattedString.Position,PureComponents.EntrySet.SDUFormattedString.Interval@,PureComponents.EntrySet.SDUFormattedString.Interval@)">
+            <summary>
+            Splits interval at specified position.
+            </summary>
+            <param name="where">Position where to split.</param>
+            <param name="o1">Receives interval that starts the same as original 
+            and ends at given Position.</param>
+            <param name="o2">Receives Interval that starts at given Position and 
+            ends the same as original.</param>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Interval.End">
+            <summary>
+            Ending position of the interval. (End-1) is the last 
+            character of given interval.
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.SDUFormattedString.Interval.Length">
+            <summary>
+            Length of Interval in characters.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.StringDrawUtils">
+            <summary>
+            Methods for advanced string drawing.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.GetInstance">
+            <summary>
+            Returns instance of StringDrawUtils object.
+            </summary>
+            <returns></returns>
+            <remarks>As StringDrawUtils is a singleton, always the same instance is returned.</remarks>
+        </member>
+        <member name="F:PureComponents.EntrySet.StringDrawUtils.dummyGraphics">
+            <summary>
+            We sometimes need a <see cref="T:System.Drawing.Graphics"/> object when we don't have
+            one. So here we have one.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.GetTextFromFormattedString(System.String)">
+            <summary>
+            Converts string with formatting marks into ordinary string.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+            <remarks>
+            The conversion consists of removing formatting tags and replacing 
+            "##" sequences with single #.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.GetLineHeight(System.Drawing.Graphics,System.Drawing.Font)">
+            <summary>
+            Returns line height of given font.
+            </summary>
+            <param name="gr">Graphics object used to measure line height.</param>
+            <param name="f">Font</param>
+            <returns>Line height of given font.</returns>
+            <remarks>
+            Returned value is not exactly what gr.MeasureString gives. It's
+            height of a line without the vertival gap that gr.MeasureString adds.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.GetWrappedHeight(System.Drawing.Graphics,System.String,PureComponents.EntrySet.CharacterFormat,System.Single)">
+            <summary>
+            Returns height of the text when wrapping to given <paramref name="width"/> is performed.
+            </summary>
+            <param name="gr">Graphics object used for measurement.</param>
+            <param name="str">String to be measured.</param>
+            <param name="cf"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> of given string.</param>
+            <param name="width">Maximum width of resulting text.</param>
+            <returns>Returns height of the text when wrapping to given <paramref name="width"/> 
+            is performed.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.MeasureStringExactly(System.Drawing.Graphics,System.String,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat,System.Boolean)">
+            <summary>
+            Returns (more or less) exact size of given string.
+            </summary>
+            <param name="gr">Graphics where the size should be measured.</param>
+            <param name="str">String to be measured.</param>
+            <param name="cf">CharacterFormat of the string.</param>
+            <param name="pf">ParagraphFormat of the string.</param>
+            <param name="includeTrailingSpaces">Specifies whether trailing 
+            spaces should be included into measurement.</param>
+            <returns>Returns size of given text at specified conditions.</returns>
+            <remarks>
+            Returned value is not affected by any gaps and inaccurancies which appear
+            while using Graphics.MeasureString as we use Graphics.MeasureCharacterRanges.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.GetMeasureStringVerticalGap(System.Drawing.Graphics,System.Drawing.Font)">
+            <summary>
+            Returns size of vertical gap that's included in size returned by
+            Graphics.MeasureString besides actual height of the given text.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.GetMeasureStringHorizontalGap(System.Drawing.Graphics,System.Drawing.Font)">
+            <summary>
+            Returns size of vertical gap that's included in size returned by
+            Graphics.MeasureString besides actual height of the given text.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawWrappedString(System.Drawing.Graphics,System.String,System.Drawing.PointF,System.Single,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Draws string with given formating and width at specified point.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="width">Width that string will be wrapped to.</param>
+            <param name="ofs">Top-left point of the drawn string.</param>
+            <param name="fmtCharacter"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+            <param name="fmtParagraph"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawStringInRectangle(System.Drawing.Graphics,System.String,System.Drawing.RectangleF,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Draws string with given formating into given <paramref name="rectangle"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="rectangle"><see cref="T:System.Drawing.Rectangle"/> that string is drawn into.</param>
+            <param name="fmtCharacter"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+            <param name="fmtParagraph"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawString(System.Drawing.Graphics,System.String,System.Drawing.PointF,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphAlignment)">
+            <summary>
+            Draws string with given character format and alignment at given <see cref="T:System.Drawing.Point"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="pnt"><see cref="T:System.Drawing.Point"/> where the string will be drawn.</param>
+            <param name="fmt"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+            <param name="align">Specifies whether the <paramref name="pnt"/> is at left, right 
+            or in the center of the string. (<see cref="F:PureComponents.EntrySet.ParagraphAlignment.Full"/> means the same
+            as <see cref="F:PureComponents.EntrySet.ParagraphAlignment.Left"/>.)</param>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawString(System.Drawing.Graphics,System.String,System.Drawing.PointF,PureComponents.EntrySet.CharacterFormat)">
+            <summary>
+            Draws string with given character format at given <see cref="T:System.Drawing.Point"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="pnt">Top-left <see cref="T:System.Drawing.Point"/> of the drawn string.</param>
+            <param name="fmt"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawWrappedString(System.Drawing.Image,System.String,System.Drawing.PointF,System.Single,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Draws string with given formating and width at specified point.
+            </summary>
+            <param name="img"><see cref="T:System.Drawing.Image"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="width">Width that string will be wrapped to.</param>
+            <param name="ofs">Top-left point of the drawn string.</param>
+            <param name="fmtCharacter"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+            <param name="fmtParagraph"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawStringInRectangle(System.Drawing.Image,System.String,System.Drawing.RectangleF,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Draws string with given formating into given rectangle.
+            </summary>
+            <param name="img"><see cref="T:System.Drawing.Image"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="rect"><see cref="T:System.Drawing.Rectangle"/> that string is drawn into.</param>
+            <param name="fmtCharacter"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <paramref name="str"/>. </param>
+            <param name="fmtParagraph"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> used to draw the <paramref name="str"/>. </param>
+            <remarks>There's a problem while drawing strings using ClearType on transparent 
+            background. Resulting text is going to look thick and jagged. If this applies to you, use
+            rather Image DrawString(string, CharacterFormat) or 
+            Image DrawStringInRectangle(string, SizeF, CharacterFormat, ParagraphFormat) where the 
+            problem is corrected (at cost of a slight performance loss).</remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawString(System.Drawing.Image,System.String,System.Drawing.PointF,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphAlignment)">
+            <summary>
+            Draws string with given character format and alignment at given <see cref="T:System.Drawing.Point"/>.
+            </summary>
+            <param name="img"><see cref="T:System.Drawing.Image"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="pnt"><see cref="T:System.Drawing.Point"/> where the string will be drawn.</param>
+            <param name="fmt"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+            <param name="align">Specifies whether the <paramref name="pnt"/> is at left, right 
+            or in the center of the string. (<see cref="F:PureComponents.EntrySet.ParagraphAlignment.Full"/> means the same
+            as <see cref="F:PureComponents.EntrySet.ParagraphAlignment.Left"/>.)</param>
+            <remarks>There's a problem while drawing strings using ClearType on transparent 
+            background. Resulting text is going to look thick and jagged. If this applies to you, use
+            rather Image DrawString(string, CharacterFormat) or 
+            Image DrawStringInRectangle(string, SizeF, CharacterFormat, ParagraphFormat) where the 
+            problem is corrected (at cost of a slight performance loss).</remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawString(System.Drawing.Image,System.String,System.Drawing.PointF,PureComponents.EntrySet.CharacterFormat)">
+            <summary>
+            Draws string with given character format at given <paramref name="pnt"/>.
+            </summary>
+            <param name="img"><see cref="T:System.Drawing.Image"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="pnt">Top-left <see cref="T:System.Drawing.Point"/> of the drawn string.</param>
+            <param name="fmt"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+            <remarks>There's a problem while drawing strings using ClearType on transparent 
+            background. Resulting text is going to look thick and jagged. If this applies to you, use
+            rather Image DrawString(string, CharacterFormat) or 
+            Image DrawStringInRectangle(string, SizeF, CharacterFormat, ParagraphFormat) where the 
+            problem is corrected (at cost of a slight performance loss).</remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawString(System.String,PureComponents.EntrySet.CharacterFormat)">
+            <summary>
+            Returns <see cref="T:System.Drawing.Image"/> object with <paramref name="str"/> drawn.
+            </summary>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="fmt"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <paramref name="str"/>. </param>
+            <returns><see cref="T:System.Drawing.Image"/> with given <paramref name="str"/> drawn. The image is sized
+            just to fit the string.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawWrappedString(System.String,System.Single,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Returns Image with <paramref name="str"/> drawn wrapped to given <paramref name="width"/>.
+            </summary>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="width">Width that string will be wrapped to.</param>
+            <param name="fmtCharacter"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+            <param name="fmtParagraph"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> used to draw the <see cref="T:System.String"/>. </param>
+            <returns><see cref="T:System.Drawing.Image"/> with given <paramref name="str"/> drawn.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawStringInRectangle(System.String,System.Drawing.SizeF,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat,System.Drawing.PointF@)">
+            <summary>
+            Returns Image with <paramref name="str"/> drawn into rectangle of given size.
+            </summary>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="size">Size of rectangle string will be drawn into and also of the 
+            returned image.</param>
+            <param name="fmtCharacter"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <paramref name="str"/>. </param>
+            <param name="fmtParagraph"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> used to draw the <paramref name="str"/>. </param>
+            <param name="topLeftOffset">Out parameter which receives top-left point of the rotated string. </param>
+            <returns><see cref="T:System.Drawing.Image"/> with given <paramref name="str"/> drawn.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawStringInRectangle(System.String,System.Drawing.SizeF,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Returns Image with <paramref name="str"/> drawn into rectangle of given size.
+            </summary>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="size">Size of rectangle string will be drawn into and also of the 
+            returned image.</param>
+            <param name="fmtCharacter"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <paramref name="str"/>. </param>
+            <param name="fmtParagraph"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> used to draw the <paramref name="str"/>. </param>
+            <returns><see cref="T:System.Drawing.Image"/> with given <paramref name="str"/> drawn.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.ParAl2StrAl(PureComponents.EntrySet.ParagraphAlignment)">
+            <summary>
+            Converts <see cref="T:PureComponents.EntrySet.ParagraphAlignment"/> value into <see cref="T:System.Drawing.StringAlignment"/>.
+            </summary>
+            <param name="par"><see cref="T:PureComponents.EntrySet.ParagraphAlignment"/> value to be converted.</param>
+            <returns>Resulting <see cref="T:System.Drawing.StringAlignment"/> value.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.ParVertAl2StrAl(PureComponents.EntrySet.ParagraphVerticalAlignment)">
+            <summary>
+            Converts <see cref="T:PureComponents.EntrySet.ParagraphVerticalAlignment"/> value into <see cref="T:System.Drawing.StringAlignment"/>.
+            </summary>
+            <param name="pva"><see cref="T:PureComponents.EntrySet.ParagraphVerticalAlignment"/> value to be converted.</param>
+            <returns>Resulting <see cref="T:System.Drawing.StringAlignment"/> value.</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.GetStringFormat(PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Returns <see cref="T:System.Drawing.StringFormat"/> object that fits best to given <see cref="T:PureComponents.EntrySet.CharacterFormat"/>
+            and <see cref="T:PureComponents.EntrySet.ParagraphFormat"/> objects.
+            </summary>
+            <param name="fmtCharacter"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> object</param>
+            <param name="fmtParagraph"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> object</param>
+            <returns><see cref="T:System.Drawing.StringFormat"/> object</returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawSolidBackgroundStringInRectangle(System.String,System.Drawing.SizeF,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat,System.Drawing.PointF@)">
+            <summary>
+            Returns an image with given string drawn. As in this method is not present the
+            ClearType bug correction, it's only to be used with solid background brush.<br/>
+            Merit of this method is that it can properly handle rotated text.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.CopyIntensityAsAlpha(System.Drawing.Bitmap,System.Drawing.Bitmap)">
+            <summary>
+            For every pixel of dest bitmap takes color intensity at src bitmap and computes
+            alpha value at dest.
+            </summary>
+            <param name="src">Bitmap used as source of dest's alpha canal.</param>
+            <param name="dest">Destination bitmap.</param>
+            <remarks>
+            <para>Sizes of src and dest must be equal.</para>
+            <para>White color results in transparent pixel and black in solid.</para>
+            The formula is<br/>
+            <code>
+            if(sa==255)
+            	da = 255 - sgreen;
+            else	
+            	da=0;
+            </code>
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.CopyIntensityAsAlpha(System.Drawing.Bitmap,System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            For every pixel of dest bitmap takes color intensity at src bitmap and computes
+            alpha value at dest.
+            </summary>
+            <param name="src">Bitmap used as source of dest's alpha canal.</param>
+            <param name="dest">Destination bitmap.</param>
+            <param name="channel">Index of channel used as source of alpha. 0 is red, 
+            1 green and 2 blue.</param>
+            <remarks>
+            <para>Sizes of src and dest must be equal.</para>
+            <para>White color results in transparent pixel and black in solid.</para>
+            The formula is<br/>
+            <code>
+            if(sa==255)
+            	da = 255 - schannel;
+            else	
+            	da=0;
+            </code>
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawFullAlignedLine(System.Drawing.Graphics,System.String,System.Drawing.PointF,System.Single,PureComponents.EntrySet.CharacterFormat)">
+            <summary>
+            Draws one full aligned line of text (ie. spaces are expanded to fill 
+            exactly the given <paramref name="width"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> object to draw into.</param>
+            <param name="line"><see cref="T:System.String"/> that is to be drawn.</param>
+            <param name="pnt">Top-left <see cref="T:System.Drawing.Point"/> of the line.</param>
+            <param name="width">Width of the line.</param>
+            <param name="cf"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the line. <br/>
+            </param>
+            <remarks>As this method isn't to be exposed as public, there are 
+            several limitations:<br/>
+            <see cref="F:PureComponents.EntrySet.CharacterFormat.Angle"/> has to be zero.<br/>
+            Given string has to fit into given width. <br/>
+            If not satisfied, results might be not as expected.</remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.StringDrawUtils.DrawFullAlignedStringInRectangle(System.Drawing.Graphics,System.String,System.Drawing.RectangleF,PureComponents.EntrySet.CharacterFormat,PureComponents.EntrySet.ParagraphFormat)">
+            <summary>
+            Draws full aligned string into given rectangle.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> object to draw into.</param>
+            <param name="str"><see cref="T:System.String"/> to be drawn.</param>
+            <param name="rect"><see cref="T:System.Drawing.Rectangle"/> that string is drawn into.</param>
+            <param name="cf"><see cref="T:PureComponents.EntrySet.CharacterFormat"/> used to draw the <paramref name="str"/>. </param>
+            <param name="pf"><see cref="T:PureComponents.EntrySet.ParagraphFormat"/> used to draw the <paramref name="str"/>. </param>
+            <remarks>As this method isn't to be exposed as public, there are 
+            several limitations:<br/>
+            <see cref="P:System.Drawing.Rectangle.Width"/> has to be non-zero.<br/>
+            <see cref="F:PureComponents.EntrySet.CharacterFormat.Angle"/> has to be zero.<br/>
+            <see cref="F:PureComponents.EntrySet.ParagraphFormat.MultiLine"/> has to be false.<br/>
+            <see cref="F:PureComponents.EntrySet.ParagraphFormat.Alignment"/> has to be <see cref="F:PureComponents.EntrySet.ParagraphAlignment.Full"/>.<br/>
+            <see cref="F:PureComponents.EntrySet.ParagraphFormat.BackgroundBrush"/> has to be null.<br/>
+            If not satisfied, results might be not as expected.</remarks>
+        </member>
+        <member name="P:PureComponents.EntrySet.StringDrawUtils.DummyGraphics">
+            <summary>
+            Graphics object to be used for string measurement and similar tasks.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.ParagraphAlignment">
+            <summary>
+            Paragraph alignments
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphAlignment.Left">
+            <summary>
+            Text is aligned to left
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphAlignment.Center">
+            <summary>
+            Text is centered
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphAlignment.Right">
+            <summary>
+            Text is aligned to right
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphAlignment.Full">
+            <summary>
+            Text is fully alignment
+            </summary>
+            <remarks>
+            Full alignment means that wrapped lines fill the whole 
+            line (if possible). The other lines are left aligned.
+            </remarks>
+        </member>
+        <member name="T:PureComponents.EntrySet.ParagraphVerticalAlignment">
+            <summary>
+            Vertical alignments
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphVerticalAlignment.Top">
+            <summary>
+            Paragraph is aligned to the top of its bounding rectangle.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphVerticalAlignment.Center">
+            <summary>
+            Paragraph is aligned to center of its bounding rectangle.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphVerticalAlignment.Bottom">
+            <summary>
+            Paragraph is aligned to the bottom of its bounding rectangle.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.CharacterFormat">
+            <summary>
+            Specifies character formatting
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.CharacterFormat.Font">
+            <summary>
+            Font to be used for drawing strings.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.CharacterFormat.Brush">
+            <summary>
+            Brush to be used for drawing strings.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.CharacterFormat.Angle">
+            <summary>
+            Angle of string's rotation. (Clockwise)
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.CharacterFormat.HotkeyPrefix">
+            <summary>
+            HotkeyPrefix of the string.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.CharacterFormat.Formatted">
+            <summary>
+            If true, some special sequences can be used in the string to 
+            change it's appearance.
+            </summary>
+            <remarks>
+            The formatting sequences are:<br/>
+            <table>
+            <tr>
+            <td>#CRRGGBB</td>
+            <td>Changes color of the text. RR, GG and BB are hexadecimal values of 
+            appropriate color channels.</td>
+            </tr>
+            <tr>
+            <td>#C-</td>
+            <td>Changes color of the text to the one before last use of #CRRGGBB command.<br/>
+            Can be used multiple times: #CFF0000 Red #C00FF00 Green #C0000FF Blue #C- Green #C- Red</td>
+            </tr>
+            <tr>
+            <td>#B+ and #B-</td>
+            <td>Sets and unsets the bold font style.</td>
+            </tr>
+            <tr>
+            <td>#I+ and #I-</td>
+            <td>Sets and unsets the italics font style.</td>
+            </tr>
+            <tr>
+            <td>#U+ and #U-</td>
+            <td>Sets and unsets the underline font style.</td>
+            </tr>
+            <tr>
+            <td>#S+ and #S-</td>
+            <td>Sets and unsets the strikeout font style.</td>
+            </tr>
+            <tr>
+            <td>##</td>
+            <td>Writes the # character (as it is not possible to write it by '#' character).</td>
+            </tr>
+            </table>
+            </remarks>
+        </member>
+        <member name="F:PureComponents.EntrySet.CharacterFormat.FilledBounds">
+            <summary>
+            Instead of characters, only bounding rectangles are drawn.
+            </summary>
+            <remarks>
+            This is useful when resulting image is to be masked and at the same time
+            text is drawn by several brushes.
+            </remarks>
+        </member>
+        <member name="F:PureComponents.EntrySet.CharacterFormat.IgnoreColorFormatting">
+            <summary>
+            Color formattig marks will be ignored. (Applicable only when Formatted is true.)
+            </summary>
+            <remarks>
+            This is useful when resulting image is to be used as mask and we want
+            all the text to be drawn by same brush.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.#ctor">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.CharacterFormat"/> object with implicit formatting.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.#ctor(System.Drawing.Font,System.Drawing.Color)">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.CharacterFormat"/> object with specified 
+            <see cref="F:PureComponents.EntrySet.CharacterFormat.Font"/> and <see cref="P:PureComponents.EntrySet.CharacterFormat.Color"/>.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.#ctor(System.Drawing.Font,System.Drawing.Brush)">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.CharacterFormat"/> object with specified 
+            <see cref="F:PureComponents.EntrySet.CharacterFormat.Font"/> and <see cref="F:PureComponents.EntrySet.CharacterFormat.Brush"/>.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.#ctor(System.Drawing.Font,System.Drawing.Brush,System.Single)">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.CharacterFormat"/> object with specified 
+            <see cref="F:PureComponents.EntrySet.CharacterFormat.Font"/> and <see cref="F:PureComponents.EntrySet.CharacterFormat.Brush"/> rotated by given angle.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.#ctor(System.Single)">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.CharacterFormat"/> object rotated by given angle.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.#ctor(System.Boolean)">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.CharacterFormat"/> object. If <paramref name="formatted"/> is 
+            true, strings can containg formatting tags.
+            </summary>
+            <param name="formatted"></param>
+            <remarks>
+            See <see cref="F:PureComponents.EntrySet.CharacterFormat.Formatted"/> property for specification.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.#ctor(System.Drawing.Font,System.Drawing.Brush,System.Single,System.Drawing.Text.HotkeyPrefix,System.Boolean)">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.CharacterFormat"/> object.
+            </summary>
+            <param name="f"></param>
+            <param name="br"></param>
+            <param name="a"></param>
+            <param name="hp"></param>
+            <param name="formatted"></param>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.ShallowCopy">
+            <summary>
+            Returns a shallow copy of object.
+            </summary>
+            <returns></returns>
+            <remarks>
+            Shallow copy means that member objects are not being copied, just
+            references to them.
+            </remarks>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.Equals(System.Object)">
+            <summary>
+            Determines whether the specified Object is equal to the current Object.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PureComponents.EntrySet.CharacterFormat.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type, suitable 
+            for use in hashing algorithms and data tructures like a hash table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PureComponents.EntrySet.CharacterFormat.Color">
+            <summary>
+            Color of actual brush. If brush is not solid, <see cref="F:System.Drawing.Color.Empty"/>
+            is returned.
+            </summary>
+        </member>
+        <member name="T:PureComponents.EntrySet.ParagraphFormat">
+            <summary>
+            Specifies paragraph formatting
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphFormat.Alignment">
+            <summary>
+            Alignment of the paragraph.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphFormat.VerticalAlignment">
+            <summary>
+            Vertical alignment of the paragraph.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphFormat.MultiLine">
+            <summary>
+            Specifies wherther given string is multiline. Also if true, word 
+            wrapping is performed.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphFormat.ShowIncompleteLines">
+            <summary>
+            If true, partially clipped lines are also shown.
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphFormat.Trimming">
+            <summary>
+            Specifies the way of text trimming...
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.ParagraphFormat.BackgroundBrush">
+            <summary>
+            Specifies brush used to draw text background. If null, text background
+            is transparent.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.ParagraphFormat.#ctor">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.ParagraphFormat"/> object with implicit formatting.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.ParagraphFormat.#ctor(PureComponents.EntrySet.ParagraphAlignment,PureComponents.EntrySet.ParagraphVerticalAlignment,System.Boolean,System.Boolean,System.Drawing.StringTrimming,System.Drawing.Brush)">
+            <summary>
+            Creates <see cref="T:PureComponents.EntrySet.ParagraphFormat"/> object.
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.ParagraphFormat.ShallowCopy">
+            <summary>
+            Returns a shallow copy of object.
+            </summary>
+            <returns></returns>
+            <remarks>
+            Shallow copy means that member objects are not being copied, just
+            references to them.
+            </remarks>
+        </member>
+        <member name="T:PureComponents.EntrySet.TooltipWnd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PureComponents.EntrySet.TooltipWnd.m_bMouseOver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.Show(System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Font,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.Show(System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Font,System.String,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.UpdateLayeredWindow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.UpdateLayeredWindow(System.Byte,System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.UpdateLayeredWindow(System.Drawing.Point,System.Drawing.Size,System.Byte,System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.DrawShadowVertical(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.DrawShadowHorizontal(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.RecalcLayout(System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.Hide">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.MousePositionToClient(PureComponents.EntrySet.Design.POINT)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.MousePositionToScreen(PureComponents.EntrySet.Design.POINT)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.MousePositionToScreen(PureComponents.EntrySet.Design.MSG)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.MousePositionToScreen(System.Windows.Forms.Message)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.GetShadowCache(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.CalculateColor(System.Drawing.Color,System.Drawing.Color,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PureComponents.EntrySet.TooltipWnd.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PureComponents.EntrySet.TooltipWnd.Visible">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pabo.Calendar", "Pabo.Calendar.csproj", "{898ECB12-D464-4514-AE2E-45FE430FE04E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{898ECB12-D464-4514-AE2E-45FE430FE04E}.Debug.ActiveCfg = Debug|.NET
+		{898ECB12-D464-4514-AE2E-45FE430FE04E}.Debug.Build.0 = Debug|.NET
+		{898ECB12-D464-4514-AE2E-45FE430FE04E}.Release.ActiveCfg = Release|.NET
+		{898ECB12-D464-4514-AE2E-45FE430FE04E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

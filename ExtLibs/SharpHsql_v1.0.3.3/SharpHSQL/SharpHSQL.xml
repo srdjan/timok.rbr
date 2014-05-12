@@ -1,0 +1,3334 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SharpHSQL</name>
+    </assembly>
+    <members>
+        <member name="T:System.Data.HSQL.SharpHSQLCommandBuilder">
+            <summary>
+            Summary description for SharpHSQLCommandBuilder.
+            </summary>
+        </member>
+        <member name="F:System.Data.HSQL.SharpHSQLCommandBuilder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:System.Data.HSQL.SharpHSQLCommandBuilder.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:System.Data.HSQL.SharpHSQLCommandBuilder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:System.Data.HSQL.SharpHSQLConnectionString">
+            <summary>
+            Summary description for SharpHSQLConnectionString.
+            </summary>
+        </member>
+        <member name="T:System.Data.HSQL.SharpHSQLError">
+            <summary>
+            Summary description for SharpHSQLError.
+            </summary>
+        </member>
+        <member name="T:System.Data.HSQL.SharpHSQLErrorCollection">
+            <summary>
+            Summary description for SharpHSQLErrorCollection.
+            </summary>
+        </member>
+        <member name="T:System.Data.HSQL.SharpHSQLParameter">
+            <summary>
+            Summary description for SharpHSQLParameter.
+            </summary>
+        </member>
+        <member name="T:System.Data.HSQL.SharpHSQLParameterCollection">
+            <summary>
+            Summary description for SharpHSQLParameterCollection.
+            </summary>
+        </member>
+        <member name="T:System.Data.HSQL.SharpHSQLReader">
+            <summary>
+            Summary description for SharpHSQLReader.
+            </summary>
+        </member>
+        <member name="T:System.Data.HSQL.SharpHSQLTransaction">
+            <summary>
+            Summary description for SharpHSQLTransaction.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SharpHSQL.Access" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.#ctor" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.getRight(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.getRight(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.createUser(System.String,System.String,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.dropUser(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.getUser(System.String,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.getUsers" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.grant(System.String,System.String,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Access.revoke(System.String,System.String,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "T:SharpHSQL.ByteArray" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.#ctor(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.#ctor(System.Byte[])" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.byteValue" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.compareTo(SharpHSQL.ByteArray)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.serialize(System.Object)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.serializeTostring(System.Object)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.deserialize" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.createstring(System.Byte[])" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.tostring" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.ByteArray.hashCode" -->
+        <!-- Badly formed XML comment ignored for member "T:SharpHSQL.Cache" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.#ctor(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.open(System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.flush" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.shutdown" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.free(SharpHSQL.Row,System.Int32,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.add(SharpHSQL.Row)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.getRow(System.Int32,SharpHSQL.Table)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.cleanUp" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.remove(SharpHSQL.Row)" -->
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Cache.getWorst" -->
+        <member name="M:SharpHSQL.Cache.saveAll">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Cache.saveSorted(System.Int32)">
+             Method declaration
+            
+            
+             @param count
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Cache.sort(SharpHSQL.Row[],System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param w
+             @param l
+             @param r
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Cache.swap(SharpHSQL.Row[],System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param w
+             @param a
+             @param b
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SharpHSQL.CacheFree" -->
+        <member name="T:SharpHSQL.Channel">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Channel.finalize">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.#ctor(SharpHSQL.Channel,System.Int32)">
+             Constructor declaration
+            
+            
+             @param c
+             @param id
+        </member>
+        <member name="M:SharpHSQL.Channel.#ctor(SharpHSQL.Database,SharpHSQL.User,System.Boolean,System.Boolean,System.Int32)">
+             Constructor declaration
+            
+            
+             @param db
+             @param user
+             @param autocommit
+             @param readonly
+             @param id
+        </member>
+        <member name="M:SharpHSQL.Channel.getId">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Channel.disconnect">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.isClosed">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Channel.setLastIdentity(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+        </member>
+        <member name="M:SharpHSQL.Channel.getLastIdentity">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Channel.getDatabase">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Channel.getUsername">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Channel.setUser(SharpHSQL.User)">
+             Method declaration
+            
+            
+             @param user
+        </member>
+        <member name="M:SharpHSQL.Channel.checkAdmin">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.check(System.String,System.Int32)">
+             Method declaration
+            
+            
+             @param object
+             @param right
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.checkReadWrite">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.setPassword(System.String)">
+             Method declaration
+            
+            
+             @param s
+        </member>
+        <member name="M:SharpHSQL.Channel.addTransactionDelete(SharpHSQL.Table,System.Object[])">
+             Method declaration
+            
+            
+             @param table
+             @param row
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.addTransactionInsert(SharpHSQL.Table,System.Object[])">
+             Method declaration
+            
+            
+             @param table
+             @param row
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.setAutoCommit(System.Boolean)">
+             Method declaration
+            
+            
+             @param autocommit
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.commit">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.rollback">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.beginNestedTransaction">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.endNestedTransaction(System.Boolean)">
+             Method declaration
+            
+            
+             @param rollback
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Channel.setReadOnly(System.Boolean)">
+             Method declaration
+            
+            
+             @param readonly
+        </member>
+        <member name="M:SharpHSQL.Channel.isReadOnly">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Channel.setMaxRows(System.Int32)">
+             Method declaration
+            
+            
+             @param max
+        </member>
+        <member name="M:SharpHSQL.Channel.getMaxRows">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Channel.isNestedTransaction">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="T:SharpHSQL.Column">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Column.addTypes(System.Int32,System.String,System.String,System.String)">
+             Method declaration
+            
+            
+             @param type
+             @param name
+             @param n2
+             @param n3
+        </member>
+        <member name="M:SharpHSQL.Column.addType(System.Int32,System.String)">
+             Method declaration
+            
+            
+             @param type
+             @param name
+        </member>
+        <member name="M:SharpHSQL.Column.#ctor(System.String,System.Boolean,System.Int32,System.Boolean)">
+             Constructor declaration
+            
+            
+             @param name
+             @param nullable
+             @param type
+             @param identity
+        </member>
+        <member name="M:SharpHSQL.Column.isIdentity">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Column.getTypeNr(System.String)">
+             Method declaration
+            
+            
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.getType(System.Int32)">
+             Method declaration
+            
+            
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.isNullable">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Column.add(System.Object,System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.concat(System.Object,System.Object)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.negate(System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.multiply(System.Object,System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.divide(System.Object,System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.subtract(System.Object,System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.sum(System.Object,System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.avg(System.Object,System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param type
+             @param count
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.min(System.Object,System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.max(System.Object,System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.compare(System.Object,System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.convertstring(System.String,System.Int32)">
+             Method declaration
+            
+            
+             @param s
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.convertobject(System.Object)">
+             Method declaration
+            
+            
+             @param o
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Column.convertobject(System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param o
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.createstring(System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param o
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.createstring(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Column.readData(System.IO.BinaryReader,System.Int32)">
+             Method declaration
+            
+            
+             @param in
+             @param l
+            
+             @return
+            
+             @throws IOException
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Column.writeData(System.IO.BinaryWriter,System.Object[],SharpHSQL.Table)">
+             Method declaration
+            
+            
+             @param out
+             @param data
+             @param t
+            
+             @throws IOException
+        </member>
+        <member name="M:SharpHSQL.Column.writeData(System.IO.BinaryWriter,System.Int32,System.Int32[],System.Object[])">
+             Method declaration
+            
+            
+             @param out
+             @param l
+             @param type
+             @param data
+            
+             @throws IOException
+        </member>
+        <member name="M:SharpHSQL.Column.getSize(System.Object[],SharpHSQL.Table)">
+             Method declaration
+            
+            
+             @param data
+             @param t
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Column.getSize(System.Object[],System.Int32,System.Int32[])">
+             Method declaration
+            
+            
+             @param data
+             @param l
+             @param type
+            
+             @return
+        </member>
+        <member name="T:SharpHSQL.Constraint">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Constraint.#ctor(System.Int32,SharpHSQL.Table,System.Int32[])">
+             Constructor declaration
+            
+            
+             @param type
+             @param t
+             @param col
+        </member>
+        <member name="M:SharpHSQL.Constraint.#ctor(System.Int32,SharpHSQL.Table,SharpHSQL.Table,System.Int32[],System.Int32[])">
+             Constructor declaration
+            
+            
+             @param type
+             @param main
+             @param ref
+             @param cmain
+             @param cref
+        </member>
+        <member name="M:SharpHSQL.Constraint.getType">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Constraint.getMain">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Constraint.getRef">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Constraint.getMainColumns">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Constraint.getRefColumns">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Constraint.replaceTable(SharpHSQL.Table,SharpHSQL.Table)">
+             Method declaration
+            
+            
+             @param old
+             @param n
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Constraint.checkInsert(System.Object[])">
+             Method declaration
+            
+            
+             @param row
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Constraint.checkDelete(System.Object[])">
+             Method declaration
+            
+            
+             @param row
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Constraint.checkUpdate(System.Int32[],SharpHSQL.Result,SharpHSQL.Result)">
+             Method declaration
+            
+            
+             @param col
+             @param deleted
+             @param inserted
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Constraint.isAffected(System.Int32[],System.Int32[],System.Int32)">
+             Method declaration
+            
+            
+             @param col
+             @param col2
+             @param len
+            
+             @return
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SharpHSQL.Database" -->
+        <member name="F:SharpHSQL.Database.Logger">
+            <summary>
+            Reference to the appropriate logger.
+            </summary>
+        </member>
+        <member name="M:SharpHSQL.Database.#ctor(System.String)">
+             Constructor declaration
+            
+            
+             @param name
+        </member>
+        <member name="M:SharpHSQL.Database.getName">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.isShutdown">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.connect(System.String,System.String)">
+             Method declaration
+            
+            
+             @param username
+             @param password
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.registerChannel(SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param channel
+        </member>
+        <member name="M:SharpHSQL.Database.execute(System.String,System.String,System.String)">
+             Method declaration
+            
+            
+             @param user
+             @param password
+             @param statement
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.execute(System.String,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param statement
+             @param channel
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.setReadOnly">
+             Method declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Database.getTables">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.setReferentialIntegrity(System.Boolean)">
+             Method declaration
+            
+            
+             @param ref
+        </member>
+        <member name="M:SharpHSQL.Database.isReferentialIntegrity">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.getAlias">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.getAlias(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.getLog">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.getTable(System.String,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param name
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.getScript(System.Boolean,System.Boolean,System.Boolean,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param drop
+             @param insert
+             @param cached
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.linkTable(SharpHSQL.Table)">
+             Method declaration
+            
+            
+             @param t
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.isIgnoreCase">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Database.processScript(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processCreate(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processColumnList(SharpHSQL.Tokenizer,SharpHSQL.Table)">
+             Method declaration
+            
+            
+             @param c
+             @param t
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.createIndex(SharpHSQL.Channel,SharpHSQL.Table,System.Int32[],System.String,System.Boolean)">
+             Method declaration
+            
+            
+             @param channel
+             @param t
+             @param col
+             @param name
+             @param unique
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.addForeignKeyOn(SharpHSQL.Tokenizer,SharpHSQL.Channel,System.String,SharpHSQL.Table)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+             @param name
+             @param t
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.addUniqueConstraintOn(SharpHSQL.Tokenizer,SharpHSQL.Channel,System.String,SharpHSQL.Table)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+             @param name
+             @param t
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.addIndexOn(SharpHSQL.Tokenizer,SharpHSQL.Channel,System.String,SharpHSQL.Table,System.Boolean)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+             @param name
+             @param t
+             @param unique
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processCreateTable(SharpHSQL.Tokenizer,SharpHSQL.Channel,System.Boolean)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+             @param cached
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processDrop(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processShow(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processGrantOrRevoke(SharpHSQL.Tokenizer,SharpHSQL.Channel,System.Boolean)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+             @param grant
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processConnect(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processDisconnect(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processSet(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processTrueOrFalse(SharpHSQL.Tokenizer)">
+             Method declaration
+            
+            
+             @param c
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processCommit(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processRollback(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.finalize">
+             Method declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Database.close(System.Int32)">
+             Method declaration
+            
+            
+             @param type
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processShutdown(SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param c
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.processCheckpoint(SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.dropTable(System.String)">
+            		/**
+            		 * Method declaration
+            		 *
+            		 *
+            		 * @param name
+            		 *
+            		 * @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Database.dropTable(System.String,System.Boolean)">
+             Method declaration
+            
+            
+             @param name
+             @param bExists
+            
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.DatabaseConfig">
+            <summary>
+            Summary description for DatabaseConfig.
+            </summary>
+        </member>
+        <member name="F:SharpHSQL.DatabaseController.Log">
+            <summary>
+            Reference to the appropriate logger.
+            </summary>
+        </member>
+        <member name="T:SharpHSQL.DatabaseInformation">
+             DatabaseInformation class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.DatabaseInformation.#ctor(SharpHSQL.Database,System.Collections.ArrayList,SharpHSQL.Access)">
+             Constructor declaration
+            
+            
+             @param db
+             @param tables
+             @param access
+        </member>
+        <member name="M:SharpHSQL.DatabaseInformation.getSystemTable(System.String,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param name
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.DatabaseInformation.getScript(System.Boolean,System.Boolean,System.Boolean,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param bDrop
+             @param bInsert
+             @param bCached
+             @param channel
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.DatabaseInformation.getColumnList(SharpHSQL.Table,System.Int32[],System.Int32)">
+             Method declaration
+            
+            
+             @param t
+             @param col
+             @param len
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.DatabaseInformation.addRow(SharpHSQL.Result,System.String)">
+             Method declaration
+            
+            
+             @param r
+             @param sql
+        </member>
+        <member name="M:SharpHSQL.DatabaseInformation.createTable(System.String)">
+             Method declaration
+            
+            
+             @param name
+            
+             @return
+        </member>
+        <member name="T:SharpHSQL.Expression">
+             Expression class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Expression.#ctor(SharpHSQL.Function)">
+             Constructor declaration
+            
+            
+             @param f
+        </member>
+        <member name="M:SharpHSQL.Expression.#ctor(SharpHSQL.Expression)">
+             Constructor declaration
+            
+            
+             @param e
+        </member>
+        <member name="M:SharpHSQL.Expression.#ctor(SharpHSQL.Select)">
+             Constructor declaration
+            
+            
+             @param s
+        </member>
+        <member name="M:SharpHSQL.Expression.#ctor(System.Collections.ArrayList)">
+             Constructor declaration
+            
+            
+             @param v
+        </member>
+        <member name="M:SharpHSQL.Expression.#ctor(System.Int32,SharpHSQL.Expression,SharpHSQL.Expression)">
+             Constructor declaration
+            
+            
+             @param type
+             @param e
+             @param e2
+        </member>
+        <member name="M:SharpHSQL.Expression.#ctor(System.String,System.String)">
+             Constructor declaration
+            
+            
+             @param table
+             @param column
+        </member>
+        <member name="M:SharpHSQL.Expression.#ctor(System.Int32,System.Object)">
+             Constructor declaration
+            
+            
+             @param datatype
+             @param o
+        </member>
+        <member name="M:SharpHSQL.Expression.setLikeEscape(System.Char)">
+             Method declaration
+            
+            
+             @param c
+        </member>
+        <member name="M:SharpHSQL.Expression.setDataType(System.Int32)">
+             Method declaration
+            
+            
+             @param type
+        </member>
+        <member name="M:SharpHSQL.Expression.setTrue">
+             Method declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Expression.isAggregate">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.setDescending">
+             Method declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Expression.isDescending">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.setAlias(System.String)">
+             Method declaration
+            
+            
+             @param s
+        </member>
+        <member name="M:SharpHSQL.Expression.getAlias">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.getType">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.getColumnNr">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.getArg">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.getArg2">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.getFilter">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.checkResolved">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Expression.resolve(SharpHSQL.TableFilter)">
+             Method declaration
+            
+            
+             @param f
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Expression.isResolved">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.isCompare(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.getTableName">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.getColumnName">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.swapCondition">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Expression.getValue(System.Int32)">
+             Method declaration
+            
+            
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Expression.getDataType">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Expression.getValue">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Expression.testValueList(System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param o
+             @param datatype
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Expression.test">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.Function">
+            <summary>
+            Wrapper class for an external Function.
+            </summary>
+        </member>
+        <member name="T:SharpHSQL.Index">
+             Index class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Index.#ctor(System.String,System.Int32[],System.Int32[],System.Boolean)">
+            		 * Constructor declaration
+            		 *
+            		*
+            		 * @param name
+            		 * @param column
+            		 * @param type
+            		 * @param unique
+        </member>
+        <member name="M:SharpHSQL.Index.getRoot">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Index.setRoot(SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param r
+        </member>
+        <member name="M:SharpHSQL.Index.getName">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Index.getType">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Index.isUnique">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Index.getColumns">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Index.insert(SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param i
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.delete(System.Object[],System.Boolean)">
+             Method declaration
+            
+            
+             @param row
+             @param datatoo
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.find(System.Object[])">
+             Method declaration
+            
+            
+             @param data
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.findFirst(System.Object,System.Int32)">
+             Method declaration
+            
+            
+             @param value
+             @param compare
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.first">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.next(SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param x
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.child(SharpHSQL.Node,System.Boolean)">
+             Method declaration
+            
+            
+             @param x
+             @param w
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.replace(SharpHSQL.Node,SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param x
+             @param n
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.set(SharpHSQL.Node,System.Boolean,SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param x
+             @param w
+             @param n
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.from(SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param x
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.search(System.Object[])">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.compareRowNonUnique(System.Object[],System.Object[])">
+             Method declaration
+            
+            
+             @param a
+             @param b
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.compareRow(System.Object[],System.Object[])">
+             Method declaration
+            
+            
+             @param a
+             @param b
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Index.compareValue(System.Object,System.Object)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.Library">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Library.register(System.Collections.Hashtable)">
+             Method declaration
+            
+            
+             @param h
+        </member>
+        <member name="M:SharpHSQL.Library.register(System.Collections.Hashtable,System.String[])">
+             Method declaration
+            
+            
+             @param h
+             @param s
+        </member>
+        <member name="M:SharpHSQL.Library.abs(System.Double)">
+            Returns the absolute value of the given double value.
+            @param d the number for which to determine the absolute value
+            @return the absolute value of d, as a double
+        </member>
+        <member name="M:SharpHSQL.Library.rand(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.log10(System.Double)">
+             Method declaration
+            
+            
+             @param x
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.roundMagic(System.Double)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.cot(System.Double)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.mod(System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param i1
+             @param i2
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.pi">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.round(System.Double,System.Int32)">
+             Method declaration
+            
+            
+             @param d
+             @param p
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.sign(System.Double)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.truncate(System.Double,System.Int32)">
+             Method declaration
+            
+            
+             @param d
+             @param p
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.bitand(System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param i
+             @param j
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.bitor(System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param i
+             @param j
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.ascii(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.character(System.Int32)">
+             Method declaration
+            
+            
+             @param code
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.concat(System.String,System.String)">
+             Method declaration
+            
+            
+             @param s1
+             @param s2
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.difference(System.String,System.String)">
+             Method declaration
+            
+            
+             @param s1
+             @param s2
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.insert(System.String,System.Int32,System.Int32,System.String)">
+             Method declaration
+            
+            
+             @param s1
+             @param start
+             @param length
+             @param s2
+            
+             @return
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SharpHSQL.Library.trim(System.String,System.String,System.Boolean,System.Boolean)" -->
+        <member name="M:SharpHSQL.Library.lcase(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.left(System.String,System.Int32)">
+             Method declaration
+            
+            
+             @param s
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.length(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.locate(System.String,System.String,System.Int32)">
+             Method declaration
+            
+            
+             @param search
+             @param s
+             @param start
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.ltrim(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.repeat(System.String,System.Int32)">
+             Method declaration
+            
+            
+             @param s
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.replace(System.String,System.String,System.String)">
+             Method declaration
+            
+            
+             @param s
+             @param replace
+             @param with
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.right(System.String,System.Int32)">
+             Method declaration
+            
+            
+             @param s
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.rtrim(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.soundex(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.space(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.Substring(System.String,System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param s
+             @param start
+             @param length
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.ucase(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.datediff(System.String,System.DateTime,System.DateTime)">
+             Returns the number of units elapsed between two dates.
+            
+             Contributed by Michael Landon
+            
+             @param datepart Specifies the unit in which the interval is to be measured.
+             @param d1 The starting datetime value for the interval. This value is
+                       subtracted from d2 to return the number of
+                       date-parts between the two arguments.
+             @param d2 The ending datetime for the interval. d1 is subtracted
+                       from this value to return the number of date-parts
+                       between the two arguments.
+        </member>
+        <member name="M:SharpHSQL.Library.curdate">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.curtime">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.dayname(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.getDateTimePart(System.Data.SqlTypes.SqlDateTime,System.String)">
+             Method declaration
+            
+            
+             @param d
+             @param part
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.dayofmonth(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.dayofweek(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.dayofyear(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.hour(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param t
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.minute(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param t
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.month(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.monthname(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.now">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.quarter(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.second(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.week(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.year(System.Data.SqlTypes.SqlDateTime)">
+             Method declaration
+            
+            
+             @param d
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Library.database">
+             Method declaration
+            
+            
+             @param conn
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Library.user">
+             Method declaration
+            
+            
+             @param conn
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Library.identity">
+             Method declaration
+            
+            
+             @param conn
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.Like">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Like.#ctor(System.String,System.Char,System.Boolean)">
+             Constructor declaration
+            
+            
+             @param s
+             @param escape
+             @param ignorecase
+        </member>
+        <member name="M:SharpHSQL.Like.getStartsWith">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Like.compare(System.Object)">
+             Method declaration
+            
+            
+             @param o
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Like.compareAt(System.String,System.Int32,System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param s
+             @param i
+             @param j
+             @param jLen
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Like.normalize(System.String,System.Boolean,System.Char)">
+             Method declaration
+            
+            
+             @param s
+             @param b
+             @param e
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SharpHSQL.Log" -->
+        <member name="F:SharpHSQL.Log.Logger">
+            <summary>
+            Reference to the appropriate logger.
+            </summary>
+        </member>
+        <member name="M:SharpHSQL.Log.#ctor(SharpHSQL.Database,SharpHSQL.Channel,System.String)">
+             Constructor declaration
+            
+            
+             @param db
+             @param system
+             @param name
+        </member>
+        <member name="M:SharpHSQL.Log.run">
+             Method declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Log.setWriteDelay(System.Boolean)">
+             Method declaration
+            
+            
+             @param delay
+        </member>
+        <member name="M:SharpHSQL.Log.open">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.stop">
+             Method declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Log.close(System.Boolean)">
+             Method declaration
+            
+            
+             @param compact
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.checkpoint">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.setLogSize(System.Int32)">
+             Method declaration
+            
+            
+             @param mb
+        </member>
+        <member name="M:SharpHSQL.Log.write(SharpHSQL.Channel,System.String)">
+             Method declaration
+            
+            
+             @param c
+             @param s
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.shutdown">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.scriptToFile(SharpHSQL.Database,System.String,System.Boolean,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param db
+             @param file
+             @param full
+             @param channel
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.renameNewToCurrent(System.String)">
+             Method declaration
+            
+            
+             @param file
+        </member>
+        <member name="M:SharpHSQL.Log.closeProperties">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.create">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.isAlreadyOpen">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.loadProperties">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.saveProperties">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.backup">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.restoreBackup">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.openScript">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.closeScript">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.runScript">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.writeScript(System.Boolean)">
+             Method declaration
+            
+            
+             @param full
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Log.writeLine(System.IO.StreamWriter,System.String)">
+             Method declaration
+            
+            
+             @param w
+             @param s
+            
+             @throws IOException
+        </member>
+        <member name="M:SharpHSQL.Log.readLine(System.IO.TextReader)">
+             Method declaration
+            
+            
+             @param r
+            
+             @return
+            
+             @throws IOException
+        </member>
+        <member name="T:SharpHSQL.Node">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Node.#ctor(SharpHSQL.Row,System.IO.BinaryReader,System.Int32)">
+             Constructor declaration
+            
+            
+             @param r
+             @param in
+             @param id
+        </member>
+        <member name="M:SharpHSQL.Node.#ctor(SharpHSQL.Row,System.Int32)">
+             Constructor declaration
+            
+            
+             @param r
+             @param id
+        </member>
+        <member name="M:SharpHSQL.Node.delete">
+             Method declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Node.getKey">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Node.getLeft">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.setLeft(SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param n
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.getRight">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.setRight(SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param n
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.getParent">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.setParent(SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param n
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.getBalance">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.setBalance(System.Int32)">
+             Method declaration
+            
+            
+             @param b
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.getData">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.equals(SharpHSQL.Node)">
+             Method declaration
+            
+            
+             @param n
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Node.write(System.IO.BinaryWriter)">
+             Method declaration
+            
+            
+             @param out
+            
+             @throws IOException
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.Parser">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Parser.#ctor(SharpHSQL.Database,SharpHSQL.Tokenizer,SharpHSQL.Channel)">
+             Constructor declaration
+            
+            
+             @param db
+             @param t
+             @param channel
+        </member>
+        <member name="M:SharpHSQL.Parser.processSelect">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.processCall">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.processUpdate">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.processDelete">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.processInsert">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.processAlter">
+             Method declaration
+            
+             ALTER TABLE tableName ADD COLUMN columnName columnType;
+             ALTER TABLE tableName DELETE COLUMN columnName;
+            
+             <B>Note: </B>The only change I've made to Sergio's original code was
+             changing the insert's to call insertNoCheck to bypass the trigger
+             mechanism that is a part of hsqldb 1.60 and beyond. - Mark Tutt
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.parseSelect">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.parseTableFilter(System.Boolean)">
+             Method declaration
+            
+            
+             @param outerjoin
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.addCondition(SharpHSQL.Expression,SharpHSQL.Expression)">
+             Method declaration
+            
+            
+             @param e1
+             @param e2
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Parser.getValue(System.Int32)">
+             Method declaration
+            
+            
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.parseExpression">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.readOr">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.readAnd">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.readCondition">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.readThis(System.Int32)">
+             Method declaration
+            
+            
+             @param type
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.readConcat">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.readSum">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.readFactor">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.readTerm">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Parser.read">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.Record">
+             Record class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="T:SharpHSQL.Result">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="F:SharpHSQL.Result.Logger">
+            <summary>
+            Reference to the appropriate logger.
+            </summary>
+        </member>
+        <member name="M:SharpHSQL.Result.#ctor">
+             Constructor declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Result.#ctor(System.String)">
+             Constructor declaration
+            
+            
+             @param error
+        </member>
+        <member name="M:SharpHSQL.Result.#ctor(System.Int32)">
+             Constructor declaration
+            
+            
+             @param columns
+        </member>
+        <member name="M:SharpHSQL.Result.getSize">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Result.setColumnCount(System.Int32)">
+             Method declaration
+            
+            
+             @param columns
+        </member>
+        <member name="M:SharpHSQL.Result.getColumnCount">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Result.append(SharpHSQL.Result)">
+             Method declaration
+            
+            
+             @param a
+        </member>
+        <member name="M:SharpHSQL.Result.add(System.Object[])">
+             Method declaration
+            
+            
+             @param d
+        </member>
+        <member name="M:SharpHSQL.Result.#ctor(System.Byte[])">
+             Constructor declaration
+            
+            
+             @param b
+        </member>
+        <member name="M:SharpHSQL.Result.getBytes">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Result.prepareData(System.Int32)">
+             Method declaration
+            
+            
+             @param columns
+        </member>
+        <member name="T:SharpHSQL.Row">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Row.#ctor(SharpHSQL.Table,System.Object[])">
+             Constructor declaration
+            
+            
+             @param t
+             @param o
+        </member>
+        <member name="M:SharpHSQL.Row.cleanUpCache">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Row.changed">
+             Method declaration
+            
+        </member>
+        <member name="M:SharpHSQL.Row.getNode(System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param pos
+             @param index
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Row.getRow(System.Int32)">
+             Method declaration
+            
+            
+             @param pos
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Row.getNode(System.Int32)">
+             Method declaration
+            
+            
+             @param index
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Row.getData">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Row.#ctor(SharpHSQL.Table,System.IO.BinaryReader,System.Int32,SharpHSQL.Row)">
+             Constructor declaration
+            
+            
+             @param t
+             @param in
+             @param pos
+             @param before
+        </member>
+        <member name="M:SharpHSQL.Row.insert(SharpHSQL.Row)">
+             Method declaration
+            
+            
+             @param before
+        </member>
+        <member name="M:SharpHSQL.Row.canRemove">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Row.write">
+             Method declaration
+            
+            
+             @return
+            
+             @throws IOException
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Row.delete">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Row.free">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.Select">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Select.resolve">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.resolve(SharpHSQL.TableFilter,System.Boolean)">
+             Method declaration
+            
+            
+             @param f
+             @param ownfilter
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.checkResolved">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.getValue(System.Int32)">
+             Method declaration
+            
+            
+             @param type
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.getResult(System.Int32)">
+             Method declaration
+            
+            
+             @param maxrows
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.updateAggregateRow(System.Object[],System.Object[],System.Int32)">
+             Method declaration
+            
+            
+             @param row
+             @param n
+             @param len
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.addAggregateRow(SharpHSQL.Result,System.Object[],System.Int32,System.Int32)">
+             Method declaration
+            
+            
+             @param x
+             @param row
+             @param len
+             @param count
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.removeDuplicates(SharpHSQL.Result)">
+             Method declaration
+            
+            
+             @param r
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.removeSecond(SharpHSQL.Result,SharpHSQL.Result)">
+             Method declaration
+            
+            
+             @param r
+             @param minus
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.removeDifferent(SharpHSQL.Result,SharpHSQL.Result)">
+             Method declaration
+            
+            
+             @param r
+             @param r2
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.sortResult(SharpHSQL.Result,System.Int32[],System.Int32[])">
+             Method declaration
+            
+            
+             @param r
+             @param order
+             @param way
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.trimResultFront(SharpHSQL.Result,System.Int32)">
+             Method declaration
+            
+            
+             @param r
+             @param start
+        </member>
+        <member name="M:SharpHSQL.Select.trimResult(SharpHSQL.Result,System.Int32)">
+             Method declaration
+            
+            
+             @param r
+             @param maxrows
+        </member>
+        <member name="M:SharpHSQL.Select.compareRecord(System.Object[],System.Object[],SharpHSQL.Result,System.Int32[],System.Int32[])">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param r
+             @param order
+             @param way
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Select.compareRecord(System.Object[],System.Object[],SharpHSQL.Result,System.Int32)">
+             Method declaration
+            
+            
+             @param a
+             @param b
+             @param r
+             @param len
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.stringConverter">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="F:SharpHSQL.stringConverter.Logger">
+            <summary>
+            Reference to the appropriate logger.
+            </summary>
+        </member>
+        <member name="M:SharpHSQL.stringConverter.hexToByte(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.stringConverter.byteToHex(System.Byte[])">
+             Method declaration
+            
+            
+             @param b
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.stringConverter.unicodeToHexstring(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.stringConverter.hexstringToUnicode(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.stringConverter.unicodeToAscii(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.stringConverter.asciiToUnicode(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.stringConverter.InputStreamTostring(System.IO.BinaryReader)">
+             Method declaration
+            
+            
+             @param x
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="T:SharpHSQL.Table">
+             Class declaration
+            
+            
+             @version 1.0.0.1
+        </member>
+        <member name="M:SharpHSQL.Table.#ctor(SharpHSQL.Database,System.Boolean,System.String,System.Boolean)">
+             Constructor declaration
+            
+            
+             @param db
+             @param log
+             @param name
+             @param cached
+        </member>
+        <member name="M:SharpHSQL.Table.addConstraint(SharpHSQL.Constraint)">
+             Method declaration
+            
+            
+             @param c
+        </member>
+        <member name="M:SharpHSQL.Table.getConstraints">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.addColumn(System.String,System.Int32)">
+             Method declaration
+            
+            
+             @param name
+             @param type
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.addColumn(SharpHSQL.Column)">
+             Method declaration
+            
+            
+             @param c
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.addColumn(System.String,System.Int32,System.Boolean,System.Boolean)">
+             Method declaration
+            
+            
+             @param name
+             @param type
+             @param nullable
+             @param identity
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.addColumns(SharpHSQL.Result)">
+             Method declaration
+            
+            
+             @param result
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.getName">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getInternalColumnCount">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.moveDefinition(System.String)">
+             Method declaration
+            
+            
+             @param withoutindex
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.getColumnCount">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getIndexCount">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getIdentityColumn">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getColumnNr(System.String)">
+             Method declaration
+            
+            
+             @param c
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.searchColumn(System.String)">
+             Method declaration
+            
+            
+             @param c
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getColumnName(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getColumnType(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getColumnIsNullable(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getPrimaryIndex">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.getIndexForColumn(System.Int32)">
+             Method declaration
+            
+            
+             @param column
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.getIndexForColumns(System.Int32[])">
+             Method declaration
+            
+            
+             @param col
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.getIndexRoots">
+             Method declaration
+            
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.setIndexRoots(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.getNextIndex(SharpHSQL.Index)">
+             Method declaration
+            
+            
+             @param index
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getType(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.createPrimaryKey(System.Int32)">
+             Method declaration
+            
+            
+             @param column
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.createPrimaryKey">
+             Method declaration
+            
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.createIndex(SharpHSQL.Index)">
+             Method declaration
+            
+            
+             @param index
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.createIndex(System.Int32[],System.String,System.Boolean)">
+             Method declaration
+            
+            
+             @param column
+             @param name
+             @param unique
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.checkDropIndex(System.String)">
+             Method declaration
+            
+            
+             @param index
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.isEmpty">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getNewRow">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.moveData(SharpHSQL.Table)">
+             Method declaration
+            
+            
+             @param from
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.checkUpdate(System.Int32[],SharpHSQL.Result,SharpHSQL.Result)">
+             Method declaration
+            
+            
+             @param col
+             @param deleted
+             @param inserted
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.insert(SharpHSQL.Result,SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param result
+             @param c
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.insert(System.Object[],SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param row
+             @param c
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.insertNoCheck(System.Object[],SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param row
+             @param c
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.insertNoCheck(System.Object[],SharpHSQL.Channel,System.Boolean)">
+             Method declaration
+            
+            
+             @param row
+             @param c
+             @param log
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.delete(System.Object[],SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param row
+             @param c
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.deleteNoCheck(System.Object[],SharpHSQL.Channel)">
+             Method declaration
+            
+            
+             @param row
+             @param c
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.deleteNoCheck(System.Object[],SharpHSQL.Channel,System.Boolean)">
+             Method declaration
+            
+            
+             @param row
+             @param c
+             @param log
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.getInsertStatement(System.Object[])">
+             Method declaration
+            
+            
+             @param row
+            
+             @return
+            
+             @throws Exception
+        </member>
+        <member name="M:SharpHSQL.Table.isCached">
+             Method declaration
+            
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getIndex(System.String)">
+             Method declaration
+            
+            
+             @param s
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getColumn(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getIndex(System.Int32)">
+             Method declaration
+            
+            
+             @param i
+            
+             @return
+        </member>
+        <member name="M:SharpHSQL.Table.getDeleteStatement(System.Object[])">
+             Method declaration
+            
+            
+             @param row
+            
+             @return
+            
+             @throws Exception
+        </member>

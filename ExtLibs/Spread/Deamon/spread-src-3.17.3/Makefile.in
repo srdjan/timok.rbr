@@ -1,0 +1,292 @@
+.SUFFIXES: .lo .to .tlo
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bindir=@bindir@
+sbindir=@sbindir@
+libdir=@libdir@
+includedir=@includedir@
+mandir=@mandir@
+mansubdir=@mansubdir@
+sysconfdir=@sysconfdir@
+piddir=@piddir@
+srcdir=@srcdir@
+top_srcdir=@top_srcdir@
+buildtoolsdir=$(srcdir)/buildtools
+
+DESTDIR=
+VPATH=@srcdir@
+SPREAD_PROGRAM=@sbindir@/spread
+SP_MAJOR_VERSION=@SP_MAJOR_VERSION@
+SP_MINOR_VERSION=@SP_MINOR_VERSION@
+SP_PATCH_VERSION=@SP_PATCH_VERSION@
+VERSION=@SP_MAJOR_VERSION@.@SP_MINOR_VERSION@.@SP_PATCH_VERSION@
+
+#Shared Library version -- Must be changed upon each release 
+#Rules: major  -- inc for incompatible change
+#     : minor  -- inc for bugfix or forward compatible change
+
+LIBVERSION=1.0
+
+PATHS= 
+
+CC=@CC@
+LD=@LD@
+CFLAGS=@CFLAGS@
+CPPFLAGS=-I. -I$(srcdir) @CPPFLAGS@ $(PATHS) @DEFS@
+LDFLAGS=@LDFLAGS@
+LIBS=@LIBS@
+THLDFLAGS=@THLDFLAGS@
+THLIBS=@THLIBS@
+AR=@AR@
+LEX=@LEX@
+SHCC=@SHCC@
+SHLD=@SHLD@
+SHCFLAGS=@SHCFLAGS@
+SHCPPFLAGS=@SHCPPFLAGS@ -I. -I$(srcdir) 
+SHLDFLAGS=@SHLDFLAGS@
+SHLIBS=@SHLIBS@
+RANLIB=@RANLIB@
+INSTALL=@INSTALL@
+SOFTLINK=@LN_S@
+PERL=@PERL@
+ENT=@ENT@
+EXEEXT=@EXEEXT@
+
+TARGETS=spread$(EXEEXT) spuser$(EXEEXT) spflooder$(EXEEXT) spmonitor$(EXEEXT) sptuser${EXEEXT} @LIBSPSO@ @LIBTSPSO@
+
+LIBSP_OBJS= alarm.o events.o memory.o sp.o
+
+LIBSP_SHOBJS= alarm.lo events.lo memory.lo sp.lo
+
+LIBTSP_OBJS= alarm.to events.to memory.to sp.to
+
+LIBTSP_SHOBJS= alarm.tlo events.tlo memory.tlo sp.tlo
+
+SPREADOBJS= spread.o protocol.o session.o groups.o alarm.o events.o memory.o membership.o data_link.o network.o status.o log.o flow_control.o message.o lex.yy.o y.tab.o configuration.o skiplist.o acm.o acp-permit.o auth-null.o auth-ip.o
+
+MONITOR_OBJS= monitor.o  alarm.o events.o memory.o data_link.o lex.yy.o y.tab.o configuration.o skiplist.o acm.o
+
+TMONITOR_OBJS= monitor.to  alarm.to events.to memory.to data_link.to lex.yy.to y.tab.to configuration.to skiplist.to acm.to
+
+MANPAGES	= docs/SP_connect.3.out docs/SP_disconnect.3.out docs/SP_equal_group_ids.3.out docs/SP_error.3.out docs/SP_join.3.out docs/SP_leave.3.out docs/SP_multicast.3.out docs/SP_multigroup_multicast.3.out docs/SP_multigroup_scat_multicast.3.out docs/SP_poll.3.out docs/SP_receive.3.out docs/SP_scat_multicast.3.out docs/SP_scat_receive.3.out docs/libsp.3.out docs/spread.1.out docs/spuser.1.out docs/sptuser.1.out docs/spmonitor.1.out docs/spflooder.1.out
+MANPAGES_IN	= docs/SP_connect.3 docs/SP_disconnect.3 docs/SP_equal_group_ids.3 docs/SP_error.3 docs/SP_join.3 docs/SP_leave.3 docs/SP_multicast.3 docs/SP_multigroup_multicast.3 docs/SP_multigroup_scat_multicast.3 docs/SP_poll.3 docs/SP_receive.3 docs/SP_scat_multicast.3 docs/SP_scat_receive.3 docs/libsp.3 docs/spread.1 docs/spuser.1 docs/sptuser.1 docs/spmonitor.1 docs/spflooder.1
+MANTYPE		= @MANTYPE@
+
+PATHSUBS	= \
+	-D/etc/spread.conf=$(sysconfdir)/spread.conf \
+        -D/var/run/spread.pid=$(piddir)/spread.pid
+
+FIXPATHSCMD	= $(PERL) $(buildtoolsdir)/fixpaths $(PATHSUBS)
+
+all: $(TARGETS) $(MANPAGES)
+
+$(SPREADOBJS): config.h
+$(MONITOR_OBJS): config.h
+$(TMONITOR_OBJS): config.h
+
+.c.o:
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
+
+.c.to:
+	$(CC) $(CFLAGS) $(CPPFLAGS) -D_REENTRANT -c $< -o $*.to
+
+.c.lo:
+	$(SHCC) $(SHCFLAGS) $(SHCPPFLAGS) -c $< -o $*.lo
+
+.c.tlo:
+	$(SHCC) $(SHCFLAGS) $(SHCPPFLAGS) -D_REENTRANT -c $< -o $*.tlo
+
+parser:
+	$(YACC) -d $(srcdir)/config_parse.y
+	$(LEX) $(srcdir)/config_gram.l
+
+#Disabled now because of timestamp errors causing extra regeneration
+#To build parser run "make parser" after ./configure is run.
+#lex.yy.c:       config_gram.l y.tab.c
+#	$(LEX) config_gram.l
+
+#y.tab.c:        config_parse.y
+#	$(YACC) -d config_parse.y
+
+none:	
+	@echo "Skipping shared library creation."
+
+install-none:
+	@echo "Skipping shared library installation."
+
+libspread.a: $(LIBSP_OBJS)
+	$(AR) rv $@ $(LIBSP_OBJS)
+	$(RANLIB) $@
+
+libspread.dylib:	$(LIBSP_SHOBJS)
+	$(SHLD) -o libspread.$(LIBVERSION).dylib $(LIBSP_SHOBJS) $(SHLDFLAGS) $(SHLIBS)
+	$(SOFTLINK) -f libspread.$(LIBVERSION).dylib $@
+
+install-libspread.dylib:	libspread.dylib
+	$(INSTALL) -m 0755 libspread.$(LIBVERSION).dylib $(DESTDIR)$(libdir)/libspread.$(LIBVERSION).dylib
+	(cd $(DESTDIR)$(libdir); $(SOFTLINK) -f libspread.$(LIBVERSION).dylib libspread.dylib)
+
+libspread.so:	$(LIBSP_SHOBJS)
+	$(SHLD) -o $@ $(LIBSP_SHOBJS) $(SHLDFLAGS) $(SHLIBS)
+
+install-libspread.so:	libspread.so
+	$(INSTALL) -m 0755 libspread.so $(DESTDIR)$(libdir)/libspread.so.$(LIBVERSION)
+	(cd $(DESTDIR)$(libdir); $(SOFTLINK) -f libspread.so.$(LIBVERSION) libspread.so)
+
+libtspread.a: $(LIBTSP_OBJS)
+	$(AR) rv $@ $(LIBTSP_OBJS)
+	$(RANLIB) $@
+
+libtspread.dylib:	$(LIBTSP_SHOBJS)
+	$(SHLD) -o libtspread.$(LIBVERSION).dylib $(LIBSP_SHOBJS) $(SHLDFLAGS) $(SHLIBS) $(THLIBS)
+	$(SOFTLINK) -f libtspread.$(LIBVERSION).dylib $@
+
+install-libtspread.dylib:	libtspread.dylib
+	$(INSTALL) -m 0755 libtspread.$(LIBVERSION).dylib $(DESTDIR)$(libdir)/libtspread.$(LIBVERSION).dylib
+	(cd $(DESTDIR)$(libdir); $(SOFTLINK) -f libtspread.$(LIBVERSION).dylib libtspread.dylib)
+
+libtspread.so:	$(LIBTSP_SHOBJS)
+	$(SHLD) -o $@ $(LIBTSP_SHOBJS) $(SHLDFLAGS) $(SHLIBS) $(THLIBS)
+
+install-libtspread.so:	libtspread.so
+	$(INSTALL) -m 0755 libtspread.so $(DESTDIR)$(libdir)/libtspread.so.$(LIBVERSION)
+	(cd $(DESTDIR)$(libdir); $(SOFTLINK) -f libtspread.so.$(LIBVERSION) libtspread.so)
+
+spread$(EXEEXT): $(SPREADOBJS)
+	$(LD) -o $@ $(SPREADOBJS) $(LDFLAGS) $(LIBS)
+
+spuser$(EXEEXT): libspread.a	user.o
+	$(LD) -o $@ user.o $(LDFLAGS) libspread.a $(LIBS)
+
+spflooder$(EXEEXT): libspread.a flooder.o
+	$(LD) -o $@ flooder.o $(LDFLAGS) libspread.a $(LIBS)
+
+spmonitor$(EXEEXT): $(MONITOR_OBJS)
+	$(LD) -o $@ $(MONITOR_OBJS) $(LDFLAGS) $(LIBS) 
+
+sptmonitor$(EXEEXT): $(TMONITOR_OBJS)
+	$(LD) $(THLDFLAGS) -o $@ $(TMONITOR_OBJS) $(LDFLAGS) $(LIBS) $(THLIBS) 
+
+sptuser$(EXEEXT): user.to libtspread.a
+	$(LD) $(THLDFLAGS) -o $@ user.to libtspread.a $(LDFLAGS) $(LIBS) $(THLIBS)
+
+spsimple_user$(EXEEXT): simple_user.o libspread.a
+	$(LD) -o $@ simple_user.o $(LDFLAGS) libspread.a $(LIBS) 
+
+testprog: spsend$(EXEEXT) sprecv$(EXEEXT)
+
+spsend$(EXEEXT): s.o alarm.o data_link.o events.o memory.o
+	$(LD) -o $@ s.o alarm.o data_link.o events.o memory.o $(LDFLAGS) $(LIBS)
+
+sprecv$(EXEEXT): r.o alarm.o data_link.o
+	$(LD) -o $@ r.o alarm.o data_link.o $(LDFLAGS) $(LIBS)
+
+$(MANPAGES): $(MANPAGES_IN)
+	@if [ ! -d docs ]; then \
+		$(buildtoolsdir)/mkinstalldirs docs; \
+	fi
+	@if test "$(MANTYPE)" = "cat"; then \
+		manpage=$(srcdir)/`echo $@ | sed 's/\.[1-9]\.out$$/\.0/'`; \
+	else \
+		manpage=$(srcdir)/`echo $@ | sed 's/\.out$$//'`; \
+	fi; \
+	if test "$(MANTYPE)" = "man"; then \
+		$(FIXPATHSCMD) $${manpage} | $(PERL) $(buildtoolsdir)/mdoc2man.pl > $@; \
+	else \
+		$(FIXPATHSCMD) $${manpage} > $@; \
+	fi
+
+clean:
+	rm -f *.lo *.tlo *.to *.o *.a *.dylib $(TARGETS) spsimple_user
+	rm -f config.cache config.log docs/*.out core
+	rm -rf autom4te.cache
+
+distclean: clean
+	rm -f Makefile config.h config.status *~
+
+mrproper: distclean
+
+veryclean: distclean
+	rm -f configure
+
+catman-do:
+	@for f in $(MANPAGES_IN) ; do \
+		base=`echo $$f | sed 's/\..*$$//'` ; \
+		echo "$$f -> $$base.0" ; \
+		nroff -mandoc $$f | cat -v | sed -e 's/.\^H//g' \
+			>$$base.0 ; \
+	done
+
+distprep: catman-do
+	autoreconf
+
+install: $(TARGETS) install-files install-@LIBSPSO@ install-@LIBTSPSO@
+
+install-files:
+	$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(bindir)
+	$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(sbindir)
+	$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(includedir)
+	$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(mandir)
+	$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(mandir)/$(mansubdir)1
+	$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(mandir)/$(mansubdir)3
+	$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(libdir)
+	$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(includedir)
+	$(INSTALL) -m 0755 -s spmonitor$(EXEEXT) $(DESTDIR)$(bindir)/spmonitor$(EXEEXT)
+	$(INSTALL) -m 0755 -s spuser$(EXEEXT) $(DESTDIR)$(bindir)/spuser$(EXEEXT)
+	$(INSTALL) -m 0755 -s sptuser$(EXEEXT) $(DESTDIR)$(bindir)/sptuser$(EXEEXT)
+	$(INSTALL) -m 0755 -s spflooder$(EXEEXT) $(DESTDIR)$(bindir)/spflooder$(EXEEXT)
+	$(INSTALL) -m 0755 -s spread$(EXEEXT) $(DESTDIR)$(sbindir)/spread$(EXEEXT)
+	$(INSTALL) -m 644 libspread.a $(DESTDIR)$(libdir)/libspread.a
+	$(INSTALL) -m 644 libtspread.a $(DESTDIR)$(libdir)/libtspread.a
+	$(INSTALL) -m 644 $(srcdir)/sp.h $(DESTDIR)$(includedir)/sp.h
+	$(INSTALL) -m 644 $(srcdir)/sp_func.h $(DESTDIR)$(includedir)/sp_func.h
+	$(INSTALL) -m 644 $(srcdir)/sp_events.h $(DESTDIR)$(includedir)/sp_events.h
+	$(INSTALL) -m 644 docs/spread.1.out $(DESTDIR)$(mandir)/$(mansubdir)1/spread.1
+	$(INSTALL) -m 644 docs/spuser.1.out $(DESTDIR)$(mandir)/$(mansubdir)1/spuser.1
+	$(INSTALL) -m 644 docs/sptuser.1.out $(DESTDIR)$(mandir)/$(mansubdir)1/sptuser.1
+	$(INSTALL) -m 644 docs/spflooder.1.out $(DESTDIR)$(mandir)/$(mansubdir)1/spflooder.1
+	$(INSTALL) -m 644 docs/spmonitor.1.out $(DESTDIR)$(mandir)/$(mansubdir)1/spmonitor.1
+	$(INSTALL) -m 644 docs/libsp.3.out $(DESTDIR)$(mandir)/$(mansubdir)3/libsp.3
+	for page in connect disconnect equal_group_ids error join leave multicast multigroup_multicast multigroup_scat_multicast poll receive scat_multicast scat_receive; \
+	do \
+	  $(INSTALL) -m 644 docs/SP_$$page.3.out $(DESTDIR)$(mandir)/$(mansubdir)3/SP_$$page.3; \
+	done
+	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
+		$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
+	fi
+	if [ ! -f $(DESTDIR)$(sysconfdir)/spread.conf ]; then \
+		$(INSTALL) -m 644 $(srcdir)/sample.spread.conf $(DESTDIR)$(sysconfdir)/spread.conf; \
+	else \
+		echo "$(DESTDIR)$(sysconfdir)/spread.conf already exists, install will not overwrite"; \
+	fi
+
+uninstallall:	uninstall
+	-rm -f $(DESTDIR)$(sysconfdir)/spread.conf
+	-rmdir $(DESTDIR)$(sysconfdir)
+	-rmdir $(DESTDIR)$(bindir)
+	-rmdir $(DESTDIR)$(sbindir)
+	-rmdir $(DESTDIR)$(mandir)/$(mansubdir)1
+	-rmdir $(DESTDIR)$(mandir)/$(mansubdir)3
+	-rmdir $(DESTDIR)$(mandir)
+	-rmdir $(DESTDIR)$(libdir)
+	-rmdir $(DESTDIR)$(includedir)
+
+uninstall: 
+	-rm -f $(DESTDIR)$(bindir)/spuser$(EXEEXT)
+	-rm -f $(DESTDIR)$(bindir)/spmonitor$(EXEEXT)
+	-rm -f $(DESTDIR)$(bindir)/spflooder$(EXEEXT)
+	-rm -f $(DESTDIR)$(bindir)/sptuser$(EXEEXT)
+	-rm -f $(DESTDIR)$(sbindir)/spread$(EXEEXT)
+	-rm -f $(DESTDIR)$(libdir)/libspread.a
+	-rm -f $(DESTDIR)$(libdir)/libtspread.a
+	-rm -f $(DESTDIR)$(includedir)/sp.h
+	-rm -f $(DESTDIR)$(includedir)/sp_func.h
+	-rm -f $(DESTDIR)$(includedir)/sp_events.h
+	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)3/SP_*.3
+	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)3/libsp.3
+	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/spread.1
+	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/spuser.1
+	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/sptuser.1
+	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/spflooder.1
+	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/spmonitor.1

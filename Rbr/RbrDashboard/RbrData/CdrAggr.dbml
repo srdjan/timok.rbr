@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="RbrDb_269" Class="CdrAggrDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TIMOK-LPT\TRBR;Initial Catalog=RbrDb_269;Integrated Security=True" SettingsObjectName="RbrData.Properties.Settings" SettingsPropertyName="RbrDb_269ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CdrAggregate" Member="CdrAggregates">
+    <Type Name="CdrAggregate">
+      <Column Name="date_hour" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="node_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="orig_end_point_IP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="orig_end_point_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="customer_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="customer_route_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="term_end_point_IP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="term_end_point_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="calls_attempted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="calls_completed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="setup_seconds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alert_seconds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="connected_seconds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="connected_minutes" Type="System.Decimal" DbType="Decimal(9,1) NOT NULL" CanBeNull="false" />
+      <Column Name="carrier_cost" Type="System.Decimal" DbType="Decimal(9,2) NOT NULL" CanBeNull="false" />
+      <Column Name="carrier_rounded_minutes" Type="System.Decimal" DbType="Decimal(9,1) NOT NULL" CanBeNull="false" />
+      <Column Name="wholesale_price" Type="System.Decimal" DbType="Decimal(9,2) NOT NULL" CanBeNull="false" />
+      <Column Name="wholesale_rounded_minutes" Type="System.Decimal" DbType="Decimal(9,1) NOT NULL" CanBeNull="false" />
+      <Column Name="end_user_price" Type="System.Decimal" DbType="Decimal(9,2) NOT NULL" CanBeNull="false" />
+      <Column Name="end_user_rounded_minutes" Type="System.Decimal" DbType="Decimal(9,1) NOT NULL" CanBeNull="false" />
+      <Column Name="carrier_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="carrier_route_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="access_number" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustomerAcct" Member="CustomerAccts">
+    <Type Name="CustomerAcct">
+      <Column Name="customer_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="default_bonus_minutes_type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="default_start_bonus_minutes" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="is_prepaid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="current_amount" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="limit_amount" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="warning_amount" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="allow_rerouting" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="concurrent_use" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="prefix_in_type_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="prefix_in" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="prefix_out" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="partner_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="service_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="retail_calling_plan_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="retail_markup_type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="retail_markup_dollar" Type="System.Decimal" DbType="Decimal(11,8) NOT NULL" CanBeNull="false" />
+      <Column Name="retail_markup_percent" Type="System.Decimal" DbType="Decimal(11,8) NOT NULL" CanBeNull="false" />
+      <Column Name="max_call_length" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="routing_plan_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Partner_CustomerAcct" Member="Partner" ThisKey="partner_id" OtherKey="partner_id" Type="Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Partner" Member="Partners">
+    <Type Name="Partner">
+      <Column Name="partner_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="contact_info_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="billing_schedule_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="virtual_switch_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Partner_CustomerAcct" Member="CustomerAccts" ThisKey="partner_id" OtherKey="partner_id" Type="CustomerAcct" />
+      <Association Name="Partner_CarrierAcct" Member="CarrierAccts" ThisKey="partner_id" OtherKey="partner_id" Type="CarrierAcct" />
+      <Association Name="Partner_Person" Member="Persons" ThisKey="partner_id" OtherKey="partner_id" Type="Person" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CarrierAcct" Member="CarrierAccts">
+    <Type Name="CarrierAcct">
+      <Column Name="carrier_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rating_type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="prefix_out" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="strip_1plus" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="intl_dial_code" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="partner_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="calling_plan_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="max_call_length" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="Partner_CarrierAcct" Member="Partner" ThisKey="partner_id" OtherKey="partner_id" Type="Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Node" Member="Nodes">
+    <Type Name="Node">
+      <Column Name="node_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="platform_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="node_config" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="transport_type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="user_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ip_address" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="port" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="billing_export_frequency" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cdr_publishing_frequency" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="person_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="login" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="permission" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="is_reseller" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="registration_status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="salt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="partner_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="retail_acct_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="group_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="virtual_switch_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="contact_info_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Partner_Person" Member="Partner" ThisKey="partner_id" OtherKey="partner_id" Type="Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AccessNumberByCustomer" Method="AccessNumberByCustomer">
+    <Parameter Name="date_interval" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="customer_acct_id" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="node_id" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="AccessNumberByCustomerResult">
+      <Column Name="date_hour" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="customer_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="customer_acct_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="access_number" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="total_calls_attempted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_calls_completed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_setup_seconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_alert_seconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_connected_seconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_connected_minutes" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[check]" Member="check" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rep_GetPartnerRouteSummary" Method="rep_GetPartnerRouteSummary">
+    <Parameter Name="partnerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resellAgentId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="customerAcctId" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="rep_GetPartnerRouteSummaryResult">
+      <Column Name="JDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="customer_route_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="customer_route_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="calls_attempted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="calls_completed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="setup_seconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="connected_minutes" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[by]" Member="by" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetJDateRange" Method="GetJDateRange">
+    <Parameter Name="DateName" Parameter="dateName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="StartJDateHour" Parameter="startJDateHour" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="EndJDateHour" Parameter="endJDateHour" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InventoryHistoryByService" Method="InventoryHistoryByService">
+    <Parameter Name="service_id" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="from_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="to_date" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="InventoryHistoryByServiceResult">
+      <Column Name="service_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="service_name" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="command" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="total_cards" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cmd_descr" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InventoryStateByService" Method="InventoryStateByService">
+    <Parameter Name="service_id" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="InventoryStateByServiceResult">
+      <Column Name="service_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Generated" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Loaded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activated" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deactivated" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Archived" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InventoryUsageByCustomer" Method="InventoryUsageByCustomer">
+    <Parameter Name="customer_acct_id" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="from_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="to_date" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="InventoryUsageByCustomerResult">
+      <Column Name="service_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="service_name" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="customer_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="customer_acct_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="total_first_used" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_total_used" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_balance_depleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_expired" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_q_customer" Method="proc_q_customer">
+    <Parameter Name="node" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cust" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="proc_q_customerResult">
+      <Column Name="Tag" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!node_id]" Member="aggr_1_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[aggr!1!customer_acct_id]" Member="aggr_1_customer_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!carrier_acct_id]" Member="aggr_1_carrier_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!Day]" Member="aggr_1_Day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Total]" Member="aggr_1_Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Completed]" Member="aggr_1_Completed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!InMinutes]" Member="aggr_1_InMinutes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!OutMinutes]" Member="aggr_1_OutMinutes" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[aggr!1!Cost]" Member="aggr_1_Cost" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[aggr!1!Name]" Member="aggr_1_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[aggr!1!PopName]" Member="aggr_1_PopName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[aggr!1!which]" Member="aggr_1_which" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_q_daily" Method="proc_q_daily">
+    <Parameter Name="node" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="proc_q_dailyResult">
+      <Column Name="Tag" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!node_id]" Member="aggr_1_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[aggr!1!date_hour]" Member="aggr_1_date_hour" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!Day]" Member="aggr_1_Day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Total]" Member="aggr_1_Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Completed]" Member="aggr_1_Completed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!InMinutes]" Member="aggr_1_InMinutes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!OutMinutes]" Member="aggr_1_OutMinutes" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[aggr!1!which]" Member="aggr_1_which" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_q_route" Method="proc_q_route">
+    <Parameter Name="node" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cust" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="proc_q_routeResult">
+      <Column Name="Tag" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!node_id]" Member="aggr_1_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[aggr!1!route_id]" Member="aggr_1_route_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!carrier_acct_id]" Member="aggr_1_carrier_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!Day]" Member="aggr_1_Day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Total]" Member="aggr_1_Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Completed]" Member="aggr_1_Completed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!InMinutes]" Member="aggr_1_InMinutes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!OutMinutes]" Member="aggr_1_OutMinutes" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[aggr!1!Cost]" Member="aggr_1_Cost" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[aggr!1!Name]" Member="aggr_1_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[aggr!1!PopName]" Member="aggr_1_PopName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[aggr!1!which]" Member="aggr_1_which" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_q_trunk" Method="proc_q_trunk">
+    <Parameter Name="node" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="carrier" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="proc_q_trunkResult">
+      <Column Name="Tag" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!node_id]" Member="aggr_1_node_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[aggr!1!carrier_acct_id]" Member="aggr_1_carrier_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!customer_acct_id]" Member="aggr_1_customer_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!Day]" Member="aggr_1_Day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Total]" Member="aggr_1_Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Completed]" Member="aggr_1_Completed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!InMinutes]" Member="aggr_1_InMinutes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!OutMinutes]" Member="aggr_1_OutMinutes" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[aggr!1!Cost]" Member="aggr_1_Cost" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[aggr!1!Name]" Member="aggr_1_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[aggr!1!CustName]" Member="aggr_1_CustName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[aggr!1!which]" Member="aggr_1_which" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rep_GetPartnerCustomerAcctSummary" Method="rep_GetPartnerCustomerAcctSummary">
+    <Parameter Name="partnerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resellAgentId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="rep_GetPartnerCustomerAcctSummaryResult">
+      <Column Name="customer_acct_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="JDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="customer_acct_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="calls_attempted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="calls_completed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="setup_seconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="connected_minutes" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[by]" Member="by" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DateToJ" Method="DateToJ" IsComposable="true">
+    <Parameter Name="dt" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ListOfPhoneCardServices" Method="ListOfPhoneCardServices" IsComposable="true">
+    <ElementType Name="ListOfPhoneCardServicesResult">
+      <Column Name="service_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.F_DateTable" Method="F_DateTable" IsComposable="true">
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="F_DateTableResult">
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="julian" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.F_START_OF_WEEK" Method="F_START_OF_WEEK" IsComposable="true">
+    <Parameter Name="DATE" Parameter="dATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="WEEK_START_DAY" Parameter="wEEK_START_DAY" Type="System.Int32" DbType="Int" />
+    <Return Type="System.DateTime" />
+  </Function>
+  <Function Name="dbo.GetCommandList" Method="GetCommandList" IsComposable="true">
+    <ElementType Name="GetCommandListResult">
+      <Column Name="command" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDateRange" Method="GetDateRange" IsComposable="true">
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="now" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.DateTime" />
+  </Function>
+  <Function Name="dbo.IntToDottedIPAddress" Method="IntToDottedIPAddress" IsComposable="true">
+    <Parameter Name="IPAddressAsInt" Parameter="iPAddressAsInt" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.JToDate" Method="JToDate" IsComposable="true">
+    <Parameter Name="JulianDate" Parameter="julianDate" Type="System.Int32" DbType="Int" />
+    <Return Type="System.DateTime" />
+  </Function>
+  <Function Name="dbo.JToDay" Method="JToDay" IsComposable="true">
+    <Parameter Name="JulianDate" Parameter="julianDate" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.JToHour" Method="JToHour" IsComposable="true">
+    <Parameter Name="JulianDate" Parameter="julianDate" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.JToYear" Method="JToYear" IsComposable="true">
+    <Parameter Name="JulianDate" Parameter="julianDate" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ListOfCarriers" Method="ListOfCarriers" IsComposable="true">
+    <ElementType Name="ListOfCarriersResult">
+      <Column Name="carrierID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="carrierDescr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ListOfCustomers" Method="ListOfCustomers" IsComposable="true">
+    <ElementType Name="ListOfCustomersResult">
+      <Column Name="custID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="custDescr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ListOfCustomersByPartnerOrResellAgent" Method="ListOfCustomersByPartnerOrResellAgent" IsComposable="true">
+    <Parameter Name="partnerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resellAgentId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ListOfCustomersByPartnerOrResellAgentResult">
+      <Column Name="customer_acct_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="customer_acct_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ListOfDates" Method="ListOfDates" IsComposable="true">
+    <ElementType Name="ListOfDatesResult">
+      <Column Name="dateAlias" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="dateDescr" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ListOfNodes" Method="ListOfNodes" IsComposable="true">
+    <ElementType Name="ListOfNodesResult">
+      <Column Name="nodeID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="nodeDescr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ListOfPhoneCardCustomers" Method="ListOfPhoneCardCustomers" IsComposable="true">
+    <ElementType Name="ListOfPhoneCardCustomersResult">
+      <Column Name="custID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="custDescr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_nodes_daily" Method="proc_nodes_daily">
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="proc_nodes_dailyResult">
+      <Column Name="Tag" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!node_id]" Member="aggr_1_node_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!date_hour]" Member="aggr_1_date_hour" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[aggr!1!Day]" Member="aggr_1_Day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Total]" Member="aggr_1_Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!Completed]" Member="aggr_1_Completed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!InMinutes]" Member="aggr_1_InMinutes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[aggr!1!OutMinutes]" Member="aggr_1_OutMinutes" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="[aggr!1!which]" Member="aggr_1_which" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,10 @@
+Aculab Installation
+==============================
+Serial number is on the back of the card
+
+1) download drivers/firmware
+2) Disable NIC
+3) Install Card
+4) Cancel out when windows recognizes new hardware
+5) Configure Card (ACT)
+6) enable NIC

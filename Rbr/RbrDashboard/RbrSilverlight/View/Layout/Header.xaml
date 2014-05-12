@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="RbrSiverlight.View.Layout.Header"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Toolbar="clr-namespace:RbrSiverlight.View.Toolbar"
+    Width="650" Height="91">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="31"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Canvas Grid.Row="0">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,-0.06" StartPoint="0.5,0.62">
+                    <GradientStop Color="#FF6CA2DF"/>
+                    <GradientStop Color="#FF92BAE7" Offset="1"/>
+                    <!--<GradientStop Color="AliceBlue" Offset="0.2"/>
+                    <GradientStop Color="WhiteSmoke" Offset="1"/>-->
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+        
+        <Canvas Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Margin="7,0">
+							<TextBlock x:Name="dashboardLabel" Canvas.Left="30" Canvas.Top="10" Margin="0,5" FontSize="32" Foreground="WhiteSmoke"></TextBlock>
+							<TextBlock Canvas.Left="30" Canvas.Top="10" Margin="500,0,0,0" Height="14" FontSize="12" Foreground="WhiteSmoke">Powered by: </TextBlock>
+							<HyperlinkButton NavigateUri="http://www.timok.com" Margin="0,45" Height="14" FontSize="12" FontWeight="Bold" Foreground="WhiteSmoke" Content="Timok.es" TargetName="_blank"/>
+							<!--Image HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,45" Width="24" Height="24" 
+											Source="../../Images/timok_small.png" 
+											Stretch="Uniform" 
+											RenderTransformOrigin="0.5,0.5" 
+											x:Name="timokLogo" >
+									<Image.RenderTransform>
+										<TransformGroup>
+											<ScaleTransform ScaleX="1" ScaleY="1" x:Name="timokLogoScale"/>
+											<SkewTransform/>
+											<RotateTransform/>
+											<TranslateTransform/>
+										</TransformGroup>
+									</Image.RenderTransform>
+							</Image-->
+					</StackPanel>
+        </Canvas>
+                        
+        <Toolbar:Toolbar Grid.Row="1" Width="Auto">
+            <Toolbar:Toolbar.Children>
+                <Toolbar:ToolbarButton x:Name="thishour" Text="This Hour" Action="thishour" ButtonClick="ToolbarButton_ButtonClick" />
+                <Toolbar:ToolbarButton x:Name="previoushour" Text="Previous Hour" Action="previoushour" ButtonClick="ToolbarButton_ButtonClick" />
+                <Toolbar:ToolbarButton x:Name="today" Text="Today" Action="today" ButtonClick="ToolbarButton_ButtonClick" />
+                <Toolbar:ToolbarButton x:Name="yesterday" Text="Yesterday" Action="yesterday" ButtonClick="ToolbarButton_ButtonClick" />
+            </Toolbar:Toolbar.Children>
+        </Toolbar:Toolbar>
+    </Grid>
+</UserControl>

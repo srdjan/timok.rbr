@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Core", "Timok.Core.csproj", "{60553581-F39F-4A4F-B11A-61A9E07A2ED4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Core.Test", "Timok.Core.Test\Timok.Core.Test.csproj", "{007C26DA-FCF1-4847-9C9E-3C8B7F703578}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60553581-F39F-4A4F-B11A-61A9E07A2ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60553581-F39F-4A4F-B11A-61A9E07A2ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60553581-F39F-4A4F-B11A-61A9E07A2ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60553581-F39F-4A4F-B11A-61A9E07A2ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007C26DA-FCF1-4847-9C9E-3C8B7F703578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007C26DA-FCF1-4847-9C9E-3C8B7F703578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007C26DA-FCF1-4847-9C9E-3C8B7F703578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007C26DA-FCF1-4847-9C9E-3C8B7F703578}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

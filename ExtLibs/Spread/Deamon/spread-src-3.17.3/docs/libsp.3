@@ -1,0 +1,59 @@
+.\" Process this file with
+.\" groff -man -Tascii foo.1
+.\"
+.TH SP 3 "April 2002" Spread "User Manuals"
+.SH "NAME"
+libsp \- Spread Group Communication Client Library
+.SH "SYNOPSIS"
+.SH "DESCRIPTION"
+The Spread 
+.B libsp
+library implements the client SP interface to the Spread
+group communication or multicast message bus system.
+.SH "DATA STRUCTURES"
+.SH "HEADER FILES"
+.I sp.h
+is the main header and includes necessary defines and types. It also 
+includes the other header files sp_events.h and sp_func.h.
+
+.I sp_events.h
+declares the types and functions that make up the E Event-management 
+library.
+
+.I sp_func.h
+declares the functions of the SP interface. Since sp.h includes this you
+should not include this directly.
+.SH "FILES"
+No files are required for client applications using the SP library.
+.SH "DIAGNOSTICS"
+The library will not output any debugging information except in fatal errors.
+The 
+.B SP_error(3)
+function can be used to print an informative error message when SP functions
+return an error code.
+.SH "BUGS"
+None currently known. Library is only thread-safe if the program
+is linked with libtsp.a not libsp.a.  The non-thread-safe library is
+provided for those who are writing single-threaded applications and do not
+want to pay the minimal performance penalty for locking.
+.SH AUTHOR
+Yair Amir <yairamir@cnds.jhu.edu>
+.PP
+Jonathan Stanton <jonathan@cnds.jhu.edu>
+.PP
+Spread Project <spread@spread.org>
+.SH "SEE ALSO"
+.BR spread (1)
+.BR SP_connect (3)
+.BR SP_disconnect (3)
+.BR SP_equal_group_ids (3)
+.BR SP_error (3)
+.BR SP_join (3)
+.BR SP_leave (3)
+.BR SP_multicast (3)
+.BR SP_scat_multicast (3)
+.BR SP_multigroup_multicast (3)
+.BR SP_multigroup_scat_multicast (3)
+.BR SP_poll (3)
+.BR SP_receive (3)
+.BR SP_scat_receive (3)

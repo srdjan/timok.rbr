@@ -1,0 +1,3196 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileHelpers</name>
+    </assembly>
+    <members>
+        <member name="T:FileHelpers.MasterDetail.MasterDetailSelector">
+            <summary>
+            Delegate thats determines the Type of the current record (Master, Detail, Skip)
+            </summary>
+            <param name="recordString">The string of the current record.</param>
+            <returns>the action used for the current record (Master, Detail, Skip)</returns>
+        </member>
+        <member name="T:FileHelpers.MasterDetail.CommonActions">
+            <summary>The Action taken when the selector string is found.</summary>
+        </member>
+        <member name="F:FileHelpers.MasterDetail.CommonActions.MasterIfContains">
+            <summary>Parse the current record as <b>Master</b> if the selector string is found.</summary>
+        </member>
+        <member name="F:FileHelpers.MasterDetail.CommonActions.DetailIfContains">
+            <summary>Parse the current record as <b>Detail</b> if the selector string is found.</summary>
+        </member>
+        <member name="T:FileHelpers.MasterDetail.MasterDetailEngine">
+            <summary>
+			<para><b>One of the main classes of the library.</b></para>
+			<para>This engine is responsable to Read/Write <b>Master-Details</b> records from/to files or streams.</para>
+		</summary><remarks>
+		 <para>You can set the <see cref="P:FileHelpers.ErrorManager.ErrorMode"/> of this class when found an error, and can retrive them with the <see cref="P:FileHelpers.ErrorManager.Errors"/> property.</para>
+		 <para>See in the <a href="class_diagram.html">Class Diagram</a> and in the <a href="quick_start.html">Quick Start Guide</a> for more Info.</para>
+		 <para>Or you can browse the <a href="examples.html">Examples Seccion</a> for more code.</para>
+		</remarks><seealso href="quick_start.html">Quick Start Guide</seealso><seealso href="class_diagram.html">Class Diagram</seealso><seealso href="examples.html">Examples of Use</seealso><seealso href="attributes.html">Attributes List</seealso>
+            <!-- No matching elements were found for the following include tag --><include file="Examples.xml" path="doc/examples/MasterDetailEngine/*"/>
+        </member>
+        <member name="T:FileHelpers.EngineBase">
+            <summary>Base class for the two engines of the library: <see cref="T:FileHelpers.FileHelperEngine"/> and <see cref="T:FileHelpers.FileHelperAsyncEngine"/></summary>
+        </member>
+        <member name="M:FileHelpers.EngineBase.#ctor(System.Type)">
+            <summary>
+			 Initializes a new instance of the FileHelperEngine class with the specified type of records.
+		</summary><param name="recordType">The record mapping class.</param>
+        </member>
+        <member name="F:FileHelpers.EngineBase.mErrorManager">
+            <summary>This is a common class that manage the errors of the library.</summary>
+        </member>
+        <member name="F:FileHelpers.EngineBase.mProgressMode">
+            <summary></summary>
+        </member>
+        <member name="F:FileHelpers.EngineBase.mNotifyHandler">
+            <summary></summary>
+        </member>
+        <member name="M:FileHelpers.EngineBase.SetProgressHandler(FileHelpers.ProgressChangeHandler)">
+            <summary>Set the handler to the engine used to notify progress into the operations.</summary>
+            <param name="handler">The <see cref="T:FileHelpers.ProgressChangeHandler"/></param>
+        </member>
+        <member name="M:FileHelpers.EngineBase.SetProgressHandler(FileHelpers.ProgressChangeHandler,FileHelpers.ProgressMode)">
+            <summary>Set the handler to the engine used to notify progress into the operations.</summary>
+            <param name="handler">Your <see cref="T:FileHelpers.ProgressChangeHandler"/> method.</param>
+            <param name="mode">The <see cref="T:FileHelpers.ProgressMode"/> to use.</param>
+        </member>
+        <member name="P:FileHelpers.EngineBase.LineNumber">
+            <summary>The current line number.</summary>
+        </member>
+        <member name="P:FileHelpers.EngineBase.TotalRecords">
+            <summary>The total numbers of records in the last read/written file (only works with whole read/write).</summary>
+        </member>
+        <member name="P:FileHelpers.EngineBase.RecordType">
+            <summary>Returns the type of records handled by this engine.</summary>
+        </member>
+        <member name="P:FileHelpers.EngineBase.HeaderText">
+            <summary>The read header in the last read operation. If any.</summary>
+        </member>
+        <member name="P:FileHelpers.EngineBase.FooterText">
+            <summary>The read footer in the last read operation. If any.</summary>
+        </member>
+        <member name="P:FileHelpers.EngineBase.Encoding">
+            <summary>The encoding to Read and Write the streams.</summary>
+            <remarks>Default is the system's current ANSI code page.</remarks>
+            <value>Default is the system's current ANSI code page.</value>
+        </member>
+        <member name="P:FileHelpers.EngineBase.ErrorManager">
+            <summary>This is a common class that manage the errors of the library.</summary>
+            <remarks>You can, for example, get the errors, their number, Save them to a file, etc.</remarks>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.#ctor(System.Type,System.Type,FileHelpers.MasterDetail.MasterDetailSelector)">
+            <summary>
+			 Initializes a new instance of the MasterDetailEngine class with the specified type of records.
+		</summary><param name="masterType">The master record class.</param><param name="detailType">The detail record class.</param><param name="recordSelector">The <see cref="T:FileHelpers.MasterDetail.MasterDetailSelector"/> to get the <see cref="T:FileHelpers.MasterDetail.RecordAction"/>.</param>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.#ctor(System.Type,System.Type,FileHelpers.MasterDetail.CommonActions,System.String)">
+            <summary>
+			 Initializes a new instance of the MasterDetailEngine class with the specified type of records.
+		</summary><param name="masterType">The master record class.</param><param name="detailType">The detail record class.</param><param name="action">The <see cref="T:FileHelpers.MasterDetail.CommonActions"/> used by the engine.</param><param name="selector">The string selector used by the engine.</param>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.ReadFile(System.String)">
+            <summary>
+		Read a file and return an array of the contained records.
+		</summary><remarks>
+		This method open, read and close the file (don't open or close the file before or after to call this method)
+		</remarks><include file="Examples.xml" path="doc/examples/ReadFile/*"/><param name="fileName">The file path to be read.</param><returns>An array of the records in the file</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.ReadStream(System.IO.TextReader)">
+            <summary>
+		Read a Stream and return an array of the contained records.
+		</summary><remarks>
+		This method only uses the stream and dont close them after use it, you must do it.
+		</remarks><include file="Examples.xml" path="doc/examples/ReadFile/*"/><param name="reader">The reader of the source stream.</param><returns>An array of the records in the Stream</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.ReadString(System.String)">
+            <summary>
+		Read a String and return an array of the contained records.
+		</summary><param name="source">The string that contains the records.</param><returns>An array of the records in the String.</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.WriteFile(System.String,FileHelpers.MasterDetail.MasterDetails[])">
+            <summary>
+		Write an array of records to the specified file.
+		</summary><remarks>
+		<para>This method open, write and close the file (don't open or close the file before or after to call this method)</para>
+		<para>This method overrides existing files.</para>
+		</remarks><include file="Examples.xml" path="doc/examples/WriteFile/*"/><param name="fileName">The file path to be write.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.WriteFile(System.String,FileHelpers.MasterDetail.MasterDetails[],System.Int32)">
+            <summary>
+		Write the specified number of records from the array to a file.
+		</summary><remarks>
+		<para>This method open, write and close the file (don't open or close the file before or after to call this method)</para>
+		<para>This method overrides existing files.</para>
+		</remarks><include file="Examples.xml" path="doc/examples/WriteFile/*"/><param name="fileName">The file path to be write.</param><param name="records">The array of records to write.</param><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.WriteStream(System.IO.TextWriter,FileHelpers.MasterDetail.MasterDetails[])">
+            <summary>
+		Write an array of records to the specified Stream.
+		</summary><remarks>
+		This method only uses the stream and don't close them after use it, you must do it.
+		</remarks><include file="Examples.xml" path="doc/examples/WriteFile/*"/><param name="writer">The writer of the source stream.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.WriteStream(System.IO.TextWriter,FileHelpers.MasterDetail.MasterDetails[],System.Int32)">
+            <summary>
+		Write the specified number of records in the array to the Stream.
+		</summary><remarks>
+		This method only uses the stream and don't close them after use it, you must do it.
+		</remarks><include file="Examples.xml" path="doc/examples/WriteFile/*"/><param name="writer">The writer of the source stream.</param><param name="records">The array of records to write.</param><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.WriteString(FileHelpers.MasterDetail.MasterDetails[])">
+            <summary>
+		Write an array of records to an String and return it.
+		</summary><param name="records">The array of records to write.</param><returns>The resulting string after write the records.</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.WriteString(FileHelpers.MasterDetail.MasterDetails[],System.Int32)">
+            <summary>
+		Write an array of records to an String and return it.
+		</summary><param name="records">The array of records to write.</param><returns>The resulting string after write the records.</returns><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.AppendToFile(System.String,FileHelpers.MasterDetail.MasterDetails)">
+            <summary>
+		Append a record to the specified file.
+		</summary><remarks>
+		This method open, seek ends, write and close the file (don't open or close the file before or after to call this method)
+		</remarks><include file="Examples.xml" path="doc/examples/AppendFile/*"/><param name="fileName">The file path to be written at end.</param><param name="record">The record to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetailEngine.AppendToFile(System.String,FileHelpers.MasterDetail.MasterDetails[])">
+            <summary>
+		Append an array of records to the specified file.
+		</summary><remarks>
+		This method open, seek ends, write and close the file (don't open or close the file before or after to call this method)
+		</remarks><include file="Examples.xml" path="doc/examples/AppendFile/*"/><param name="fileName">The file path to be written at end.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="P:FileHelpers.MasterDetail.MasterDetailEngine.MasterType">
+            <summary>Returns the type of the master records handled by this engine.</summary>
+        </member>
+        <member name="T:FileHelpers.FieldBase">
+            <summary>Base class for all Field Types. Implements all the basic functionality of a field in a typed file.</summary>
+        </member>
+        <member name="T:FileHelpers.AlignMode">
+            <summary>Indicates the align of the field when the <see cref="T:FileHelpers.FileHelperEngine"/> <b>writes</b> the record.</summary>
+        </member>
+        <member name="F:FileHelpers.AlignMode.Left">
+            <summary>Aligns the field to the left.</summary>
+        </member>
+        <member name="F:FileHelpers.AlignMode.Center">
+            <summary>Aligns the field to the center.</summary>
+        </member>
+        <member name="F:FileHelpers.AlignMode.Right">
+            <summary>Aligns the field to the right.</summary>
+        </member>
+        <member name="T:FileHelpers.DataLink.DataStorage">
+            <summary>Base class for all the Storage classes of the library or the custom Storage classes.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.Notify(FileHelpers.ProgressChangeHandler,FileHelpers.ProgressMode,System.Int32,System.Int32)">
+            <summary>For internal Use.</summary>
+            <param name="handler"></param>
+            <param name="mode"></param>
+            <param name="current"></param>
+            <param name="total"></param>
+        </member>
+        <member name="F:FileHelpers.DataLink.DataStorage.mProgressMode">
+            <summary>Indicates the way to notify the progress.</summary>
+        </member>
+        <member name="F:FileHelpers.DataLink.DataStorage.mNotifyHandler">
+            <summary>You method handler used to notify progress.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.SetProgressHandler(FileHelpers.ProgressChangeHandler)">
+            <summary>Set the handler to the engine used to notify progress into the operations.</summary>
+            <param name="handler">The <see cref="T:FileHelpers.ProgressChangeHandler"/></param>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.SetProgressHandler(FileHelpers.ProgressChangeHandler,FileHelpers.ProgressMode)">
+            <summary>Set the handler to the engine used to notify progress into the operations.</summary>
+            <param name="handler">Your <see cref="T:FileHelpers.ProgressChangeHandler"/> method.</param>
+            <param name="mode">The <see cref="T:FileHelpers.ProgressMode"/> to use.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.ExtractRecords">
+            <summary>Must Return the records from the DataSource (DB, Excel, etc)</summary>
+            <returns>The extracted records.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.ExtractRecordsAsDT">
+            <summary>Must Return the records from the DataSource (DB, Excel, etc)</summary>
+            <returns>The extracted records.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.InsertRecords(System.Object[])">
+            <summary>Must Insert the records in a DataSource (DB, Excel, etc)</summary>
+            <param name="records">The records to insert.</param>
+        </member>
+        <member name="F:FileHelpers.DataLink.DataStorage.mErrorManager">
+            <summary>The Object responsable for manage the errors.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.AddError(System.Int32,System.Exception)">
+            <summary>Add an error to the ErrorCollection.</summary>
+            <param name="lineNumber">The line when the error occurs.</param>
+            <param name="ex">The exception throwed, can be null.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.#ctor">
+            <summary>Creates an instance of this class.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.DataStorage.CreateRecordInfo(System.Type)">
+            <summary>Creates an instance of the RecordInfo class. This method is used because hte constructor of the record info is internal.</summary>
+            <param name="recordClass">The class passed to the RecordInfo constructor.</param>
+            <returns>A RecordInfo instance.</returns>
+        </member>
+        <member name="P:FileHelpers.DataLink.DataStorage.RecordType">
+            <summary>Returns the class that represent the records in the file.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.DataStorage.ErrorManager">
+            <summary>The Object responsable for manage the errors.</summary>
+        </member>
+        <member name="T:FileHelpers.BadUsageException">
+            <summary>Indicates the wrong usage of the library.</summary>
+        </member>
+        <member name="T:FileHelpers.FileHelperException">
+            <summary>Base class for all the library Exceptions.</summary>
+        </member>
+        <member name="M:FileHelpers.FileHelperException.#ctor(System.String)">
+            <summary>Basic constructor of the exception.</summary>
+            <param name="message">Message of the exception.</param>
+        </member>
+        <member name="M:FileHelpers.BadUsageException.#ctor(System.String)">
+            <summary>Creates an instance of an BadUsageException.</summary>
+            <param name="message">The exception Message</param>
+        </member>
+        <member name="T:FileHelpers.TransformToRecordAttribute">
+            <summary>With this attribute you can mark a method in the RecordClass that is the responsable of convert it to the specified.</summary>
+        </member>
+        <member name="M:FileHelpers.TransformToRecordAttribute.#ctor(System.Type)">
+            <summary>With this attribute you can mark a method in the RecordClass that is the responsable of convert it to the specified.</summary>
+            <param name="targetType">The target of the convertion.</param>
+        </member>
+        <member name="P:FileHelpers.TransformToRecordAttribute.TargetType">
+            <summary>The target type of the convertion</summary>
+        </member>
+        <member name="T:FileHelpers.IgnoreFirstAttribute">
+            <summary>Indicates the number of first lines to be discarded.</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.IgnoreFirstAttribute.#ctor">
+            <summary>Indicates that the first line must be discarded.</summary>
+        </member>
+        <member name="M:FileHelpers.IgnoreFirstAttribute.#ctor(System.Int32)">
+            <summary>Indicates the number of first lines to be ignored.</summary>
+            <param name="numberOfLines">The number of first lines to be discarded.</param>
+        </member>
+        <member name="P:FileHelpers.IgnoreFirstAttribute.NumberOfLines">
+            <summary>The number of first lines to be ignored.</summary>
+        </member>
+        <member name="T:FileHelpers.FileHelperAsyncEngine">
+            <summary>
+			<para><b>One of the main classes of the library.</b></para>
+			<para>This engine is responsable to Read/Write the records <b>One by One</b> from/to files or streams.</para>
+		</summary><remarks>
+		 <para>You can set the <see cref="P:FileHelpers.ErrorManager.ErrorMode"/> of this class when found an error, and can retrive them with the <see cref="P:FileHelpers.ErrorManager.Errors"/> property.</para>
+		 <para>See in the <a href="class_diagram.html">Class Diagram</a> and in the <a href="quick_start.html">Quick Start Guide</a> for more Info.</para>
+		 <para>Or you can browse the <a href="examples.html">Examples Seccion</a> for more code.</para>
+		</remarks><seealso href="quick_start.html">Quick Start Guide</seealso><seealso href="class_diagram.html">Class Diagram</seealso><seealso href="examples.html">Examples of Use</seealso><seealso href="attributes.html">Attributes List</seealso>
+            <example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+	
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.#ctor(System.Type)">
+            <summary>
+			 Initializes a new instance of the FileHelperEngine class with the specified type of records.
+		</summary><param name="recordType">The record mapping class.</param>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.BeginReadStream(System.IO.TextReader)">
+            <summary>
+		Open a specified stream and seek to the first record.
+		</summary><remarks>
+		<para>This method only seek to the first record.</para>
+		<para>To read record by record use <b><see cref="M:FileHelpers.FileHelperAsyncEngine.ReadNext"/></b> method.</para>
+		<para>When you stop to read the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine.EndsRead"/></b> method.</para>
+		</remarks><param name="reader">The TextReader of the stream.</param><returns>True if the stream is succefully opened. False otherway.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.BeginReadFile(System.String)">
+            <summary>
+		Open a specified file and seek to the first record.
+		</summary><remarks>
+		<para>This method only open the file.</para>
+		<para>To read record by record use <b><see cref="M:FileHelpers.FileHelperAsyncEngine.ReadNext"/></b> method.</para>
+		<para>When you stop to read the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine.EndsRead"/></b> method.</para>
+		</remarks><param name="fileName">The file path to be read.</param><returns>True if the file is succefully opened. False otherway.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.BeginReadString(System.String)">
+            <!-- No matching elements were found for the following include tag --><include file="FileHelperAsyncEngine.docs.xml" path="doc/BeginReadString/*"/>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.ReadNext">
+            <summary>
+		Reads the next record of a file opened with the <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginReadFile(System.String)"/> or <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginReadStream(System.IO.TextReader)"/> method.
+		</summary><remarks>
+		<para>This method not only returns the current record, also moves to the next.</para>
+		<para>If the end of file is reached this method return <b>null</b>.</para>
+  	    </remarks><returns>The current record of the opened file.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.ReadNexts(System.Int32)">
+            <summary>
+		Reads the specified number of records from a file or stream opened with the <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginReadFile(System.String)"/> or <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginReadStream(System.IO.TextReader)"/> method.
+		</summary><remarks>
+		If there are less records in the source, read to the end.
+  	    </remarks><param name="numberOfRecords">The number of records to read. If there are less records in the source, read to the end.</param><returns>The nexts records of the opened file or stream.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.EndsRead">
+            <summary>
+			If any, close all opened stream readers.
+		</summary><remarks>
+		<para>This method must be called when you finish to process a file to dispose the opened streams.</para>
+  	    </remarks><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.BeginWriteStream(System.IO.TextWriter)">
+            <summary>
+		  Set the stream to be used in the <see cref="M:FileHelpers.FileHelperAsyncEngine.WriteNext(System.Object)"/> operation.
+		</summary><remarks>
+		<para>When you finish to write to the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine.EndsWrite"/></b> method.</para>
+		</remarks><param name="writer">To stream to writes to.</param><returns>True if the operation is successful. False otherwise.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.BeginWriteFile(System.String)">
+            <summary>
+		Open a file to write it. If exist override it.
+		</summary><remarks>
+		<para>When you finish to write to the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine.EndsWrite"/></b> method.</para>
+		</remarks><param name="fileName">The file path to be opened to write.</param><returns>True if the operation is successful. False otherwise.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.BeginAppendToFile(System.String)">
+            <summary>
+		Open a file to Append to the end.
+		</summary><remarks>
+		<para>This method open and seek ends the file.</para>
+		<para>When you finish to append to the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine.EndsWrite"/></b> method.</para>
+		</remarks><param name="fileName">The file path to be opened to write at the end.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.WriteNext(System.Object)">
+            <summary>
+		Write the next record to a file or stream opened with <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginWriteFile(System.String)"/>, <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginWriteStream(System.IO.TextWriter)"/> or <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginAppendToFile(System.String)"/> method.
+		</summary><param name="record">The record to write.</param><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.WriteNexts(System.Object[])">
+            <summary>
+		Write the nexts records to a file or stream opened with <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginWriteFile(System.String)"/>, <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginWriteStream(System.IO.TextWriter)"/> or <see cref="M:FileHelpers.FileHelperAsyncEngine.BeginAppendToFile(System.String)"/> method.
+		</summary><param name="records">The records to write.</param>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine.EndsWrite">
+            <summary>
+			If any, close all opened stream writers.
+		</summary><remarks>
+		<para>This method must be called when you finish to process a file to dispose the opened streams.</para>
+  	    </remarks><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="P:FileHelpers.FileHelperAsyncEngine.LastRecord">
+            <summary>Contains the last Record read by the <see cref="M:FileHelpers.FileHelperAsyncEngine.ReadNext"/> method.</summary><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="T:FileHelpers.IgnoreEmptyLinesAttribute">
+            <summary>Indicates that the engine must ignore the empty lines while reading.</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.IgnoreEmptyLinesAttribute.#ctor">
+            <summary>Indicates that the engine must ignore the empty lines while reading.</summary>
+        </member>
+        <member name="T:FileHelpers.StringHelper">
+            <summary>Helper Class to manipulate Strings.</summary>
+        </member>
+        <member name="M:FileHelpers.StringHelper.CreateQuotedString(System.String,System.Char)">
+            <summary>Used to generate a quoted string and escape the quote char.</summary>
+            <param name="source">Source string</param>
+            <param name="quoteChar">The quoted char.</param>
+            <returns>The quoted string</returns>
+        </member>
+        <member name="M:FileHelpers.StringHelper.RemoveBlanks(System.String)">
+            <summary>Removes the blank characters (space, tabs, etc) from the string.</summary>
+            <param name="source">The string to be parsed.</param>
+            <returns>A string thats results of remove the blanks chars from the source string.</returns>
+        </member>
+        <member name="M:FileHelpers.StringHelper.ExtractQuotedString(System.String,System.Char,System.Int32@)">
+            <summary>Used to extract a quoted string and de-escape the quote char.</summary>
+            <param name="source">Source string</param>
+            <param name="quoteChar">The quoted char.</param>
+            <param name="index">An output parameter of the index of the end of the string.</param>
+            <returns>The estracted string</returns>
+        </member>
+        <member name="T:FileHelpers.ErrorInfo">
+            <summary>Contains error information of the <see cref="T:FileHelpers.FileHelperEngine"/> class.</summary>
+        </member>
+        <member name="P:FileHelpers.ErrorInfo.LineNumber">
+            <summary>The line number of the error</summary>
+        </member>
+        <member name="P:FileHelpers.ErrorInfo.RecordString">
+            <summary>The string of the record of the error.</summary>
+        </member>
+        <member name="P:FileHelpers.ErrorInfo.ExceptionInfo">
+            <summary>The exception that indicates the error.</summary>
+        </member>
+        <member name="T:FileHelpers.ConverterBase">
+            <summary>
+            Base class to provide bidirectional
+            Field - String convertion.
+            </summary>
+        </member>
+        <member name="M:FileHelpers.ConverterBase.StringToField(System.String)">
+            <summary>
+            Convert a string in the file to a field value.
+            </summary>
+            <param name="from">The string to convert.</param>
+            <returns>The field value.</returns>
+        </member>
+        <member name="M:FileHelpers.ConverterBase.FieldToString(System.Object)">
+            <summary>
+            Convert a field value to an string to write this to the file.
+            </summary>
+            <remarks>The basic implementation performs a: from.ToString();</remarks>
+            <param name="from">The field values to convert.</param>
+            <returns>The string representing the field value.</returns>
+        </member>
+        <member name="P:FileHelpers.ConverterBase.CustomNullHandling">
+            <summary>If the class retures false the engines don´t pass null values to the converter. If true the engines pass all the values to the converter.</summary>
+        </member>
+        <member name="T:FileHelpers.DataLink.SqlServerStorage">
+            <summary>This is a base class that implements the <see cref="T:FileHelpers.DataLink.DataStorage"/> for Microsoft SqlServer.</summary>
+        </member>
+        <member name="T:FileHelpers.DataLink.DatabaseStorage">
+            <summary>This class implements the <see cref="T:FileHelpers.DataLink.DataStorage"/> and is the base class for Data Base storages.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.DatabaseStorage.#ctor(System.Type)">
+            <summary>Default constructor.</summary>
+            <param name="recordType">The Record Type.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.DatabaseStorage.FillRecord(System.Object[])">
+            <summary>This method recives the fields values as an array and must return a record object.</summary>
+            <param name="fieldValues">The record fields values.</param>
+            <returns>The record object.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.DatabaseStorage.GetSelectSql">
+            <summary>Must return the Select Sql used to Fetch the records to Extract.</summary>
+            <returns>The SQL statement.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.DatabaseStorage.GetInsertSql(System.Object)">
+            <summary>Must return a SQL string with the insert statement for the records.</summary>
+            <param name="record">The record to insert.</param>
+            <returns>The Sql string to used to insert the record.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.DatabaseStorage.CreateConnection">
+            <summary>Must create an abstract connection object.</summary>
+            <returns>An Abstract Connection Object.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.DatabaseStorage.CreateCommand">
+            <summary>Must create an abstract command object.</summary>
+            <returns>An Abstract Command Object.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.DatabaseStorage.ExtractRecords">
+            <summary>Must Return the records from the DataSource (DB, Excel, etc)</summary>
+            <returns>The extracted records.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.DatabaseStorage.InsertRecords(System.Object[])">
+            <summary>Must Insert the records in a DataSource (DB, Excel, etc)</summary>
+            <param name="records">The records to insert.</param>
+        </member>
+        <member name="P:FileHelpers.DataLink.DatabaseStorage.RecordType">
+            <summary>Returns the class that represent the records in the file.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.DatabaseStorage.SelectSql">
+            <summary>Indicates the Sql statment used to get the records.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.DatabaseStorage.ExecuteInBatch">
+            <summary>Indicates if the underlaying Conexion allow more than one instruction per execute.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.DatabaseStorage.InsertSqlCallback">
+            <summary>Delegate used to get the SQL for the insert or update statement.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.DatabaseStorage.FillRecordCallback">
+            <summary>Delegate used to fill the values of a new record from the db.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.DatabaseStorage.ExecuteInBatchSize">
+            <summary>Indicates the max number of instruction of each execution. High numbers help reduce the round trips to the db and so help tp improve performance.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.SqlServerStorage.#ctor(System.Type)">
+            <summary>Create a new instance of the SqlServerStorage based on the record type provided.</summary>
+            <param name="recordType">The type of the record class.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.SqlServerStorage.#ctor(System.Type,System.String,System.String)">
+            <summary>Create a new instance of the SqlServerStorage based on the record type provided (uses windows auth)</summary>
+            <param name="recordType">The type of the record class.</param>
+            <param name="server">The server name or IP of the sqlserver</param>
+            <param name="database">The database name into the server.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.SqlServerStorage.#ctor(System.Type,System.String,System.String,System.String,System.String)">
+            <summary>Create a new instance of the SqlServerStorage based on the record type provided (uses SqlServer auth)</summary>
+            <param name="recordType">The type of the record class.</param>
+            <param name="server">The server name or IP of the sqlserver</param>
+            <param name="database">The database name into the server.</param>
+            <param name="user">The sql username to login into the server.</param>
+            <param name="pass">The pass of the sql username to login into the server.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.SqlServerStorage.CreateConnection">
+            <summary>Must create an abstract connection object.</summary>
+            <returns>An Abstract Connection Object.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.SqlServerStorage.CreateCommand">
+            <summary>Must create an abstract command object.</summary>
+            <returns>An Abstract Command Object.</returns>
+        </member>
+        <member name="P:FileHelpers.DataLink.SqlServerStorage.ServerName">
+            <summary> The server name or IP of the SqlServer </summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.SqlServerStorage.DatabaseName">
+            <summary> The name of the database. </summary> 
+        </member>
+        <member name="P:FileHelpers.DataLink.SqlServerStorage.UserName">
+            <summary> The user name used to logon into the SqlServer. (leave empty for WindowsAuth)</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.SqlServerStorage.UserPass">
+            <summary> The user pass used to logon into the SqlServer. (leave empty for WindowsAuth)</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.SqlServerStorage.ExecuteInBatch">
+            <summary></summary>
+        </member>
+        <member name="T:FileHelpers.DataLink.FileStorage">
+            <summary>This class implements the <see cref="T:FileHelpers.DataLink.DataStorage"/> for plain text files.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileStorage.#ctor(System.Type,System.String)">
+            <summary>Create an instance of this class to work with the specified type.</summary>
+            <param name="type">The record class.</param>
+            <param name="fileName">The target filename.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileStorage.ExtractRecords">
+            <summary>Must Return the records from the DataSource (DB, Excel, etc)</summary>
+            <returns>The extracted records.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileStorage.InsertRecords(System.Object[])">
+            <summary>Must Insert the records in a DataSource (DB, Excel, etc)</summary>
+            <param name="records">The records to insert.</param>
+        </member>
+        <member name="P:FileHelpers.DataLink.FileStorage.RecordType">
+            <summary>Returns the class that represent the records in the file.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.FileStorage.Engine">
+            <summary>The engine behind the FileStorage.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.FileStorage.FileName">
+            <summary>The target file name.</summary>
+        </member>
+        <member name="T:FileHelpers.FieldIgnoredAttribute">
+            <summary>Indicates that the target field is completely ignored by the Engine (i.e. This field don´t exists for the library).</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="T:FileHelpers.FieldAttribute">
+            <summary>Base class of <see cref="T:FileHelpers.FieldFixedLengthAttribute"/> and <see cref="T:FileHelpers.FieldDelimiterAttribute"/></summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldAttribute.#ctor">
+            <summary>Abstract class, see the inheritors.</summary>
+        </member>
+        <member name="M:FileHelpers.FieldIgnoredAttribute.#ctor">
+            <summary>Indicates that the target field is ignored by the Engine AND NOT IS IN THE FILE.</summary>
+        </member>
+        <member name="T:FileHelpers.FieldFixedLengthAttribute">
+            <summary>Indicates the length of a FixedLength field.</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldFixedLengthAttribute.#ctor(System.Int32)">
+            <summary>Indicates the length of a FixedLength field.</summary>
+            <param name="length">The length of the field.</param>
+        </member>
+        <member name="P:FileHelpers.FieldFixedLengthAttribute.Length">
+            <summary>The String Length of the record defined inside a class with the <see cref="T:FileHelpers.FixedLengthRecordAttribute"/>. </summary>
+        </member>
+        <member name="T:FileHelpers.MultilineMode">
+            <summary>Indicates the behavior of multiline fields.</summary>
+        </member>
+        <member name="F:FileHelpers.MultilineMode.AllowForBoth">
+            <summary>The engine can handle multiline values for read or write.</summary>
+        </member>
+        <member name="F:FileHelpers.MultilineMode.AllowForRead">
+            <summary>The engine can handle multiline values only for read.</summary>
+        </member>
+        <member name="F:FileHelpers.MultilineMode.AllowForWrite">
+            <summary>The engine can handle multiline values only for write.</summary>
+        </member>
+        <member name="F:FileHelpers.MultilineMode.NotAllow">
+            <summary>The engine don´t allow multiline values for this field.</summary>
+        </member>
+        <member name="T:FileHelpers.ConverterKind">
+            <summary>Indicates the convertion used in the <see cref="T:FileHelpers.FieldConverterAttribute"/>.</summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Date">
+            <summary>
+            <para>Convert from/to <b>Date</b> values.</para>
+            <para>Params: arg1 is the <b>string</b> with the date format.</para>
+            </summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Boolean">
+            <summary>Convert from/to <b>Boolean</b> values.</summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Byte">
+            <summary>Convert from/to <b>Byte</b> values.</summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Int16">
+            <summary>Convert from/to <b>Int16</b> values.</summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Int32">
+            <summary>Convert from/to <b>Int32</b> values.</summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Int64">
+            <summary>Convert from/to <b>Int64</b> values.</summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Decimal">
+            <summary>Convert from/to <b>Decimal</b> values.</summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Double">
+            <summary>Convert from/to <b>Double</b> values.</summary>
+        </member>
+        <member name="F:FileHelpers.ConverterKind.Single">
+            <summary>Convert from/to <b>Single</b> values.</summary>
+        </member>
+        <member name="T:FileHelpers.FileHelperEngine`1">
+            <summary>
+			<para><b>One of the main classes of the library.</b></para>
+			<para>This engine is responsable to Read/Write the records <b>at once</b> from/to files or streams.</para>
+		</summary><remarks>
+		 <para>You can set the <see cref="P:FileHelpers.ErrorManager.ErrorMode"/> of this class when found an error, and can retrive them with the <see cref="P:FileHelpers.ErrorManager.Errors"/> property.</para>
+		 <para>See in the <a href="class_diagram.html">Class Diagram</a> and in the <a href="quick_start.html">Quick Start Guide</a> for more Info.</para>
+		 <para>Or you can browse the <a href="examples.html">Examples Seccion</a> for more code.</para>
+		</remarks><seealso href="quick_start.html">Quick Start Guide</seealso><seealso href="class_diagram.html">Class Diagram</seealso><seealso href="examples.html">Examples of Use</seealso><seealso href="attributes.html">Attributes List</seealso>
+            <example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+
+		SampleType[] records;	
+		
+		records = (SampleType[]) engine.ReadFile("source.txt");
+		
+		// Now "records" array contains all the records in the
+		// sourcefile and can be acceded like this:
+		
+		int sum = records[0].Field2 + records[1].Field2;
+	}
+
+	
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.#ctor">
+            <summary>
+			 Initializes a new instance of the FileHelperEngine class with the specified type of records.
+		</summary><param name="recordType">The record mapping class.</param>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.ReadFile(System.String)">
+            <summary>
+		Read a file and return an array of the contained records.
+		</summary><remarks>
+		This method open, read and close the file (don't open or close the file before or after to call this method)
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+
+		SampleType[] records;	
+		
+		records = (SampleType[]) engine.ReadFile("source.txt");
+		
+		// Now "records" array contains all the records in the
+		// sourcefile and can be acceded like this:
+		
+		int sum = records[0].Field2 + records[1].Field2;
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be read.</param><returns>An array of the records in the file</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.ReadStream(System.IO.TextReader)">
+            <summary>
+		Read a Stream and return an array of the contained records.
+		</summary><remarks>
+		This method only uses the stream and dont close them after use it, you must do it.
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+
+		SampleType[] records;	
+		
+		records = (SampleType[]) engine.ReadFile("source.txt");
+		
+		// Now "records" array contains all the records in the
+		// sourcefile and can be acceded like this:
+		
+		int sum = records[0].Field2 + records[1].Field2;
+	}
+
+		</code>
+		</example><param name="reader">The reader of the source stream.</param><returns>An array of the records in the Stream</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.ReadString(System.String)">
+            <summary>
+		Read a String and return an array of the contained records.
+		</summary><param name="source">The string that contains the records.</param><returns>An array of the records in the String.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.WriteFile(System.String,`0[])">
+            <summary>
+		Write an array of records to the specified file.
+		</summary><remarks>
+		<para>This method open, write and close the file (don't open or close the file before or after to call this method)</para>
+		<para>This method overrides existing files.</para>
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be write.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.WriteFile(System.String,`0[],System.Int32)">
+            <summary>
+		Write the specified number of records from the array to a file.
+		</summary><remarks>
+		<para>This method open, write and close the file (don't open or close the file before or after to call this method)</para>
+		<para>This method overrides existing files.</para>
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be write.</param><param name="records">The array of records to write.</param><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.WriteStream(System.IO.TextWriter,`0[])">
+            <summary>
+		Write an array of records to the specified Stream.
+		</summary><remarks>
+		This method only uses the stream and don't close them after use it, you must do it.
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="writer">The writer of the source stream.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.WriteStream(System.IO.TextWriter,`0[],System.Int32)">
+            <summary>
+		Write the specified number of records in the array to the Stream.
+		</summary><remarks>
+		This method only uses the stream and don't close them after use it, you must do it.
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="writer">The writer of the source stream.</param><param name="records">The array of records to write.</param><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.WriteString(`0[])">
+            <summary>
+		Write an array of records to an String and return it.
+		</summary><param name="records">The array of records to write.</param><returns>The resulting string after write the records.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.WriteString(`0[],System.Int32)">
+            <summary>
+		Write an array of records to an String and return it.
+		</summary><param name="records">The array of records to write.</param><returns>The resulting string after write the records.</returns><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.AppendToFile(System.String,`0)">
+            <summary>
+		Append a record to the specified file.
+		</summary><remarks>
+		This method open, seek ends, write and close the file (don't open or close the file before or after to call this method)
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void AppendExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.AppendToFile("destination.txt", records);
+		
+		// Now the file contains have one more record at the end:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be written at end.</param><param name="record">The record to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.AppendToFile(System.String,`0[])">
+            <summary>
+		Append an array of records to the specified file.
+		</summary><remarks>
+		This method open, seek ends, write and close the file (don't open or close the file before or after to call this method)
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void AppendExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.AppendToFile("destination.txt", records);
+		
+		// Now the file contains have one more record at the end:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be written at end.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.ReadFileAsDT(System.String)">
+            <summary>
+            Read the records of the file and fill a DataTable with them
+            </summary>
+            <param name="fileName">The file name.</param>
+            <returns>The DataTable with the read records.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.ReadStringAsDT(System.String)">
+            <summary>
+            Read the records of a string and fill a DataTable with them.
+            </summary>
+            <param name="source">The source string with the records.</param>
+            <returns>The DataTable with the read records.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine`1.ReadStreamAsDT(System.IO.TextReader)">
+            <summary>
+            Read the records of the stream and fill a DataTable with them
+            </summary>
+            <param name="reader">The stream with the source records.</param>
+            <returns>The DataTable with the read records.</returns>
+        </member>
+        <member name="T:FileHelpers.DelimitedRecordAttribute">
+            <summary>Indicates that this class represents a delimited record. </summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="T:FileHelpers.TypedRecordAttribute">
+            <summary>Base class for the record types..</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.TypedRecordAttribute.#ctor">
+            <summary>Abstract class, see inheritors.</summary>
+        </member>
+        <member name="M:FileHelpers.DelimitedRecordAttribute.#ctor(System.String)">
+            <summary>Indicates that this class represents a delimited record. </summary>
+            <param name="sep">The separator string used to split the fields of the record.</param>
+        </member>
+        <member name="T:FileHelpers.DataLink.GenericDataLink">
+            <summary>
+            This class has the responsability to enable the two directional
+            transformation.
+            <list type="bullet">
+            <item> DataStorage &lt;-&gt; DataStorage </item>
+            </list>
+            </summary>
+            <remarks>
+            <para>Uses two <see cref="T:FileHelpers.DataLink.DataStorage"/> to accomplish this task.</para>
+            </remarks>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="class_diagram.html">Class Diagram</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+            <seealso href="example_datalink.html">Example of the DataLink</seealso>
+            <seealso href="attributes.html">Attributes List</seealso>
+        </member>
+        <member name="M:FileHelpers.DataLink.GenericDataLink.#ctor(FileHelpers.DataLink.DataStorage,FileHelpers.DataLink.DataStorage)">
+            <summary>Create a new instance of the class.</summary>
+            <param name="provider1">The First <see cref="T:FileHelpers.DataLink.DataStorage"/> used to insert/extract records .</param>
+            <param name="provider2">The Second <see cref="T:FileHelpers.DataLink.DataStorage"/> used to insert/extract records .</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.GenericDataLink.CopyDataFrom1To2">
+            <summary>Extract the records from DataStorage1 and Insert them to the DataStorage2.</summary>
+            <returns>The Copied records.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.GenericDataLink.CopyDataFrom2To1">
+            <summary>Extract the records from DataStorage2 and Insert them to the DataStorage1.</summary>
+            <returns>The Copied records.</returns>
+        </member>
+        <member name="P:FileHelpers.DataLink.GenericDataLink.DataStorage1">
+            <summary>The fisrt <see cref="T:FileHelpers.DataLink.DataStorage"/> of the <see cref="T:FileHelpers.DataLink.GenericDataLink"/>.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.GenericDataLink.DataStorage2">
+            <summary>The second <see cref="T:FileHelpers.DataLink.DataStorage"/> of the <see cref="T:FileHelpers.DataLink.GenericDataLink"/>.</summary>
+        </member>
+        <member name="T:FileHelpers.FieldQuotedAttribute">
+            <summary>Indicates that the field must be read and written like a Quoted String. (by default "")</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldQuotedAttribute.#ctor">
+            <summary>Indicates that the field must be read and written like a Quoted String with double quotes.</summary>
+        </member>
+        <member name="M:FileHelpers.FieldQuotedAttribute.#ctor(System.Char)">
+            <summary>Indicates that the field must be read and written like a Quoted String with the specified char.</summary>
+            <param name="quoteChar">The char used to quote the string.</param>
+        </member>
+        <member name="M:FileHelpers.FieldQuotedAttribute.#ctor(FileHelpers.MultilineMode)">
+            <summary>Indicates that the field must be read and written like a Quoted String with double quotes.</summary>
+            <param name="multiline">Indicates if the field can span multiple lines.</param>
+        </member>
+        <member name="M:FileHelpers.FieldQuotedAttribute.#ctor(FileHelpers.QuoteMode)">
+            <summary>Indicates that the field must be read and written like a "Quoted String"  (that can be optional depending of the mode).</summary>
+            <param name="mode">Indicates if the handling of optionals in the quoted field.</param>
+        </member>
+        <member name="M:FileHelpers.FieldQuotedAttribute.#ctor(System.Char,FileHelpers.QuoteMode)">
+            <summary>Indicates that the field must be read and written like a Quoted String (that can be optional).</summary>
+            <param name="quoteChar">The char used to quote the string.</param>
+            <param name="mode">Indicates if the handling of optionals in the quoted field.</param>
+        </member>
+        <member name="M:FileHelpers.FieldQuotedAttribute.#ctor(FileHelpers.QuoteMode,FileHelpers.MultilineMode)">
+            <summary>Indicates that the field must be read and written like a Quoted String (that can be optional).</summary>
+            <param name="mode">Indicates if the handling of optionals in the quoted field.</param>
+            <param name="multiline">Indicates if the field can span multiple lines.</param>
+        </member>
+        <member name="M:FileHelpers.FieldQuotedAttribute.#ctor(System.Char,FileHelpers.QuoteMode,FileHelpers.MultilineMode)">
+            <summary>Indicates that the field must be read and written like a Quoted String (that can be optional).</summary>
+            <param name="quoteChar">The char used to quote the string.</param>
+            <param name="mode">Indicates if the handling of optionals in the quoted field.</param>
+            <param name="multiline">Indicates if the field can span multiple lines.</param>
+        </member>
+        <member name="P:FileHelpers.FieldQuotedAttribute.QuoteChar">
+            <summary>The char used to quote the string.</summary>
+        </member>
+        <member name="P:FileHelpers.FieldQuotedAttribute.QuoteMode">
+            <summary>Indicates if the Quoted char can be optional (default is false)</summary>
+        </member>
+        <member name="P:FileHelpers.FieldQuotedAttribute.QuoteMultiline">
+            <summary>The char used to quote the string.</summary>
+        </member>
+        <member name="T:FileHelpers.FileHelperAsyncEngine`1">
+            <summary>
+			<para><b>One of the main classes of the library.</b></para>
+			<para>This engine is responsable to Read/Write the records <b>One by One</b> from/to files or streams.</para>
+		</summary><remarks>
+		 <para>You can set the <see cref="P:FileHelpers.ErrorManager.ErrorMode"/> of this class when found an error, and can retrive them with the <see cref="P:FileHelpers.ErrorManager.Errors"/> property.</para>
+		 <para>See in the <a href="class_diagram.html">Class Diagram</a> and in the <a href="quick_start.html">Quick Start Guide</a> for more Info.</para>
+		 <para>Or you can browse the <a href="examples.html">Examples Seccion</a> for more code.</para>
+		</remarks><seealso href="quick_start.html">Quick Start Guide</seealso><seealso href="class_diagram.html">Class Diagram</seealso><seealso href="examples.html">Examples of Use</seealso><seealso href="attributes.html">Attributes List</seealso>
+            <example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+	
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.#ctor">
+            <summary>
+			 Initializes a new instance of the FileHelperEngine class with the specified type of records.
+		</summary><param name="recordType">The record mapping class.</param>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.BeginReadStream(System.IO.TextReader)">
+            <summary>
+		Open a specified stream and seek to the first record.
+		</summary><remarks>
+		<para>This method only seek to the first record.</para>
+		<para>To read record by record use <b><see cref="M:FileHelpers.FileHelperAsyncEngine`1.ReadNext"/></b> method.</para>
+		<para>When you stop to read the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine`1.EndsRead"/></b> method.</para>
+		</remarks><param name="reader">The TextReader of the stream.</param><returns>True if the stream is succefully opened. False otherway.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.BeginReadFile(System.String)">
+            <summary>
+		Open a specified file and seek to the first record.
+		</summary><remarks>
+		<para>This method only open the file.</para>
+		<para>To read record by record use <b><see cref="M:FileHelpers.FileHelperAsyncEngine`1.ReadNext"/></b> method.</para>
+		<para>When you stop to read the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine`1.EndsRead"/></b> method.</para>
+		</remarks><param name="fileName">The file path to be read.</param><returns>True if the file is succefully opened. False otherway.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.BeginReadString(System.String)">
+            <!-- No matching elements were found for the following include tag --><include file="FileHelperAsyncEngine.docs.xml" path="doc/BeginReadString/*"/>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.ReadNext">
+            <summary>
+		Reads the next record of a file opened with the <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginReadFile(System.String)"/> or <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginReadStream(System.IO.TextReader)"/> method.
+		</summary><remarks>
+		<para>This method not only returns the current record, also moves to the next.</para>
+		<para>If the end of file is reached this method return <b>null</b>.</para>
+  	    </remarks><returns>The current record of the opened file.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.ReadNexts(System.Int32)">
+            <summary>
+		Reads the specified number of records from a file or stream opened with the <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginReadFile(System.String)"/> or <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginReadStream(System.IO.TextReader)"/> method.
+		</summary><remarks>
+		If there are less records in the source, read to the end.
+  	    </remarks><param name="numberOfRecords">The number of records to read. If there are less records in the source, read to the end.</param><returns>The nexts records of the opened file or stream.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.EndsRead">
+            <summary>
+			If any, close all opened stream readers.
+		</summary><remarks>
+		<para>This method must be called when you finish to process a file to dispose the opened streams.</para>
+  	    </remarks><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.BeginWriteStream(System.IO.TextWriter)">
+            <summary>
+		  Set the stream to be used in the <see cref="M:FileHelpers.FileHelperAsyncEngine`1.WriteNext(`0)"/> operation.
+		</summary><remarks>
+		<para>When you finish to write to the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine`1.EndsWrite"/></b> method.</para>
+		</remarks><param name="writer">To stream to writes to.</param><returns>True if the operation is successful. False otherwise.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.BeginWriteFile(System.String)">
+            <summary>
+		Open a file to write it. If exist override it.
+		</summary><remarks>
+		<para>When you finish to write to the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine`1.EndsWrite"/></b> method.</para>
+		</remarks><param name="fileName">The file path to be opened to write.</param><returns>True if the operation is successful. False otherwise.</returns><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.BeginAppendToFile(System.String)">
+            <summary>
+		Open a file to Append to the end.
+		</summary><remarks>
+		<para>This method open and seek ends the file.</para>
+		<para>When you finish to append to the file you must call <b><see cref="M:FileHelpers.FileHelperAsyncEngine`1.EndsWrite"/></b> method.</para>
+		</remarks><param name="fileName">The file path to be opened to write at the end.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.WriteNext(`0)">
+            <summary>
+		Write the next record to a file or stream opened with <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginWriteFile(System.String)"/>, <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginWriteStream(System.IO.TextWriter)"/> or <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginAppendToFile(System.String)"/> method.
+		</summary><param name="record">The record to write.</param><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.WriteNexts(`0[])">
+            <summary>
+		Write the nexts records to a file or stream opened with <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginWriteFile(System.String)"/>, <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginWriteStream(System.IO.TextWriter)"/> or <see cref="M:FileHelpers.FileHelperAsyncEngine`1.BeginAppendToFile(System.String)"/> method.
+		</summary><param name="records">The records to write.</param>
+        </member>
+        <member name="M:FileHelpers.FileHelperAsyncEngine`1.EndsWrite">
+            <summary>
+			If any, close all opened stream writers.
+		</summary><remarks>
+		<para>This method must be called when you finish to process a file to dispose the opened streams.</para>
+  	    </remarks><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginWriteFile("source.txt");
+	    
+	    record.Field1 = "Primer Registro";
+	    record.Field2 = 1;
+	    engine.WriteNext(record);
+	    
+	    record.Field1 = "Segundo Registro";
+	    record.Field2 = 2;
+	    engine.WriteNext(record);
+
+	    engine.EndsWrite();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="P:FileHelpers.FileHelperAsyncEngine`1.LastRecord">
+            <summary>Contains the last Record read by the <see cref="M:FileHelpers.FileHelperAsyncEngine`1.ReadNext"/> method.</summary><example>
+			This example show the basic use of the async methods in the FileHelperAsymcEngine:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		SampleType record;	
+
+		FileHelperAsyncEngine engine = new FileHelperAsyncEngine(typeof(SampleType));
+
+	    engine.BeginReadFile("source.txt");
+	    
+	    while( engine.ReadNext() != null )
+	    {
+	       record = (SampleType) engine.LastRecord;
+	       
+	       // put your code here !!!!
+	       Console.WriteLine("Data " + record.Field1 + " , " + record.Field2.ToString());
+	    
+	    }
+	    
+	    engine.EndsRead();
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="T:FileHelpers.RecordInfo">
+            <summary>An internal class used to store information about the Record Type.</summary>
+            <remarks>Is public to provide extensibility of DataSorage from outside the library.</remarks>
+        </member>
+        <member name="M:FileHelpers.RecordInfo.#ctor(System.Type)">
+            <summary>The unique constructor for this class. It needs the subyacent record class.</summary>
+            <param name="recordType">The Type of the record class.</param>
+        </member>
+        <member name="M:FileHelpers.RecordInfo.RecordToString(System.Object)">
+            <summary>Internal.</summary>
+            <param name="record"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileHelpers.RecordInfo.ValuesToRecord(System.Object[])">
+            <summary>Returns a record formed with the passed values.</summary>
+            <param name="values">The source Values.</param>
+            <returns>A record formed with the passed values.</returns>
+        </member>
+        <member name="M:FileHelpers.RecordInfo.RecordToValues(System.Object)">
+            <summary>Get an object[] of the values in the fields of the passed record.</summary>
+            <param name="record">The source record.</param>
+            <returns>An object[] of the values in the fields.</returns>
+        </member>
+        <member name="P:FileHelpers.RecordInfo.FieldCount">
+            <summary>The Number of no ignored fields in the record class.</summary>
+        </member>
+        <member name="P:FileHelpers.RecordInfo.HasDateFields">
+            <summary>Indicates if the Record Info has fields of type Date</summary>
+            <remarks>This is used externally by the ExcelStorage.</remarks>
+        </member>
+        <member name="T:FileHelpers.DataLink.InsertSqlHandler">
+            <summary>Delegate used by the <see cref="T:FileHelpers.DataLink.DatabaseStorage"/> to get the SQL for the insert or update statement.</summary>
+        </member>
+        <member name="T:FileHelpers.DataLink.FillRecordHandler">
+            <summary>Delegate used by the <see cref="T:FileHelpers.DataLink.DatabaseStorage"/> to fill the values of a new record from the db (you only need to assing hte values.</summary>
+        </member>
+        <member name="T:FileHelpers.IgnoreLastAttribute">
+            <summary>Indicates the number of lines to be discarded at the end.</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.IgnoreLastAttribute.#ctor">
+            <summary>Indicates that the last line must be discarded.</summary>
+        </member>
+        <member name="M:FileHelpers.IgnoreLastAttribute.#ctor(System.Int32)">
+            <summary>Indicates the number of last lines to be ignored at the end.</summary>
+            <param name="numberOfLines">The number of lines to be discarded at end.</param>
+        </member>
+        <member name="P:FileHelpers.IgnoreLastAttribute.NumberOfLines">
+            <summary>The number of lines to be ignored at end.</summary>
+        </member>
+        <member name="T:FileHelpers.FieldTrimAttribute">
+            <summary>Indicates the <see cref="P:FileHelpers.FieldTrimAttribute.TrimMode"/> used after read to truncate the field. </summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldTrimAttribute.#ctor(FileHelpers.TrimMode)">
+            <summary>Indicates the <see cref="P:FileHelpers.FieldTrimAttribute.TrimMode"/> used after read to truncate the field. By default trims the blank spaces and tabs.</summary>
+            <param name="mode">The <see cref="P:FileHelpers.FieldTrimAttribute.TrimMode"/> used after read.</param>
+        </member>
+        <member name="M:FileHelpers.FieldTrimAttribute.#ctor(FileHelpers.TrimMode,System.Char[])">
+            <summary>Indicates the <see cref="P:FileHelpers.FieldTrimAttribute.TrimMode"/> used after read to truncate the field. </summary>
+            <param name="mode">The <see cref="P:FileHelpers.FieldTrimAttribute.TrimMode"/> used after read.</param>
+            <param name="chars">A list of chars used to trim.</param>
+        </member>
+        <member name="P:FileHelpers.FieldTrimAttribute.TrimChars">
+            <summary>The chars to Trim.</summary>
+        </member>
+        <member name="P:FileHelpers.FieldTrimAttribute.TrimMode">
+            <summary>The Trim behavior.</summary>
+        </member>
+        <member name="T:FileHelpers.FieldConverterAttribute">
+            <summary>Indicates the <see cref="T:FileHelpers.ConverterKind"/> used for read/write operations.</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldConverterAttribute.#ctor(FileHelpers.ConverterKind)">
+            <summary>Indicates the <see cref="T:FileHelpers.ConverterKind"/> used for read/write ops. </summary>
+            <param name="converter">The <see cref="T:FileHelpers.ConverterKind"/> used for the transformations.</param>
+        </member>
+        <member name="M:FileHelpers.FieldConverterAttribute.#ctor(FileHelpers.ConverterKind,System.String)">
+            <summary>Indicates the <see cref="T:FileHelpers.ConverterKind"/> used for read/write ops. </summary>
+            <param name="converter">The <see cref="T:FileHelpers.ConverterKind"/> used for the transformations.</param>
+            <param name="arg1">The first param pased directly to the Converter Constructor.</param>
+        </member>
+        <member name="M:FileHelpers.FieldConverterAttribute.#ctor(FileHelpers.ConverterKind,System.String,System.String)">
+            <summary>Indicates the <see cref="T:FileHelpers.ConverterKind"/> used for read/write ops. </summary>
+            <param name="converter">The <see cref="T:FileHelpers.ConverterKind"/> used for the transformations.</param>
+            <param name="arg1">The first param pased directly to the Converter Constructor.</param>
+            <param name="arg2">The second param pased directly to the Converter Constructor.</param>
+        </member>
+        <member name="M:FileHelpers.FieldConverterAttribute.#ctor(FileHelpers.ConverterKind,System.String,System.String,System.String)">
+            <summary>Indicates the <see cref="T:FileHelpers.ConverterKind"/> used for read/write ops. </summary>
+            <param name="converter">The <see cref="T:FileHelpers.ConverterKind"/> used for the transformations.</param>
+            <param name="arg1">The first param pased directly to the Converter Constructor.</param>
+            <param name="arg2">The second param pased directly to the Converter Constructor.</param>
+            <param name="arg3">The third param pased directly to the Converter Constructor.</param>
+        </member>
+        <member name="M:FileHelpers.FieldConverterAttribute.#ctor(System.Type,System.Object[])">
+            <summary>Indicates a custom <see cref="T:FileHelpers.ConverterBase"/> implementation.</summary>
+            <param name="customConverter">The Type of your custom converter.</param>
+            <param name="args">A list of params pased directly to your converter constructor.</param>
+        </member>
+        <member name="M:FileHelpers.FieldConverterAttribute.#ctor(System.Type)">
+            <summary>Indicates a custom <see cref="T:FileHelpers.ConverterBase"/> implementation.</summary>
+            <param name="customConverter">The Type of your custom converter.</param>
+        </member>
+        <member name="P:FileHelpers.FieldConverterAttribute.Converter">
+            <summary> The <see cref="T:FileHelpers.ConverterBase"/> used to performs the string to records and record to string operations. </summary>
+        </member>
+        <member name="T:FileHelpers.FieldAlignAttribute">
+            <summary>Indicates the <see cref="T:FileHelpers.AlignMode"/> used for <b>write</b> operations.</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldAlignAttribute.#ctor(FileHelpers.AlignMode)">
+            <summary>Uses the ' ' char to align.</summary>
+            <param name="align">The position of the alignment.</param>
+        </member>
+        <member name="M:FileHelpers.FieldAlignAttribute.#ctor(FileHelpers.AlignMode,System.Char)">
+            <summary>You can indicate the align char.</summary>
+            <param name="align">The position of the alignment.</param>
+            <param name="alignChar">The character used to align.</param>
+        </member>
+        <member name="F:FileHelpers.FieldAlignAttribute.Align">
+            <summary>The position of the alignment.</summary>
+        </member>
+        <member name="F:FileHelpers.FieldAlignAttribute.AlignChar">
+            <summary>The character used to align.</summary>
+        </member>
+        <member name="T:FileHelpers.QuoteMode">
+            <summary>Indicates the behavior of quoted fields.</summary>
+        </member>
+        <member name="F:FileHelpers.QuoteMode.AlwaysQuoted">
+            <summary>The engine always expects a quote when read and always adds the quotes when write.</summary>
+        </member>
+        <member name="F:FileHelpers.QuoteMode.OptionalForRead">
+            <summary>The engine expects or not a quote when read and always adds the quotes when write.</summary>
+        </member>
+        <member name="F:FileHelpers.QuoteMode.OptionalForWrite">
+            <summary>The engine always expects a quote when read and adds the quotes when write only if the field contains: quotes, new lines or the separator char.</summary>
+        </member>
+        <member name="F:FileHelpers.QuoteMode.OptionalForBoth">
+            <summary>The engine expects or not a quote when read and adds the quotes when write only if the field contains: quotes, new lines or the separator char.</summary>
+        </member>
+        <member name="T:FileHelpers.DataLink.OleDbStorage">
+            <summary>This is a base class that implements the <see cref="T:FileHelpers.DataLink.DataStorage"/> for Microsoft Access Files.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.OleDbStorage.#ctor(System.Type,System.String)">
+            <summary>
+            Create a new OleDbStorage based in the record type and in the connection string.
+            </summary>
+            <param name="recordType">The Type of the records.</param>
+            <param name="oleDbConnString">The conection string used to create the OleDbConnection.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.OleDbStorage.CreateConnection">
+            <summary>Must create an abstract connection object.</summary>
+            <returns>An Abstract Connection Object.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.OleDbStorage.CreateCommand">
+            <summary>Must create an abstract command object.</summary>
+            <returns>An Abstract Command Object.</returns>
+        </member>
+        <member name="P:FileHelpers.DataLink.OleDbStorage.ConnectionString">
+            <summary>The conection string used to create the OleDbConnection.</summary>
+        </member>
+        <member name="T:FileHelpers.ConvertHelpers">
+            <summary>Class that provides static methods that returns a default <see cref="T:FileHelpers.ConverterBase">Converter</see> to the basic types.</summary>
+            <remarks>Used by the <see cref="T:FileHelpers.FieldConverterAttribute"/>.</remarks>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToSByte">
+            <summary>
+            Returns a Byte <see cref="T:FileHelpers.ConverterBase">Converter</see>.
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToInt16">
+            <summary>
+            Returns a Int16 <see cref="T:FileHelpers.ConverterBase">Converter</see>.
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToInt32">
+            <summary>
+            Returns a Int32 <see cref="T:FileHelpers.ConverterBase">Converter</see>.
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToInt64">
+            <summary>
+            Returns a Int64 <see cref="T:FileHelpers.ConverterBase">Converter</see>.
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToDecimal">
+            <summary>
+            Returns a Int16 <see cref="T:FileHelpers.ConverterBase">Converter</see>.
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToSingle">
+            <summary>
+            Returns a Int32 <see cref="T:FileHelpers.ConverterBase">Converter</see>.
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToDouble">
+            <summary>
+            Returns a Int64 <see cref="T:FileHelpers.ConverterBase">Converter</see>.
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToDateTime">
+            <summary>
+            <para>Returns a Date <see cref="T:FileHelpers.ConverterBase">Converter</see>.</para>
+            <para>Uses the default format "ddMMyyyy".</para>
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToDateTime(System.String)">
+            <summary>
+            <para>Returns a Date <see cref="T:FileHelpers.ConverterBase">Converter</see>.</para>
+            <para>Uses the specified format.</para>
+            </summary>
+            <param name="format">The format used to convert from/to a string.</param>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="M:FileHelpers.ConvertHelpers.ToBoolean">
+            <summary>
+            Returns a Boolean <see cref="T:FileHelpers.ConverterBase">Converter</see>.
+            </summary>
+            <returns>The <see cref="T:FileHelpers.ConverterBase"/> that performs the convertion.</returns>
+        </member>
+        <member name="T:FileHelpers.ProgressMode">
+            <summary>Indicate the method used to calculate the current progress</summary>
+        </member>
+        <member name="F:FileHelpers.ProgressMode.NotifyPercent">
+            <summary>Notify the percent completed.</summary>
+        </member>
+        <member name="F:FileHelpers.ProgressMode.NotifyRecords">
+            <summary>Notify the Record completed.</summary>
+        </member>
+        <member name="F:FileHelpers.ProgressMode.NotifyBytes">
+            <summary>Notify the bytes readed.</summary>
+        </member>
+        <member name="F:FileHelpers.ProgressMode.DontNotify">
+            <summary>Dont call to the progress handler.</summary>
+        </member>
+        <member name="T:FileHelpers.FileTransformEngine">
+            <summary>
+            This class allow you to convert the records of a file to a different record format.
+            </summary>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="class_diagram.html">Class Diagram</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+            <seealso href="example_datalink.html">Example of the DataLink</seealso>
+            <seealso href="attributes.html">Attributes List</seealso>
+        </member>
+        <member name="M:FileHelpers.FileTransformEngine.#ctor(System.Type,System.Type)">
+            <summary>Create a new instance of the class.</summary>
+            <param name="sourceType">The source record Type.</param>
+            <param name="destType">The destination record Type.</param>
+        </member>
+        <member name="M:FileHelpers.FileTransformEngine.TransformFile(System.String,System.String)">
+            <summary>Transform the contents of the sourceFile and write them to the destFile.(use only if you need the array of the transformed records, TransformFileAsync is faster)</summary>
+            <param name="sourceFile">The source file.</param>
+            <param name="destFile">The destination file.</param>
+            <returns>The transformed records in the destFile.</returns>
+        </member>
+        <member name="M:FileHelpers.FileTransformEngine.TransformFileAsync(System.String,System.String)">
+            <summary>Transform the contents of the sourceFile and write them to the destFile. (faster and use less memory, best choice for big files)</summary>
+            <param name="sourceFile">The source file.</param>
+            <param name="destFile">The destination file.</param>
+            <returns>The number of transformed records.</returns>
+        </member>
+        <member name="P:FileHelpers.FileTransformEngine.SourceType">
+            <summary>The source record Type.</summary>
+        </member>
+        <member name="P:FileHelpers.FileTransformEngine.DestinationType">
+            <summary>The destination record Type.</summary>
+        </member>
+        <member name="P:FileHelpers.FileTransformEngine.SourceEncoding">
+            <summary>The Encoding of the Source File.</summary>
+        </member>
+        <member name="P:FileHelpers.FileTransformEngine.DestinationEncoding">
+            <summary>The Encoding of the Destination File.</summary>
+        </member>
+        <member name="T:FileHelpers.DataLink.FileDataLink">
+            <summary>
+            This class has the responsability to enable the two directional
+            transformation.
+            <list type="bullet">
+            <item> File &lt;-&gt; DataStorage </item>
+            </list>
+            </summary>
+            <remarks>
+            <para>Uses an <see cref="P:FileHelpers.DataLink.FileDataLink.DataStorage"/> to accomplish this task.</para>
+            <para>See in the <a href="class_diagram.html">Class Diagram</a> and in the <a href="example_datalink.html">DataLink Sample</a> for more Info.</para>
+            </remarks>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="class_diagram.html">Class Diagram</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+            <seealso href="example_datalink.html">Example of the DataLink</seealso>
+            <seealso href="attributes.html">Attributes List</seealso>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileDataLink.#ctor(FileHelpers.DataLink.DataStorage)">
+            <summary>Create a new instance of the class.</summary>
+            <param name="provider">The <see cref="T:FileHelpers.DataLink.DataStorage"/> used to performs the transformation.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileDataLink.ExtractToFile(System.String)">
+            <summary>
+            Extract records from the data source and insert them to the specified file using the DataLinkProvider <see cref="M:FileHelpers.DataLink.DataStorage.ExtractRecords"/> method.
+            </summary>
+            <param name="fileName">The files where the records be written.</param>
+            <returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileDataLink.ExtractToStream(System.IO.StreamWriter)">
+            <summary>
+            Extract records from the data source and insert them to the specified stream using the DataLinkProvider <see cref="M:FileHelpers.DataLink.DataStorage.ExtractRecords"/> method.
+            </summary>
+            <param name="writer">The stream where the records be written.</param>
+            <returns>The extracted records</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileDataLink.InsertFromFile(System.String)">
+            <summary>Extract records from a file and insert them to the data source using the DataLinkProvider <see cref="M:FileHelpers.DataLink.DataStorage.InsertRecords(System.Object[])"/> method.</summary>
+            <param name="fileName">The file with the source records.</param>
+            <returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileDataLink.InsertFromStream(System.IO.StreamReader)">
+            <summary>Extract records from a stream and insert them to the data source using the DataLinkProvider <see cref="M:FileHelpers.DataLink.DataStorage.InsertRecords(System.Object[])"/> method.</summary>
+            <param name="reader">The stream with the source records.</param>
+            <returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileDataLink.EasyExtractToFile(FileHelpers.DataLink.DataStorage,System.String)">
+            <summary>The short way to Extract the records from a DataStorage to a file</summary>
+            <param name="storage">The DataStorage from where get the records</param>
+            <param name="filename">The file where to write the records to.</param>
+            <returns>The Extracted records.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.FileDataLink.EasyInsertFromFile(FileHelpers.DataLink.DataStorage,System.String)">
+            <summary>The short way to Insert Records from a file to a DataStorage</summary>
+            <param name="storage">The DataStorage where store the records.</param>
+            <param name="filename">The file with the SourceRecords</param>
+            <returns>The Inserted records</returns>
+        </member>
+        <member name="P:FileHelpers.DataLink.FileDataLink.FileHelperEngine">
+            <summary> The internal <see cref="T:FileHelpers.FileHelperEngine"/> used to the file or stream ops. </summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.FileDataLink.DataStorage">
+            <summary> The internal <see cref="T:FileHelpers.DataLink.IDataLinkProvider"/> used to the link ops. </summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.FileDataLink.LastExtractedRecords">
+            <summary>
+            An array of the last records extracted from the data source to a file.
+            </summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.FileDataLink.LastInsertedRecords">
+            <summary>
+            An array of the last records inserted in the data source that comes from a file.
+            </summary>
+        </member>
+        <member name="T:FileHelpers.FieldInNewLineAttribute">
+            <summary>Indicates the target field has a new line before his value (i.e. indicates that the records has multiple lines, and this field is in the begining of a line)</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldInNewLineAttribute.#ctor">
+            <summary>Indicates the target field has a new line before his value (i.e. indicates that the records has multiple lines, and this field is in the begining of a line)</summary>
+        </member>
+        <member name="T:FileHelpers.ErrorMode">
+            <summary>Indicates the behavior when the <see cref="T:FileHelpers.FileHelperEngine"/> class found an error.</summary>
+        </member>
+        <member name="F:FileHelpers.ErrorMode.ThrowException">
+            <summary>Default value, this simple Rethrow the original exception.</summary>
+        </member>
+        <member name="F:FileHelpers.ErrorMode.SaveAndContinue">
+            <summary>Add an <see cref="T:FileHelpers.ErrorInfo"/> to the array of <see cref="P:FileHelpers.ErrorManager.Errors"/>.</summary>
+        </member>
+        <member name="F:FileHelpers.ErrorMode.IgnoreAndContinue">
+            <summary>Simply ignores the exception an continue.</summary>
+        </member>
+        <member name="T:FileHelpers.FileHelperEngine">
+            <summary>
+			<para><b>One of the main classes of the library.</b></para>
+			<para>This engine is responsable to Read/Write the records <b>at once</b> from/to files or streams.</para>
+		</summary><remarks>
+		 <para>You can set the <see cref="P:FileHelpers.ErrorManager.ErrorMode"/> of this class when found an error, and can retrive them with the <see cref="P:FileHelpers.ErrorManager.Errors"/> property.</para>
+		 <para>See in the <a href="class_diagram.html">Class Diagram</a> and in the <a href="quick_start.html">Quick Start Guide</a> for more Info.</para>
+		 <para>Or you can browse the <a href="examples.html">Examples Seccion</a> for more code.</para>
+		</remarks><seealso href="quick_start.html">Quick Start Guide</seealso><seealso href="class_diagram.html">Class Diagram</seealso><seealso href="examples.html">Examples of Use</seealso><seealso href="attributes.html">Attributes List</seealso>
+            <example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+
+		SampleType[] records;	
+		
+		records = (SampleType[]) engine.ReadFile("source.txt");
+		
+		// Now "records" array contains all the records in the
+		// sourcefile and can be acceded like this:
+		
+		int sum = records[0].Field2 + records[1].Field2;
+	}
+
+	
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.#ctor(System.Type)">
+            <summary>
+			 Initializes a new instance of the FileHelperEngine class with the specified type of records.
+		</summary><param name="recordType">The record mapping class.</param>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.ReadFile(System.String)">
+            <summary>
+		Read a file and return an array of the contained records.
+		</summary><remarks>
+		This method open, read and close the file (don't open or close the file before or after to call this method)
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+
+		SampleType[] records;	
+		
+		records = (SampleType[]) engine.ReadFile("source.txt");
+		
+		// Now "records" array contains all the records in the
+		// sourcefile and can be acceded like this:
+		
+		int sum = records[0].Field2 + records[1].Field2;
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be read.</param><returns>An array of the records in the file</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.ReadStream(System.IO.TextReader)">
+            <summary>
+		Read a Stream and return an array of the contained records.
+		</summary><remarks>
+		This method only uses the stream and dont close them after use it, you must do it.
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void ReadExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+
+		SampleType[] records;	
+		
+		records = (SampleType[]) engine.ReadFile("source.txt");
+		
+		// Now "records" array contains all the records in the
+		// sourcefile and can be acceded like this:
+		
+		int sum = records[0].Field2 + records[1].Field2;
+	}
+
+		</code>
+		</example><param name="reader">The reader of the source stream.</param><returns>An array of the records in the Stream</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.ReadString(System.String)">
+            <summary>
+		Read a String and return an array of the contained records.
+		</summary><param name="source">The string that contains the records.</param><returns>An array of the records in the String.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.WriteFile(System.String,System.Object[])">
+            <summary>
+		Write an array of records to the specified file.
+		</summary><remarks>
+		<para>This method open, write and close the file (don't open or close the file before or after to call this method)</para>
+		<para>This method overrides existing files.</para>
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be write.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.WriteFile(System.String,System.Object[],System.Int32)">
+            <summary>
+		Write the specified number of records from the array to a file.
+		</summary><remarks>
+		<para>This method open, write and close the file (don't open or close the file before or after to call this method)</para>
+		<para>This method overrides existing files.</para>
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be write.</param><param name="records">The array of records to write.</param><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.WriteStream(System.IO.TextWriter,System.Object[])">
+            <summary>
+		Write an array of records to the specified Stream.
+		</summary><remarks>
+		This method only uses the stream and don't close them after use it, you must do it.
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="writer">The writer of the source stream.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.WriteStream(System.IO.TextWriter,System.Object[],System.Int32)">
+            <summary>
+		Write the specified number of records in the array to the Stream.
+		</summary><remarks>
+		This method only uses the stream and don't close them after use it, you must do it.
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void WriteExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.WriteFile("destination.txt", records);
+		
+		// Now the file contains the created record in this format:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="writer">The writer of the source stream.</param><param name="records">The array of records to write.</param><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.WriteString(System.Object[])">
+            <summary>
+		Write an array of records to an String and return it.
+		</summary><param name="records">The array of records to write.</param><returns>The resulting string after write the records.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.WriteString(System.Object[],System.Int32)">
+            <summary>
+		Write an array of records to an String and return it.
+		</summary><param name="records">The array of records to write.</param><returns>The resulting string after write the records.</returns><param name="maxRecords">The max number of array elements to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.AppendToFile(System.String,System.Object)">
+            <summary>
+		Append a record to the specified file.
+		</summary><remarks>
+		This method open, seek ends, write and close the file (don't open or close the file before or after to call this method)
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void AppendExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.AppendToFile("destination.txt", records);
+		
+		// Now the file contains have one more record at the end:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be written at end.</param><param name="record">The record to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.AppendToFile(System.String,System.Object[])">
+            <summary>
+		Append an array of records to the specified file.
+		</summary><remarks>
+		This method open, seek ends, write and close the file (don't open or close the file before or after to call this method)
+		</remarks><example>
+			This example show the basic use of the library with minimun code:
+<code>
+
+	using FileHelpers;
+	
+	// First declare the record class
+		
+	[Delimitedrecord("|")]
+	public class SampleType
+	{
+		public string Field1;
+		public int    Field2;
+	}
+
+
+	public void AppendExample()
+	{
+		FileHelperEngine engine = new FileHelperEngine(typeof(SampleType));
+		
+		SampleType[] records = new SampleType[1];
+
+		records[0] = new SampleType();
+
+		records[0].Field1 = "Hello World";
+		records[0].Field2 = 12;
+
+		engine.AppendToFile("destination.txt", records);
+		
+		// Now the file contains have one more record at the end:
+		// 
+		// Hello World,12
+		
+	}
+
+		</code>
+		</example><param name="fileName">The file path to be written at end.</param><param name="records">The array of records to write.</param><returns>True if the operation is successful. False otherwise.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.ReadFileAsDT(System.String)">
+            <summary>
+            Read the records of the file and fill a DataTable with them
+            </summary>
+            <param name="fileName">The file name.</param>
+            <returns>The DataTable with the read records.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.ReadStringAsDT(System.String)">
+            <summary>
+            Read the records of a string and fill a DataTable with them.
+            </summary>
+            <param name="source">The source string with the records.</param>
+            <returns>The DataTable with the read records.</returns>
+        </member>
+        <member name="M:FileHelpers.FileHelperEngine.ReadStreamAsDT(System.IO.TextReader)">
+            <summary>
+            Read the records of the stream and fill a DataTable with them
+            </summary>
+            <param name="reader">The stream with the source records.</param>
+            <returns>The DataTable with the read records.</returns>
+        </member>
+        <member name="T:FileHelpers.DataLink.AccessStorage">
+            <summary>This is a base class that implements the <see cref="T:FileHelpers.DataLink.DataStorage"/> for Microsoft Access Files.</summary>
+        </member>
+        <member name="M:FileHelpers.DataLink.AccessStorage.#ctor(System.Type)">
+            <summary>Creates a new AccessStorage.</summary>
+            <param name="recordType">The Type of the Records</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.AccessStorage.#ctor(System.Type,System.String)">
+            <summary>Creates a new AccessStorage using the indicated file.</summary>
+            <param name="recordType">The Type of the Records</param>
+            <param name="accessFile">The MS Access file.</param>
+        </member>
+        <member name="M:FileHelpers.DataLink.AccessStorage.CreateConnection">
+            <summary>Must create an abstract connection object.</summary>
+            <returns>An Abstract Connection Object.</returns>
+        </member>
+        <member name="M:FileHelpers.DataLink.AccessStorage.CreateCommand">
+            <summary>Must create an abstract command object.</summary>
+            <returns>An Abstract Command Object.</returns>
+        </member>
+        <member name="P:FileHelpers.DataLink.AccessStorage.AccessFileName">
+            <summary>The file full path of the Microsoft Access File.</summary>
+        </member>
+        <member name="P:FileHelpers.DataLink.AccessStorage.AccessFilePassword">
+            <summary>The password to the access database.</summary>
+        </member>
+        <member name="T:FileHelpers.FixedLengthRecordAttribute">
+            <summary>Indicates that this class represents a fixed length record.</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FixedLengthRecordAttribute.#ctor">
+            <summary>Indicates that this class represents a fixed length record.</summary>
+        </member>
+        <member name="T:FileHelpers.FieldDelimiterAttribute">
+            <summary>Indicates a diferent delimiter for this field. </summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldDelimiterAttribute.#ctor(System.String)">
+            <summary>Indicates a diferent delimiter for this field. </summary>
+            <param name="separator">The separator string used to split the fields of the record.</param>
+        </member>
+        <member name="T:FileHelpers.ProgressEventArgs">
+            <summary>Class used to notify the current progress position and other context info.</summary>
+        </member>
+        <member name="P:FileHelpers.ProgressEventArgs.ProgressCurrent">
+            <summary>The current progress position. Check also the ProgressMode property.</summary>
+        </member>
+        <member name="P:FileHelpers.ProgressEventArgs.ProgressTotal">
+            <summary>The total when the progress finish. (<b>-1 means undefined</b>)</summary>
+        </member>
+        <member name="P:FileHelpers.ProgressEventArgs.ProgressMode">
+            <summary>The ProgressMode used.</summary>
+        </member>
+        <member name="T:FileHelpers.ProgressChangeHandler">
+            <summary>Delegate used to notify progress to the user.</summary>
+        </member>
+        <member name="T:FileHelpers.MasterDetail.RecordAction">
+            <summary>Used with the <see cref="T:FileHelpers.MasterDetail.MasterDetailSelector"/> Delegate to determines the action used by the <see cref="T:FileHelpers.MasterDetail.MasterDetailEngine"/></summary>
+        </member>
+        <member name="F:FileHelpers.MasterDetail.RecordAction.Skip">
+            <summary><b>Ignore</b> the current record.</summary>
+        </member>
+        <member name="F:FileHelpers.MasterDetail.RecordAction.Master">
+            <summary>Use the current record as <b>Master</b>.</summary>
+        </member>
+        <member name="F:FileHelpers.MasterDetail.RecordAction.Detail">
+            <summary>Use the current record as <b>Detail</b>.</summary>
+        </member>
+        <member name="T:FileHelpers.MasterDetail.MasterDetails">
+            <summary>
+            <para>This class contains information of a Master record an their Details records.</para>
+            <para>This class is used for the Read and Write operations of the <see cref="T:FileHelpers.MasterDetail.MasterDetailEngine"/>.</para>
+            </summary>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetails.#ctor">
+            <summary>Create an empty instance.</summary>
+        </member>
+        <member name="M:FileHelpers.MasterDetail.MasterDetails.#ctor(System.Object,System.Object[])">
+            <summary>Create a new instance with the specified values.</summary>
+            <param name="master">The master record.</param>
+            <param name="details">The details record.</param>
+        </member>
+        <member name="P:FileHelpers.MasterDetail.MasterDetails.Empty">
+            <summary>Returns a canonical empty MasterDetail object.</summary>
+        </member>
+        <member name="P:FileHelpers.MasterDetail.MasterDetails.Master">
+            <summary>The Master record.</summary>
+        </member>
+        <member name="P:FileHelpers.MasterDetail.MasterDetails.Details">
+            <summary>An Array with the Detail records.</summary>
+        </member>
+        <member name="T:FileHelpers.CommonEngine">
+            <summary>This class only have <b>static methods</b> to work with files and strings (the most common of them)</summary>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.ReadFile(System.Type,System.String)">
+            <summary>
+            Used to read a file without instanciate the engine.<br />
+            <b>This is feature limited method try to use the non static methods.</b>
+            </summary>
+            <param name="recordClass">The record class.</param>
+            <param name="fileName">The file name</param>
+            <returns>The read records.</returns>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.ReadString(System.Type,System.String)">
+            <summary>
+            Used to read a string without instanciate the engine.<br />
+            <b>This is feature limited method try to use the non static methods.</b>
+            </summary>
+            <param name="recordClass">The record class.</param>
+            <param name="input">The input string.</param>
+            <returns>The read records.</returns>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.WriteFile(System.Type,System.String,System.Object[])">
+            <summary>
+            Used to write a file without instanciate the engine.<br />
+            <b>This is feature limited method try to use the non static methods.</b>
+            </summary>
+            <param name="recordClass">The record class.</param>
+            <param name="fileName">The file name</param>
+            <param name="records">The records to write</param>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.WriteString(System.Type,System.Object[])">
+            <summary>
+            Used to write a string without instanciate the engine.<br />
+            <b>This is feature limited method try to use the non static methods.</b>
+            </summary>
+            <param name="recordClass">The record class.</param>
+            <param name="records">The records to write</param>
+            <returns>The string with the writen records.</returns>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.TransformFileAsync(System.String,System.Type,System.String,System.Type)">
+            <summary><b>Faster way</b> to Transform the records of type sourceType in the sourceFile in records of type destType and write them to the destFile.</summary>
+            <param name="sourceType">The Type of the records in the source File.</param>
+            <param name="destType">The Type of the records in the dest File.</param>
+            <param name="sourceFile">The file with records to be transformed</param>
+            <param name="destFile">The destination file with the transformed records</param>
+            <returns>The number of transformed records</returns>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.TransformFile(System.String,System.Type,System.String,System.Type)">
+            <summary>Transform the records of type sourceType in the sourceFile in records of type destType and write them to the destFile. (but returns the transformed records) WARNING: this is a slower method that the TransformFileAssync.</summary>
+            <param name="sourceType">The Type of the records in the source File.</param>
+            <param name="destType">The Type of the records in the dest File.</param>
+            <param name="sourceFile">The file with records to be transformed</param>
+            <param name="destFile">The destination file with the transformed records</param>
+            <returns>The transformed records.</returns>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.ReadSortedFile(System.Type,System.String)">
+            <summary>
+            Read the contents of a file and sort the records.
+            </summary>
+            <param name="recordClass">Record Class (remember that need to implement the IComparer interface, or you can use SortFileByfield)</param>
+            <param name="fileName">The file to read.</param>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.SortFile(System.Type,System.String,System.String)">
+            <summary>
+            Sort the contents of the source file and write them to the destination file. 
+            </summary>
+            <param name="recordClass">Record Class (remember that need to implement the IComparable interface or use the SortFileByfield instead)</param>
+            <param name="sourceFile">The source file.</param>
+            <param name="sortedFile">The destination File.</param>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.SortFileByField(System.Type,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Sort the content of a File using the field name provided
+            </summary>
+            <param name="recordClass">The class for each record of the file.</param>
+            <param name="fieldName">The name of the field used to sort the file.</param>
+            <param name="asc">The sort direction.</param>
+            <param name="sourceFile">The source file.</param>
+            <param name="sortedFile">The destination File.</param>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.SortRecordsByField(System.Object[],System.String)">
+            <summary>
+            Sort the Record Array based in the field name provided. (for advanced sorting use SortRecords)
+            </summary>
+            <param name="fieldName">The field name.</param>
+            <param name="records">The records Array.</param>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.SortRecordsByField(System.Object[],System.String,System.Boolean)">
+            <summary>
+            Sort the Record Array based in the field name provided. (for advanced sorting use SortRecords)
+            </summary>
+            <param name="fieldName">The field name.</param>
+            <param name="records">The records Array.</param>
+            <param name="asc">The direction of the sort. True means Ascending.</param>
+        </member>
+        <member name="M:FileHelpers.CommonEngine.SortRecords(System.Object[])">
+            <summary>
+            Sort the Record Array. The records must be of a Type that implements the IComparable interface.
+            </summary>
+            <param name="records">The records Array.</param>
+        </member>
+        <member name="T:FileHelpers.FieldOptionalAttribute">
+            <summary>Indicates that the target field is included only under some circunstances.</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldOptionalAttribute.#ctor">
+            <summary>Indicates that the target field is included only under some circunstances.</summary>
+        </member>
+        <member name="T:FileHelpers.ErrorManager">
+            <summary>This is the class that handles the errors of the library process.</summary>
+            <remarks>This is shared by the FileHelper Engine and all the DataStorage.</remarks>
+        </member>
+        <member name="M:FileHelpers.ErrorManager.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:FileHelpers.ErrorManager"/> class.</summary>
+        </member>
+        <member name="M:FileHelpers.ErrorManager.#ctor(FileHelpers.ErrorMode)">
+            <summary>Initializes a new instance of the <see cref="T:FileHelpers.ErrorManager"/> class. with the specified <see cref="P:FileHelpers.ErrorManager.ErrorMode"/>.</summary>
+            <param name="mode">Indicates the error behavior of the class.</param>
+        </member>
+        <member name="M:FileHelpers.ErrorManager.ClearErrors">
+            <summary>Clears the error collection.</summary>
+        </member>
+        <member name="M:FileHelpers.ErrorManager.AddError(FileHelpers.ErrorInfo)">
+            <summary>Add the specified ErrorInfo to the contained collection.</summary>
+            <param name="error"></param>
+        </member>
+        <member name="M:FileHelpers.ErrorManager.SaveErrors(System.String)">
+            <summary>Saves the contained errors to the specified file.</summary>
+            <param name="fileName">The file that contains the errors.</param>
+        </member>
+        <member name="M:FileHelpers.ErrorManager.SaveErrors(System.String,System.String)">
+            <summary>Saves the contained errors to the specified file.</summary>
+            <param name="fileName">The file that contains the errors.</param>
+            <param name="header">The header line of the errors file.</param>
+        </member>
+        <member name="M:FileHelpers.ErrorManager.LoadErrors(System.String)">
+            <summary>Load errors from a file.</summary>
+            <param name="fileName">The file that contains the errors.</param>
+        </member>
+        <member name="P:FileHelpers.ErrorManager.Errors">
+            <summary>Is an array of <see cref="T:FileHelpers.ErrorInfo"/> that contains the errors of the last operation in this class.</summary>
+        </member>
+        <member name="P:FileHelpers.ErrorManager.ErrorMode">
+            <summary>Indicates the behavior of the <see cref="T:FileHelpers.FileHelperEngine"/> when it found an error.</summary>
+        </member>
+        <member name="P:FileHelpers.ErrorManager.ErrorCount">
+            <summary>Number of contained errors.</summary>
+        </member>
+        <member name="T:FileHelpers.TrimMode">
+            <summary>Indicates the triming behavior of the trailing characters.</summary>
+        </member>
+        <member name="F:FileHelpers.TrimMode.None">
+            <summary>No triming is performed.</summary>
+        </member>
+        <member name="F:FileHelpers.TrimMode.Both">
+            <summary>The field is trimed in both sides.</summary>
+        </member>
+        <member name="F:FileHelpers.TrimMode.Left">
+            <summary>The field is trimed in the left.</summary>
+        </member>
+        <member name="F:FileHelpers.TrimMode.Right">
+            <summary>The field is trimed in the right.</summary>
+        </member>
+        <member name="T:FileHelpers.FieldNullValueAttribute">
+            <summary>Indicates the value to assign to the field in the case of find a "NULL".</summary>
+            <remarks>See the <a href="attributes.html">Complete Attributes List</a> for more clear info and examples of each one.</remarks>
+            <seealso href="attributes.html">Attributes List</seealso>
+            <seealso href="quick_start.html">Quick Start Guide</seealso>
+            <seealso href="examples.html">Examples of Use</seealso>
+        </member>
+        <member name="M:FileHelpers.FieldNullValueAttribute.#ctor(System.Object)">
+            <summary>Indicates directly the null value.</summary>
+            <param name="nullValue">The value to assign in the "NULL" case.</param>
+        </member>
+        <member name="M:FileHelpers.FieldNullValueAttribute.#ctor(System.Type,System.String)">
+            <summary>Indicates a type and a string to be converted to that type.</summary>
+            <param name="type">The type of the null value.</param>
+            <param name="nullValue">The string to be converted to the specified type.</param>
+        </member>
+        <member name="T:FileHelpers.ConvertException">
+            <summary>
+            Indicates that a string value can't be converted to a dest type.
+            </summary>
+        </member>
+        <member name="P:FileHelpers.ConvertException.Type">
+            <summary>The destination type.</summary>
+        </member>
+        <member name="P:FileHelpers.ConvertException.StringValue">
+            <summary>The source string.</summary>
+        </member>
+    </members>
+</doc>

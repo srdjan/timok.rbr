@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpHsql", "SharpHSQL\SharpHsql.csproj", "{E5291DD4-3B36-11D5-85ED-0010A4E6E139}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hsqltest", "hsqltest\hsqltest.csproj", "{264A06D6-76FB-4652-8619-9B651DF182D5}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Providertest", "Providertest\Providertest.csproj", "{8388AFBC-8E76-45B2-AA2D-F49A360747AE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalFunction", "ExternalFunction\ExternalFunction.csproj", "{7E430EE6-B587-428A-9FB9-C1269A3FE4FD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E5291DD4-3B36-11D5-85ED-0010A4E6E139}.Debug.ActiveCfg = Debug|.NET
+		{E5291DD4-3B36-11D5-85ED-0010A4E6E139}.Debug.Build.0 = Debug|.NET
+		{E5291DD4-3B36-11D5-85ED-0010A4E6E139}.Release.ActiveCfg = Release|.NET
+		{E5291DD4-3B36-11D5-85ED-0010A4E6E139}.Release.Build.0 = Release|.NET
+		{264A06D6-76FB-4652-8619-9B651DF182D5}.Debug.ActiveCfg = Debug|.NET
+		{264A06D6-76FB-4652-8619-9B651DF182D5}.Debug.Build.0 = Debug|.NET
+		{264A06D6-76FB-4652-8619-9B651DF182D5}.Release.ActiveCfg = Release|.NET
+		{264A06D6-76FB-4652-8619-9B651DF182D5}.Release.Build.0 = Release|.NET
+		{8388AFBC-8E76-45B2-AA2D-F49A360747AE}.Debug.ActiveCfg = Debug|.NET
+		{8388AFBC-8E76-45B2-AA2D-F49A360747AE}.Debug.Build.0 = Debug|.NET
+		{8388AFBC-8E76-45B2-AA2D-F49A360747AE}.Release.ActiveCfg = Release|.NET
+		{8388AFBC-8E76-45B2-AA2D-F49A360747AE}.Release.Build.0 = Release|.NET
+		{7E430EE6-B587-428A-9FB9-C1269A3FE4FD}.Debug.ActiveCfg = Debug|.NET
+		{7E430EE6-B587-428A-9FB9-C1269A3FE4FD}.Debug.Build.0 = Debug|.NET
+		{7E430EE6-B587-428A-9FB9-C1269A3FE4FD}.Release.ActiveCfg = Release|.NET
+		{7E430EE6-B587-428A-9FB9-C1269A3FE4FD}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

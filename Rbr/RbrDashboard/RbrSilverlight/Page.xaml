@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="RbrSiverlight.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Layout1="clr-namespace:RbrSiverlight.View.Layout"
+    Width="Auto" Height="Auto" Loaded="pageLoaded" >
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="91"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Layout1:Header x:Name="Header" Grid.Row="0" Height="Auto" Width="Auto" NavigateRequest="navigateRequest" />
+        <Layout1:Footer x:Name="Footer" Grid.Row="2" Height="Auto" Width="Auto" />
+    </Grid>
+</UserControl>
+

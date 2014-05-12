@@ -1,0 +1,9 @@
+- disable Aculab NIC
+- exceptions:
+ACT
+startupservice
+acuremgr
+portmap
+sipserver
+tcp port: 5060
+udp port: 5060

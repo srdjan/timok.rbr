@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="RbrSiverlight.View.Toolbar.ToolbarButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             Height="31" 
+             Cursor="Hand"
+             MouseEnter="ToolbarButton_MouseEnter"
+             MouseLeave="ToolbarButton_MouseLeave"
+             MouseLeftButtonDown="ToolbarButton_MouseLeftButtonDown"
+             MouseLeftButtonUp="ToolbarButton_MouseLeftButtonUp" >
+    <Grid>
+        <Rectangle x:Name="selectedIndicator" 
+                   Height="21" 
+                   Canvas.Left="3" 
+                   Canvas.Top="5" 
+                   Opacity="0" 
+                   RadiusX="3" 
+                   RadiusY="3" 
+                   Stroke="White" 
+                   Fill="WhiteSmoke" />
+        <TextBlock x:Name="buttonText" 
+                   Text="Home" 
+                   TextWrapping="NoWrap" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="13" 
+                   Foreground="#FFFFFFFF" 
+                   Margin="15, 0" />
+    </Grid>
+</UserControl>

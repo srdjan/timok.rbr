@@ -1,0 +1,16 @@
+2.69 deployed on Mundetel.40
+using Is_reseller field as AccessScope
+added identity table to CdrDb 
+
+2.68.1.3087 deployed on : Mundetel.40
+added: indexservice_id, serial_number
+---------------------
+2.67.1.3070 deployed on: Gtg.135, Gtg.136, Gtg.137, Gtg.138
+added: max_calls column to carrier account
+added: script_type column to access_number_list.sql
+---------------------
+v2.66.2.2971 deployed on: Gtg.132, Mundetel.182
+2.66.2946.0 deployed on: Mundetel.45, Mundetel.70,
+
+Mudetel.40 and Gtg.132 only with latest v2.69.1
+

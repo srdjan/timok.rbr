@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "HSQLTEST", "HSQLTEST\HSQLTEST.csdproj", "{6A12AA12-1561-44FE-8218-3DF5C600BEE2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{6A12AA12-1561-44FE-8218-3DF5C600BEE2}.Debug.ActiveCfg = Debug|Pocket PC
+		{6A12AA12-1561-44FE-8218-3DF5C600BEE2}.Debug.Build.0 = Debug|Pocket PC
+		{6A12AA12-1561-44FE-8218-3DF5C600BEE2}.Debug.Deploy.0 = Debug|Pocket PC
+		{6A12AA12-1561-44FE-8218-3DF5C600BEE2}.Release.ActiveCfg = Release|Pocket PC
+		{6A12AA12-1561-44FE-8218-3DF5C600BEE2}.Release.Build.0 = Release|Pocket PC
+		{6A12AA12-1561-44FE-8218-3DF5C600BEE2}.Release.Deploy.0 = Release|Pocket PC
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

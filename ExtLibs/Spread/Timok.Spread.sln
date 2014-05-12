@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.SpreadLib", "Timok.SpreadLib.csproj", "{148EFE3F-8751-46ED-8D9E-112DE17FF781}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Build = Build
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{148EFE3F-8751-46ED-8D9E-112DE17FF781}.Build.ActiveCfg = Build|.NET
+		{148EFE3F-8751-46ED-8D9E-112DE17FF781}.Build.Build.0 = Build|.NET
+		{148EFE3F-8751-46ED-8D9E-112DE17FF781}.Debug.ActiveCfg = Debug|.NET
+		{148EFE3F-8751-46ED-8D9E-112DE17FF781}.Debug.Build.0 = Debug|.NET
+		{148EFE3F-8751-46ED-8D9E-112DE17FF781}.Release.ActiveCfg = Release|.NET
+		{148EFE3F-8751-46ED-8D9E-112DE17FF781}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,444 @@
+March 5, 2004 Ver 3.17.2:
+--------------
+1) Fix daemon quit when multiple interfaces are configured as "D" daemon 
+   interfaces in the spread.conf file. Bug reported by Orit Wasserman.
+2) Updated url for Java 'ant' build system. Patch by Daniel Rall.
+3) Fix group_id bug that causes incorrect vs_sets. Patch by Ryan Caudy.
+4) Fix spread.conf parser so it validates the machine names in segments
+   and forces them to be less then MAX_PROC_NAME. Patch by Mikhail Terekhov.
+5) Minor fix to Mac OS X compilation so library softlinks do not fail the 
+   second time make is run.
+6) Alarm() changes to support priority levels on each Alarm() call. 
+7) Fix crash by improving packet accounting when a client connected to a 
+   singleton daemon sends a large broadcast. Reported by David Shaw.
+8) Fix bus errors on Sparc & Alpha for message buffer integer assignment. 
+   Reported by Greg Shebert; tested and patched Mikhail Terekhov.
+9) Verify daemon names in spread.conf are unique. If non-unique names are
+   provided in spread.conf, configuration will be rejected and daemon will 
+   not start. Suggested by Tim Peters. 
+10) Zero buffer in c library before sending multicast. 
+    Reported by Panagiotis Kougiouris. 
+11) Send fewer lookup probe messages when only a single segment is configured.
+12) Remove extra token rotations when no messages are sent. Will decrease
+    network packet overhead. 
+13) Make mailbox and service in sp.h a typedef instead of a #define. Suggested
+    and patched by Steven Dake. 
+14) Fix small endianness error in sp.c where the mess_type field may not be
+    correctly converted for different endian platforms when the SP_*_recv calls
+    return a BUFFER_TOO_SHORT or GROUPS_TOO_SHORT error.
+15) Change alarm tag for security prints from SEC to SECURITY because of conflict
+    with sys/time.h header.
+16) Documentation fix to SP_receive man page to correct fields for self-leave
+    membership messages.
+17) Update of email addresses in copyright statements and headers.
+18) Windows binary libraries now built as libspread and libtspread like other
+    platforms. 
+
+June 20, 2003 Ver 3.17.1
+----------------------------
+Bugfixes:
+*) Fix memory corruption and crash with groups of large size.
+*) Correct make install so it installs header files.
+*) Fix syntax error in build.xml file for Java/Ant.
+*) Cleanup prototypes to remove compiler warnings.
+*) Fix parser to correctly recognize upper, lower, and mixed case command options.
+*) During make install, remove old symlinks.
+*) Change setgroups call to be more portable. (fixes MacOSX)
+*) Change name of r and s to sprecv and spsend, and add as make targets. 
+   They can be built by "make testprog" (not built by default).
+*) Work on making long group names possible. 
+*) Increase listen backlog for accepting client connections.
+*) Fix Win32 project files to have correct path to source files. 
+   (note CVS was always ok, but 3.17.0 release had incorrect path)
+*) Fix bug where large groups overflow Mess_buf in groups.c.
+*) Fix memory corruption bug when a message header is received in
+   several separate packets in session.c. Thanks to Ryan Caudy for 
+   many, many hours tracking this down.
+*) Change order of build in Makefile so binaries are built before
+   documentation.
+*) Fix Java bug where connection objects cannot be disconnected and
+   then reconnected, but must be created anew. They can now be reused.
+*) Fix compile error on AIX for struct if_info.
+*) Fix security issue with buffer checks in the C library. 
+*) Fix obscure off-by-one buffer error with the parser. 
+
+September 25, 2002 Ver 3.17.0
+----------------------
+Features:
+1) Apply Daniel Rall's SO_REUSEADDR patch. This adds a new configuration
+   option SocketPortReuse that can either force SO_REUSEADDR on or off
+   for TCP server sockets, or set it to an auto mode that uses REUSEADDR
+   if specific interfaces are specified in the spread.conf file and
+   does not use it if the default of INADDR_ANY is used. If you force
+   this on, be aware that it can open up a security risk where other
+   processes can steal Spread's traffic.
+2) Enhance the group membership algorithm so very large groups and very large
+   numbers of groups will be merged correctly during a membership. 
+   With this change Spread should correctly handle groups with thousands
+   of members and thousands of groups. This also includes a slight 
+   optimzation by sending groups messages as AGREED instead of SAFE.
+   Thanks to Ryan Caudy from JHU for doing this work.
+3) Revamped build setup using autoconf instead of manual Makefiles. Thanks
+   to Theo Schlossnagle for writing this and updating it. Some small changes
+   were made to Theo's 3.16.2 patch when I applied it.
+4) Change library name from libsp to libspread. This is both more descriptive
+   and should fix the problem with library clashes with other libsp's.
+5) Apply Daniel Rall's patch to make the spread execution directory and
+   the user and group it runs as configurable at runtime.
+
+Bugfixes: 
+6) Make sure service_type is set to 0 before using it in SP_receive calls 
+   in sample programs (spuser, spflooder, simple_user).
+7) Fix GGT bug where Spread gets stuck or crashes if you reach GGT state.
+8) Fix Mem_Alloc blocks so they can be freed without assertion failure.
+9) Fix hanging bug where token rotates, but ARU is stuck.
+
+Documentation:
+10) Split the growing changelog at the beginning of Readme.txt into a 
+    separate file.
+11) Updates to man pages. Clarify service_type handling. Add info on accessor
+    functions for membership message body.
+
+April 2, 2002 Ver 3.16.2 (The Almost April Fools Release)
+---------------------------
+Bugfixes:
+1) All recv calls in session now check for EWOULDBLOCK, EAGAIN, EINTR 
+   and retry the call later. This fixes problem on busy servers where 
+   connections would be killed erroneously. Thanks to the Zope team 
+   (Guido van Rossum, Tim Peters, and Jeremy Hylton) for discovering this
+   and helping with fixing it.
+2) log.c file operations now check for errors and handle them.
+3) Windows bugs:
+   a) close() does not close sockets, we need to call closesocket() to avoid
+      memory leak.
+   b) sockets are not consecutive fd's on windows, they can be > FD_SETSIZE.
+      So fd mapping to sessions changed to use a hash instead of array. 
+      As a side-effect it should be faster to connect/disconnect. 
+      Thanks to Marc Zyngier for discovering the problem and writing and 
+      testing a patch for it.
+   c) Raise the FD_SETSIZE for windows to 1024 by #defining it in arch.h.
+   d) Enhanced error handling to support WSAGetLastError, and define a
+      sock_strerror() function to return nice error strings on windows.
+   e) Include Visual C++ Project files to build Spread on Windows.
+4) Included improved NetBSD makefile and warning fix from Patrick Welche.
+5) Generalize the errno handling to support windows errors and other 
+   odd cases. Also see fix 3d. Thanks to Marc Zyngier, Tim Peters, and
+   David Holmer for help with this.
+6) Improve the install targets for linux. Now install include headers
+   and use standard PREFIX define for base directory.
+7) Updates to man pages. New libsp manpage.
+
+December 11, 2001 Ver 3.16.1  
+------------------------
+Bugfixes:
+1) Fix various races and bugs in the new authentication and access control 
+   code. 
+   a) Fix session establishment races with authentication
+   b) Add more info for access control hooks to use (mess_type and num_groups)
+   c) Fix so rejected messages are not still delivered to local group members.
+   d) Make reject messages honor SELF_DISCARD.
+   e) Fix bug that always allowed NULL connections.
+2) SGI now builds using signed chars and reports errors correctly.
+3) MacOSX build fixed. 
+4) Fixed race at session establishment that caused the assertion failure
+   "assert( xxxxx ) false "
+5) Add MAX_MESSAGE_BODY_LEN to spread_params.h (used in sp.c checks), move
+   MAX_PACKET_SIZE to spread_params.h from arch.h.
+6) Fixed interface restrictions for daemons. 
+7) Fixed crashes in user and flooder programs when wrong number of command
+   line parameters were passed.
+8) Added assertion check for Groups membership message with zero members in a group. (Theo)
+9) Java library fixes and enhancements (Thanks to Dan Rall and Leonard
+	Richardson )
+10) Fix bug in group name validator G_private_to_names that caused crash.
+11) Fix for reversed parameters to memset in groups.c (Thanks to Marc Zyngier)
+12) Fix bug in session connection that confused closed, but not yet deleted file 
+    descriptors with newly accepted connections. (Thanks to Dave Parker for discovering bug).
+13) Fix significant memory leak when connections are disconnected. This
+    leak has been present since at least 3.15.0. (Thanks to Dave Parker
+    for discovering this and providing lots of assistance debugging it.)
+14) Fix the binding to specific interfaces to work with broadcast packets. 
+    (Thanks to Marc Zyngier for reporting the problem)
+15) Updated man pages and Users Guide
+16) Added makefile for OpenBSD contributed by Brandon Palmer.
+17) Added makefile for Solaris 8 with Solaris cc compiler 6.1 contributed by Luc I. Suryo.
+
+
+June 25, 2001 Ver 3.16.0
+-------------------------
+Changes:
+1) Add support for configuring multiple interfaces on daemons. Each daemon
+   can now choose which interfaces to listen on for client connections, monitor
+   requests, and daemon-to-daemon communication.
+2) Added support for MacOSX. Thanks to Julien Defour and Dirk-Willem van Gulik.
+3) Agreed messages for join/leave instead of SAFE messages.
+4) Fixed bug with membership messages for more then 42 members in a group.
+5) Document how to monitor packing effectiveness.
+6) SP_connect assigns unique private name if user gives a zero length string as
+   the user name.
+7) Slightly loosen valid field checking for service_type field to allow
+   flush and secure spread libraries to work.
+8) Fix events to work with low priority events for Splash.
+9) Adds modular access control and authentication system that allows the 
+   daemon to authenticate client connections and allow or disallow various
+   actions (such as joining groups, sending messages or connecting) based
+   on the authenticated user. This changes the client-server network
+   protocol, but is backward compatible with clients linked with old libraries.
+   This also adds new functions to the API. A sample module that
+   provides access control based on the IP address of the client is 
+   included. Also a module that provides the same "allow all clients" 
+   policy as older versions of Spread. The Java API has also been 
+   updated to support the new access control framework.
+10) New license for Spread. BSD based open-source license.
+11) Updated Perl library with some bug fixes and compatibility with new C lib.
+12) Added support for 64 bit platforms (alpha, ultrasparc & ia64) Note only
+    alpha is actually tested.
+13) Fix bug in sp.c where if a message was not completely received because 
+    of a short buffer and the next call had an invalid message scatter the
+    data in the messages would get corrupted. Probably difficult to trigger 
+    unless you are trying hard.
+14) Changed names of programs included with spread to have "sp" as a prefix.
+    This should help avoid conflicts with all the other utilities called 
+    "user" or "monitor".
+15) Small bugfixes to the Java library. 
+16) Bugfix which removes a costly, and unnecessary, recalculation when 
+    several network level membership events occur in close (time) proximity.
+ 
+March 20, 2001 Ver 3.15.2
+-------------------------
+
+Changes:
+1) Bugfix to java library to fix exception caused when trying to establish
+   connection. This is a new bug in 3.15.1. Thanks to Julien Dufour.
+2) Add #define SPREAD_VERSION to sp.h so client applications can test for
+   what version of the spread API to use. This allows applications to compile
+   against multiple incompatible versions of the spread library. Specifically,
+   this can be used for an app to support both the old 'float SP_version()'
+   and new 'int SP_version(int, int, int)' functions.
+3) Fix memory leak in Perl module. Thanks to Theo Schlossnagle.
+
+February 26, 2001 Ver. 3.15.1
+-----------------------------
+Changes:
+1) Make sess_read() non-blocking so slow clients sending messages don't slow
+   or block daemon.
+2) Implement input validation on all messages received from clients. This
+   is to address the possibility of clients overflowing the servers buffers.
+   These problems were uncovered in a security audit by Olaf Kirch of Caldera.
+3) Use chroot to isolate spread and drop priveledges if spread is run by root.
+   If it is run as a normal user, then no chroot is done and it runs just as 
+   before. The user to run as and the location of the chroot jail can be 
+   configured in the spread_params.h file at compile time.
+4) Fix a bug that causes a significant memory leak when retransmissions are 
+   required. This memory leak exists in versions 3.13, 3.14 and 3.15.0.
+5) SP_version() no longer returns a float, instead it returns in 3 separate
+   parameters the 3 components of the version number.
+ 
+December 20, 2000 -- Unreleased 3.15.0
+-----------------
+Changes:
+1) New version number scheme with 3 components: Major, Minor, and Patch.
+2) Small bugfix to prevent clients from sending to too many groups and
+   crashing spread.
+3) Copyright changed to Spread Concepts LLC for code by original
+   developers.
+
+0ctober 31, 2000 
+---------------
+Changes:
+1) Bugfixes to skiplist implementation.
+2) Critical fixes to group membership that removes bugs introduced in 
+   optimization work of 3.13.
+3) Critical bugfix to membership which solves problem introduced in 3.13 
+   with using configurations of more then one segment.
+4) Changes to spread.conf parser, but nothing that should be user visable.
+5) Better error/problem reporting in a few cases.
+6) Enforce message length limit. SP_mcast* will now return an error
+   if a message body is too long.
+7) Minor memory leak at initialization fixed.
+8) Fix to events.c to prevent an illegal message bug. Bug is triggered
+   when messages are sent very fast during a membership merge.
+
+August 07, 2000
+---------------
+Changes:
+1) To compile the Linux version on systems based on glibc2.0 (such as 
+   RedHat 5.2) you need to comment out the #define of HAVE_STDINT_H in the 
+   arch.h file before compiling.
+
+2) Major scalability improvements. Should now support upto 990 connections
+   to each daemon, thousands of groups, and faster throughput with
+   small messages.
+
+3) Configuration file changes. 
+	a) The default name of the configuration file 
+	   has changed from config.dat to spread.conf. The default locations 
+	   checked if nothing is specified on the command line is 
+	   /etc/spread.conf and ./spread.conf (i.e. the current directory 
+	   where the binary is run from).
+	b) The format of the spread.conf file is improved. You no longer
+	   have to specify the number of members of a segment or the number
+	   of segments by hand. The format is also more standard and has a 
+	   lex/yacc grammer defining it. See the sample.spread.conf file 
+	   for an example or the documention for details.
+	c) More configuration variables. 
+		EventLogFile: You can now have all the Spread event messages 
+			      that print to the screen print to a file instead.
+			      To have each daemon log to a separate file use the
+			      '%h' or '%H' special characters in the log filename.
+			      Spread will replace those characters with the hostname
+			      of the machine which the daemon is running on. An 
+			      example can be found in the sample.spread.conf file.
+		DebugFlags: The event mask that determines which messages
+			    to print to the screen is now configurable at
+			    runtime.
+		EventTimeStamp: Add a timestamp in front of all logged event 
+				messages and set the format of the timestamp.
+
+		DangerousMonitor: Certain monitor commands like partition, kill
+				  and flow_control are disabled by default now.
+				  To enable them set this to true.
+
+4) Fix membership bug when under high load and a late data message arrives.
+   Also fix membership bug where the assertion 
+"spread: membership.c:1835: Backoff_membership: Assertion `pack_entry != -1' failed."
+   triggered.
+   Also fix membership bug where several machines will get trapped in 
+   State 3 (GATHER state) and will never complete the membership.
+
+5) Some documentation on how to tune Spread using some of the internal variables.
+   This is contained in the new Spread User Guide Chapter 2 which can be 
+   downloaded from www.spread.org.
+
+6) Fix bug in new No Drop semantics. When a BUFFER_TOO_SHORT error occured
+   the endian_mismatch field was incorrectly set to the size of the app buffer
+   instead of the size of the data message. So it was useless. This is fixed and
+   the semantics are extended to set the num_groups and endian_mismatch fields to 0
+   if the corresponding buffers ARE large enough, and to the needed size 
+   (as a negative) when they are NOT large enough. This allows you to know when 
+   you receive a GROUPS_TOO_SHORT whether the buffer is also too short without 
+   any calculation...Just check if endian_mismatch is 0.
+
+7) License updated to version 1.2. The only change is a small addition to the
+   attribution requirement, a capitalization of Spread, and a clarification of
+   the Spread version.
+
+May 01, 2000
+---------------
+Changes:
+1) Integrated FreeBSD port. A Big thanks to Ben Laurie <ben@algroup.co.uk>
+   for this port and a lot of compile warnings, type cleanups and 2 bugfixes.
+
+2) Removed some compile warnings.
+
+3) 2 bugs fixed. One in SP_group_ids_equal() and one in the 
+   daemon that would never trigger in reality.
+
+4) Updated java interface to most recent version.
+
+5) Updated events (E_* functions) to most recent version. This
+   adds the ability to attach to file descriptors for 
+   Exceptions and Write events as well as reads. It also 
+   adds a void* data pointer to the callback parameters.
+
+6) Change SP_recv semantics to be "No Drop" by default. The 
+   old "drop" semantics are still available by setting the 
+   service_type parameter to SP_recv to DROP_RECV before calling it.
+   *** 
+   See the file "Short_Buffer_Handling.txt" for detailed comments
+   on this change and what application modifications might be necessary
+   ***
+
+7) Documentation updates.
+
+8) Changed the way arch.h is implemented. This might require 
+   some additions for Ports that we do not support natively.
+
+9) Added Is_self_leave() macro which matches documentation for testing
+   self-leaves.
+
+10) Changed SP_* and E_* functions to use 'const' appropriately.
+
+11) Reserved fields are listed in sp.h to prevent collisions.
+
+12) Make MAX_PROC_NAME and MAX_PRIVATE_GROUP sizes available in sp.h.
+
+13) Added Perl library interface. You can now write Spread client 
+    programs in perl. Thanks to Theo Schlossnagle <theos@cnds.jhu.edu>.
+
+14) License updated to version 1.1. Main change is a reformatting and 
+    updated email addresses. 
+
+July 27, 1999 Official Release
+---------------------------------------------------
+
+1) Has new license (license.txt) and copyright notices
+
+2) New Java interface included
+
+3) Location of license has moved to: 
+	    http://www.spread.org/license/
+	    http://www.cnds.jhu.edu/spread/license/
+
+4) Minor documentation and example program improvements.
+
+5) One minor bug fixed in group handling.
+
+May 26, 1999 Release:
+---------------------
+1) Expiration Date Removed from Binary version
+   This release of the executatbles will not expire.
+
+2) New Copyright Statement
+   The copyright of Spread has been finalized. The statement at the top of 
+   this file shows it.
+
+3) Source release soon & new license
+   a) As soon as a few final issues are resolved we will release the source
+      to Spread under the CNDS Non-Commercial and Development License. 
+   b) A draft of the new license can be found at 
+      http://www.cnds.jhu.edu/spread/CNCL/.
+      Please email us any comments or concerns you have at spread@spread.org
+
+4) Bugs Fixed:
+   a) Bug fix to the SP_scatter_recv() call to make receives into 
+      scatter structures of multiple entries of different sizes work.
+   b) The Linux platform also had scatter-gather functionality enabled 
+      (now that glibc has working sendmsg, recvmsg calls)
+   c) Fixed bug where packets which are delayed a long time in the network
+      but then actually arrive at a spread daemon cause a crash.
+
+
+October 30,1998 Release:
+-----------
+1) Multi-threading:
+   Libsp.a has split into two libraries, libsp.a and libtsp.a, they
+   are identical except that libtsp.a is thread-safe and libsp.a is not.
+   Both versions are provided so that single-threaded programs who don't 
+   need a safe library can avoid the (admittedly pretty small) overhead of 
+   locking. The libtsp.a can be used identically with libsp.a with the 
+   addition that all SP_* functions can be called by multiple threads 
+   at the same time.  Thread safety in libtsp.a is provided optimally,
+   with the most possible parallelism allowed.  Threads acting on separate
+   mailboxes will never block each other, threads writing to a mailbox will
+   never block other threads reading from the same mailbox and vice versa.
+   The one time thread calls to SP_ functions will be serialzed is when 
+   multiple threads are reading the same mailbox or writing the same mailbox.
+   There is minimal locking of internal structures which can temporarily 
+   block another thread, but since a thread never blocks while in one of 
+   these structure critical sections and the duration of the lock is at 
+   most a fewinstructions the delay should be minimal.  
+   
+2) IP-Multicast:
+   Spread now allows you to specifiy IP-Multicast addresses(i.e. 224.0.0.1) 
+   as the broadcast address for a segment in the spread.conf file. This will 
+   work transparently in the same segment, and is guaranteed not to spill 
+   multicast packets beyond that segment. If multi-segment ip-multicast is 
+   desired, please contact us.
+
+3) Fixed several minor bugs.
+
+4) Included man pages for SP functions. The old html documentation is also 
+   included.
+
+5) None of these changes effect the Java version which has not changed.

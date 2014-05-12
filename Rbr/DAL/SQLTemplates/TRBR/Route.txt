@@ -1,0 +1,507 @@
+464	Afghanistan-Proper	1	1	202	0	0
+37	Alaska-Proper	1	1	25	0	0
+152	Albania-Mobile	1	1	96	0	0
+151	Albania-Proper	1	1	96	0	0
+43	Algeria-Mobile	1	1	28	0	0
+42	Algeria-Proper	1	1	28	0	0
+430	American Samoa-Mobile	1	1	178	0	0
+429	American Samoa-Proper	1	1	178	0	0
+176	Andorra-Mobile	1	1	108	0	0
+175	Andorra-Proper	1	1	108	0	0
+85	Angola-Mobile	1	1	55	0	0
+84	Angola-Proper	1	1	55	0	0
+7	Anguilla-Mobile	1	1	5	0	0
+6	Anguilla-Proper	1	1	5	0	0
+8	Antigua and Barbuda-Proper	1	1	6	0	0
+244	Argentina-Fixed	1	1	144	0	0
+245	Argentina-Mobile	1	1	144	0	0
+172	Armenia-Mobile	1	1	106	0	0
+171	Armenia-Proper	1	1	106	0	0
+128	Aruba-Mobile	1	1	83	0	0
+127	Aruba-Proper	1	1	83	0	0
+87	Ascension-Proper	1	1	57	0	0
+406	Australia-Mobile	1	1	160	0	0
+405	Australia-Proper	1	1	160	0	0
+417	Australian Ext. Ter.-Proper	1	1	166	0	0
+206	Austria-Mobile	1	1	124	0	0
+205	Austria-Proper	1	1	124	0	0
+501	Azerbaijan-Mobile	1	1	224	0	0
+500	Azerbaijan-Proper	1	1	224	0	0
+3	Bahamas-Proper	1	1	3	0	0
+489	Bahrain-Mobile	1	1	216	0	0
+488	Bahrain-Proper	1	1	216	0	0
+457	Bangladesh-Mobile	1	1	198	0	0
+456	Bangladesh-Proper	1	1	198	0	0
+5	Barbados and Diego Garcia-Mobile	1	1	4	0	0
+4	Barbados and Diego Garcia-Proper	1	1	4	0	0
+174	Belarus-Mobile	1	1	107	0	0
+173	Belarus-Proper	1	1	107	0	0
+136	Belgium-Mobile	1	1	88	0	0
+135	Belgium-Proper	1	1	88	0	0
+220	Belize-Proper	1	1	132	0	0
+64	Benin-Mobile	1	1	40	0	0
+63	Benin-Proper	1	1	40	0	0
+13	Bermuda-Proper	1	1	10	0	0
+492	Bhutan-Proper	1	1	218	0	0
+377	Bolivia-Cochabamba	1	1	150	0	0
+375	Bolivia-La Paz	1	1	150	0	0
+378	Bolivia-Mobile	1	1	150	0	0
+374	Bolivia-Proper	1	1	150	0	0
+376	Bolivia-Santa Cruz	1	1	150	0	0
+190	Bosnia and Herzegovina-Mobile	1	1	116	0	0
+189	Bosnia and Herzegovina-Proper	1	1	116	0	0
+120	Botswana-Mobile	1	1	77	0	0
+119	Botswana-Proper	1	1	77	0	0
+246	Brazil-55 SPECIAL SERVICES	1	1	145	0	0
+289	Brazil-55 STANDBY	1	1	145	0	0
+254	Brazil-55_ROC_CEL	1	1	145	0	0
+249	Brazil-5511 GT JUNDIAI	1	1	145	0	0
+247	Brazil-5511 GT SAO PAULO	1	1	145	0	0
+250	Brazil-5511 MOBILE	1	1	145	0	0
+248	Brazil-5511 ROC	1	1	145	0	0
+253	Brazil-5512 GT S J CAMPOS	1	1	145	0	0
+252	Brazil-5512 GT TAUBATE	1	1	145	0	0
+251	Brazil-5512 ROC	1	1	145	0	0
+255	Brazil-5513 GT SANTOS	1	1	145	0	0
+256	Brazil-5513 ROC	1	1	145	0	0
+258	Brazil-5514 GT BAURU	1	1	145	0	0
+257	Brazil-5514 ROC	1	1	145	0	0
+260	Brazil-5515 GT SOROCABA	1	1	145	0	0
+259	Brazil-5515 ROC	1	1	145	0	0
+263	Brazil-5516 GT FRANCA	1	1	145	0	0
+262	Brazil-5516 GT R  PRETO	1	1	145	0	0
+261	Brazil-5516 ROC	1	1	145	0	0
+265	Brazil-5517 GT S J RIO PRETO	1	1	145	0	0
+266	Brazil-5517 ROC	1	1	145	0	0
+268	Brazil-5518 GT P PRUDENTE	1	1	145	0	0
+267	Brazil-5518 ROC	1	1	145	0	0
+269	Brazil-5519 GT CAMPINAS	1	1	145	0	0
+270	Brazil-5519 GT PIRACICABA	1	1	145	0	0
+271	Brazil-5519 ROC	1	1	145	0	0
+272	Brazil-5521 GT RIO	1	1	145	0	0
+274	Brazil-5521 MOBILE	1	1	145	0	0
+273	Brazil-5521 ROC	1	1	145	0	0
+276	Brazil-5522 CGOYTACAZES	1	1	145	0	0
+275	Brazil-5522 MACAE	1	1	145	0	0
+278	Brazil-5524 GT V REDONDA	1	1	145	0	0
+279	Brazil-5524 MOBILE	1	1	145	0	0
+277	Brazil-5524 ROC	1	1	145	0	0
+282	Brazil-5527 GT COLATINA	1	1	145	0	0
+283	Brazil-5527 GT LINHARES	1	1	145	0	0
+280	Brazil-5527 GT VITORIA	1	1	145	0	0
+281	Brazil-5527 ROC	1	1	145	0	0
+285	Brazil-5528 GT C ITAPEMIRIM	1	1	145	0	0
+284	Brazil-5528 ROC	1	1	145	0	0
+286	Brazil-5531 GT BELO HORIZONTE	1	1	145	0	0
+288	Brazil-5531 GT IPATINGA	1	1	145	0	0
+287	Brazil-5531 ROC	1	1	145	0	0
+291	Brazil-5532 GT J FORA	1	1	145	0	0
+290	Brazil-5532 ROC	1	1	145	0	0
+293	Brazil-5533 GT G VALADARES	1	1	145	0	0
+292	Brazil-5533 ROC	1	1	145	0	0
+295	Brazil-5534 GT UBERLANDIA	1	1	145	0	0
+294	Brazil-5534 ROC	1	1	145	0	0
+296	Brazil-5538 MONTES CLAROS	1	1	145	0	0
+297	Brazil-5541 GT CURITIBA	1	1	145	0	0
+298	Brazil-5541 ROC	1	1	145	0	0
+300	Brazil-5542 GT P GROSSA	1	1	145	0	0
+299	Brazil-5542 ROC	1	1	145	0	0
+301	Brazil-5543 GT LONDRINA	1	1	145	0	0
+302	Brazil-5543 ROC	1	1	145	0	0
+303	Brazil-5544 GT MARINGA	1	1	145	0	0
+304	Brazil-5544 ROC	1	1	145	0	0
+306	Brazil-5545 GT CASCAVEL	1	1	145	0	0
+307	Brazil-5545 GT FOZ	1	1	145	0	0
+305	Brazil-5545 ROC	1	1	145	0	0
+310	Brazil-5547 GT BLUMENAU	1	1	145	0	0
+309	Brazil-5547 GT JOINVILE	1	1	145	0	0
+308	Brazil-5547 ROC	1	1	145	0	0
+312	Brazil-5548 GT CRICIUMA	1	1	145	0	0
+313	Brazil-5548 GT FLORIANOPOLIS	1	1	145	0	0
+311	Brazil-5548 ROC	1	1	145	0	0
+315	Brazil-5549 GT LAGES	1	1	145	0	0
+314	Brazil-5549 ROC	1	1	145	0	0
+316	Brazil-5551 GT  P ALEGRE	1	1	145	0	0
+317	Brazil-5551 ROC	1	1	145	0	0
+318	Brazil-5553 GT PELOTAS	1	1	145	0	0
+319	Brazil-5553 ROC	1	1	145	0	0
+321	Brazil-5554 GT CAXIAS	1	1	145	0	0
+320	Brazil-5554 ROC	1	1	145	0	0
+322	Brazil-5561 GT BRASILIA	1	1	145	0	0
+323	Brazil-5561 ROC	1	1	145	0	0
+326	Brazil-5562 GT ANAPOLIS	1	1	145	0	0
+325	Brazil-5562 GT GOIANIA	1	1	145	0	0
+327	Brazil-5562 MOBILE	1	1	145	0	0
+324	Brazil-5562 ROC	1	1	145	0	0
+329	Brazil-5565 GT CUIABA	1	1	145	0	0
+328	Brazil-5565 ROC	1	1	145	0	0
+331	Brazil-5567 GT CAMPO GRANDE	1	1	145	0	0
+330	Brazil-5567 ROC	1	1	145	0	0
+332	Brazil-5569 P VELHO	1	1	145	0	0
+333	Brazil-5571 GT SALVADOR	1	1	145	0	0
+335	Brazil-5571 MOBILE	1	1	145	0	0
+334	Brazil-5571 ROC	1	1	145	0	0
+336	Brazil-5573 ILHEUS	1	1	145	0	0
+338	Brazil-5575 GT F SANTANA	1	1	145	0	0
+337	Brazil-5575 ROC	1	1	145	0	0
+339	Brazil-5577 V CONQUISTA	1	1	145	0	0
+341	Brazil-5579 GT ARACAJU	1	1	145	0	0
+340	Brazil-5579 ROC	1	1	145	0	0
+344	Brazil-5581 CARUARU	1	1	145	0	0
+343	Brazil-5581 GT RECIFE	1	1	145	0	0
+342	Brazil-5581 ROC	1	1	145	0	0
+346	Brazil-5582 GT MACEIO	1	1	145	0	0
+345	Brazil-5582 ROC	1	1	145	0	0
+348	Brazil-5583 GT CAMPINA GRANDE	1	1	145	0	0
+349	Brazil-5583 GT J PESSOA	1	1	145	0	0
+347	Brazil-5583 ROC	1	1	145	0	0
+351	Brazil-5584 GT NATAL	1	1	145	0	0
+352	Brazil-5584 MOSSORO	1	1	145	0	0
+350	Brazil-5584 ROC	1	1	145	0	0
+353	Brazil-5585 GT FORTALEZA	1	1	145	0	0
+354	Brazil-5585 ROC	1	1	145	0	0
+355	Brazil-5586 GT TERESINA	1	1	145	0	0
+356	Brazil-5586 ROC	1	1	145	0	0
+357	Brazil-5591 GT BELEM	1	1	145	0	0
+358	Brazil-5591 ROC	1	1	145	0	0
+359	Brazil-5592 GT MANAUS	1	1	145	0	0
+360	Brazil-5592 ROC	1	1	145	0	0
+361	Brazil-5595 BOA VISTA	1	1	145	0	0
+363	Brazil-5598 GT SAO LUIS	1	1	145	0	0
+362	Brazil-5598 ROC	1	1	145	0	0
+364	Brazil-5599 IMPERATRIZ	1	1	145	0	0
+264	Brazil-ROC LAND LINE	1	1	145	0	0
+9	British Virgin Islands-Proper	1	1	7	0	0
+418	Brunei Darussalam-Proper	1	1	167	0	0
+160	Bulgaria-Mobile	1	1	100	0	0
+159	Bulgaria-Proper	1	1	100	0	0
+59	Burkina Faso-Mobile	1	1	37	0	0
+58	Burkina Faso-Proper	1	1	37	0	0
+102	Burundi-Proper	1	1	67	0	0
+452	Cambodia-Mobile	1	1	195	0	0
+451	Cambodia-Proper	1	1	195	0	0
+76	Cameroon-Mobile	1	1	48	0	0
+75	Cameroon-Proper	1	1	48	0	0
+2	Canada-Proper	1	1	2	0	0
+77	Cape Verde-Proper	1	1	49	0	0
+12	Cayman Islands-Mobile	1	1	9	0	0
+11	Cayman Islands-Proper	1	1	9	0	0
+74	Central African Rep.-Proper	1	1	47	0	0
+73	Chad-Proper	1	1	46	0	0
+366	Chile-Mobile	1	1	146	0	0
+365	Chile-Proper	1	1	146	0	0
+455	China-Mobile	1	1	197	0	0
+454	China-Proper	1	1	197	0	0
+18	CNMI-Proper	1	1	14	0	0
+369	Colombia-Barranquilla	1	1	147	0	0
+368	Colombia-Mobile	1	1	147	0	0
+367	Colombia-Proper	1	1	147	0	0
+122	Comoros and Mayotte-Proper	1	1	79	0	0
+82	Congo Brazzaville-Proper	1	1	53	0	0
+83	Congo Kinshasa-Proper	1	1	54	0	0
+427	Cook Islands-Proper	1	1	176	0	0
+230	Costa Rica-Mobile	1	1	137	0	0
+229	Costa Rica-Proper	1	1	137	0	0
+57	Cote d Ivoire-Proper	1	1	36	0	0
+186	Croatia-Mobile	1	1	114	0	0
+185	Croatia-Proper	1	1	114	0	0
+243	Cuba-Proper	1	1	143	0	0
+156	Cyprus-Mobile	1	1	98	0	0
+155	Cyprus-Proper	1	1	98	0	0
+200	Czech Rep.-Mobile	1	1	121	0	0
+199	Czech Rep.-Proper	1	1	121	0	0
+210	Denmark-Mobile	1	1	126	0	0
+209	Denmark-Proper	1	1	126	0	0
+95	Djibouti-Proper	1	1	63	0	0
+23	Dominica Rep.-Mobile	1	1	17	0	0
+22	Dominica Rep.-Proper	1	1	17	0	0
+31	Dominican Republic-Distrito	1	1	21	0	0
+29	Dominican Republic-Mobile	1	1	21	0	0
+28	Dominican Republic-Proper	1	1	21	0	0
+30	Dominican Republic-Santiago	1	1	21	0	0
+446	DPR of Korea-Proper	1	1	192	0	0
+381	Ecuador-Cuenca	1	1	152	0	0
+382	Ecuador-Mobile	1	1	152	0	0
+380	Ecuador-Quito	1	1	152	0	0
+39	Egypt-Mobile	1	1	26	0	0
+38	Egypt-Proper	1	1	26	0	0
+224	El Salvador-Mobile	1	1	134	0	0
+223	El Salvador-Proper	1	1	134	0	0
+79	Equatorial Guinea-Proper	1	1	51	0	0
+126	Eritrea-Proper	1	1	82	0	0
+168	Estonia-Mobile	1	1	104	0	0
+167	Estonia-Proper	1	1	104	0	0
+93	Ethiopia-Mobile	1	1	61	0	0
+92	Ethiopia-Proper	1	1	61	0	0
+219	Falkland Islands (Malvinas)-Proper	1	1	131	0	0
+129	Faroe Islands-Proper	1	1	84	0	0
+424	Fiji-Proper	1	1	173	0	0
+158	Finland-Mobile	1	1	99	0	0
+157	Finland-Proper	1	1	99	0	0
+138	France-Mobile	1	1	89	0	0
+137	France-Proper	1	1	89	0	0
+435	French Polynesia-Proper	1	1	183	0	0
+81	Gabon-Mobile	1	1	52	0	0
+80	Gabon-Proper	1	1	52	0	0
+49	Gambia-Mobile	1	1	31	0	0
+48	Gambia-Proper	1	1	31	0	0
+503	Georgia-Mobile	1	1	225	0	0
+502	Georgia-Proper	1	1	225	0	0
+218	Germany-Mobile	1	1	130	0	0
+217	Germany-Proper	1	1	130	0	0
+70	Ghana-Mobile	1	1	44	0	0
+69	Ghana-Proper	1	1	44	0	0
+142	Gibraltar-Mobile	1	1	91	0	0
+141	Gibraltar-Proper	1	1	91	0	0
+132	Greece-Mobile	1	1	86	0	0
+131	Greece-Proper	1	1	86	0	0
+130	Greenland-Proper	1	1	85	0	0
+15	Grenada-Mobile	1	1	11	0	0
+14	Grenada-Proper	1	1	11	0	0
+373	Guadeloupe-Mobile	1	1	149	0	0
+372	Guadeloupe-Proper	1	1	149	0	0
+19	Guam-Proper	1	1	15	0	0
+222	Guatemala-Mobile	1	1	133	0	0
+221	Guatemala-Proper	1	1	133	0	0
+384	Guiana (French dept.)-Mobile	1	1	153	0	0
+383	Guiana (French dept.)-Proper	1	1	153	0	0
+56	Guinea-Mobile	1	1	35	0	0
+55	Guinea-Proper	1	1	35	0	0
+86	Guinea Bissau-Proper	1	1	56	0	0
+379	Guyana-Proper	1	1	151	0	0
+235	Haiti-Mobile	1	1	140	0	0
+234	Haiti-Proper	1	1	140	0	0
+27	Hawaii-Proper	1	1	20	0	0
+226	Honduras-Mobile	1	1	135	0	0
+225	Honduras-Proper	1	1	135	0	0
+448	Hongkong-Mobile	1	1	193	0	0
+447	Hongkong-Proper	1	1	193	0	0
+162	Hungary-Mobile	1	1	101	0	0
+161	Hungary-Proper	1	1	101	0	0
+150	Iceland-Mobile	1	1	95	0	0
+149	Iceland-Proper	1	1	95	0	0
+461	India-Mobile	1	1	200	0	0
+460	India-Proper	1	1	200	0	0
+408	Indonesia-Mobile	1	1	161	0	0
+407	Indonesia-Proper	1	1	161	0	0
+497	Iran-Mobile	1	1	221	0	0
+496	Iran-Proper	1	1	221	0	0
+477	Iraq-Mobile	1	1	209	0	0
+476	Iraq-Proper	1	1	209	0	0
+148	Ireland-Mobile	1	1	94	0	0
+147	Ireland-Proper	1	1	94	0	0
+487	Israel-Mobile	1	1	215	0	0
+486	Israel-Proper	1	1	215	0	0
+194	Italy-Mobile	1	1	118	0	0
+193	Italy-Proper	1	1	118	0	0
+36	Jamaica-Mobile	1	1	24	0	0
+35	Jamaica-Proper	1	1	24	0	0
+442	Japan-Mobile	1	1	189	0	0
+441	Japan-Proper	1	1	189	0	0
+473	Jordan-Mobile	1	1	207	0	0
+472	Jordan-Proper	1	1	207	0	0
+97	Kenya-Mobile	1	1	64	0	0
+96	Kenya-Proper	1	1	64	0	0
+432	Kiribati-Proper	1	1	180	0	0
+443	Korea South-Proper	1	1	190	0	0
+479	Kuwait-Mobile	1	1	210	0	0
+478	Kuwait-Proper	1	1	210	0	0
+505	Kyrgyzstan-Mobile	1	1	226	0	0
+504	Kyrgyzstan-Proper	1	1	226	0	0
+453	Lao P.D.R.-Proper	1	1	196	0	0
+166	Latvia-Mobile	1	1	103	0	0
+165	Latvia-Proper	1	1	103	0	0
+471	Lebanon-Mobile	1	1	206	0	0
+470	Lebanon-Proper	1	1	206	0	0
+118	Lesotho-Proper	1	1	76	0	0
+66	Liberia-Proper	1	1	42	0	0
+47	Libya-Mobile	1	1	30	0	0
+46	Libya-Proper	1	1	30	0	0
+204	Liechtenstein-Mobile	1	1	123	0	0
+203	Liechtenstein-Proper	1	1	123	0	0
+164	Lithuania-Mobile	1	1	102	0	0
+163	Lithuania-Proper	1	1	102	0	0
+146	Luxembourg-Mobile	1	1	93	0	0
+145	Luxembourg-Proper	1	1	93	0	0
+450	Macau-Mobile	1	1	194	0	0
+449	Macau-Proper	1	1	194	0	0
+192	Macedonia-Mobile	1	1	117	0	0
+191	Macedonia-Proper	1	1	117	0	0
+109	Madagascar-Mobile	1	1	71	0	0
+108	Madagascar-Proper	1	1	71	0	0
+117	Malawi-Mobile	1	1	75	0	0
+116	Malawi-Proper	1	1	75	0	0
+404	Malaysia-Mobile	1	1	159	0	0
+403	Malaysia-Proper	1	1	159	0	0
+469	Maldives-Mobile	1	1	205	0	0
+468	Maldives-Proper	1	1	205	0	0
+54	Mali-Mobile	1	1	34	0	0
+53	Mali-Proper	1	1	34	0	0
+154	Malta-Mobile	1	1	97	0	0
+153	Malta-Proper	1	1	97	0	0
+438	Marshall Islands-Proper	1	1	186	0	0
+388	Martinique-Mobile	1	1	155	0	0
+387	Martinique-Proper	1	1	155	0	0
+52	Mauritania-Proper	1	1	33	0	0
+65	Mauritius-Proper	1	1	41	0	0
+242	Mexico-525	1	1	142	0	0
+240	Mexico-NEA	1	1	142	0	0
+239	Mexico-OffNet	1	1	142	0	0
+238	Mexico-OnNet	1	1	142	0	0
+241	Mexico-Top3	1	1	142	0	0
+437	Micronesia-Proper	1	1	185	0	0
+170	Moldova-Mobile	1	1	105	0	0
+169	Moldova-Proper	1	1	105	0	0
+179	Monaco-Kosovo Mobile	1	1	109	0	0
+178	Monaco-Mobile	1	1	109	0	0
+177	Monaco-Proper	1	1	109	0	0
+494	Mongolia-Mobile	1	1	219	0	0
+493	Mongolia-Proper	1	1	219	0	0
+17	Montserrat-Proper	1	1	13	0	0
+41	Morocco-Mobile	1	1	27	0	0
+40	Morocco-Proper	1	1	27	0	0
+104	Mozambique-Mobile	1	1	68	0	0
+103	Mozambique-Proper	1	1	68	0	0
+467	Myanmar-Proper	1	1	204	0	0
+115	Namibia-Mobile	1	1	74	0	0
+114	Namibia-Proper	1	1	74	0	0
+419	Nauru-Proper	1	1	168	0	0
+495	Nepal-Proper	1	1	220	0	0
+134	Netherlands-Mobile	1	1	87	0	0
+133	Netherlands-Proper	1	1	87	0	0
+402	Netherlands Antilles-Mobile	1	1	158	0	0
+401	Netherlands Antilles-Proper	1	1	158	0	0
+433	New Caledonia-Proper	1	1	181	0	0
+412	New Zealand-Mobile	1	1	163	0	0
+411	New Zealand-Proper	1	1	163	0	0
+228	Nicaragua-Mobile	1	1	136	0	0
+227	Nicaragua-Proper	1	1	136	0	0
+60	Niger-Proper	1	1	38	0	0
+72	Nigeria-Mobile	1	1	45	0	0
+71	Nigeria-Proper	1	1	45	0	0
+428	Niue-Proper	1	1	177	0	0
+214	Norway-Mobile	1	1	128	0	0
+213	Norway-Proper	1	1	128	0	0
+483	Oman-Proper	1	1	213	0	0
+463	Pakistan-Mobile	1	1	201	0	0
+462	Pakistan-Proper	1	1	201	0	0
+425	Palau-Proper	1	1	174	0	0
+232	Panama-Mobile	1	1	138	0	0
+231	Panama-Proper	1	1	138	0	0
+420	Papua New Guinea-Proper	1	1	169	0	0
+386	Paraguay-Mobile	1	1	154	0	0
+385	Paraguay-Proper	1	1	154	0	0
+237	Peru-Mobile	1	1	141	0	0
+236	Peru-Proper	1	1	141	0	0
+410	Philippines-Mobile	1	1	162	0	0
+409	Philippines-Proper	1	1	162	0	0
+216	Poland-Mobile	1	1	129	0	0
+215	Poland-Proper	1	1	129	0	0
+144	Portugal-Mobile	1	1	92	0	0
+143	Portugal-Proper	1	1	92	0	0
+26	Puerto Rico-Proper	1	1	19	0	0
+491	Qatar-Mobile	1	1	217	0	0
+490	Qatar-Proper	1	1	217	0	0
+111	Reunion-Mobile	1	1	72	0	0
+110	Reunion-Proper	1	1	72	0	0
+196	Romania-Mobile	1	1	119	0	0
+195	Romania-Proper	1	1	119	0	0
+440	Russia-Mobile	1	1	187	0	0
+439	Russia-Proper	1	1	187	0	0
+91	Rwanda-Proper	1	1	60	0	0
+125	Saint Helena-Proper	1	1	81	0	0
+34	Saint Kitts and Nevis-Mobile	1	1	23	0	0
+33	Saint Kitts and Nevis-Proper	1	1	23	0	0
+21	Saint Lucia-Mobile	1	1	16	0	0
+20	Saint Lucia-Proper	1	1	16	0	0
+233	Saint Pierre and Miquelon-Proper	1	1	139	0	0
+25	Saint Vincent and the Grenadines-Mobile	1	1	18	0	0
+24	Saint Vincent and the Grenadines-Proper	1	1	18	0	0
+180	San Marino-Proper	1	1	110	0	0
+78	Sao Tome and Principe-Proper	1	1	50	0	0
+481	Saudi Arabia-Mobile	1	1	211	0	0
+480	Saudi Arabia-Proper	1	1	211	0	0
+51	Senegal-Mobile	1	1	32	0	0
+50	Senegal-Proper	1	1	32	0	0
+88	Seychelles-Proper	1	1	58	0	0
+68	Sierra Leone-Mobile	1	1	43	0	0
+67	Sierra Leone-Proper	1	1	43	0	0
+414	Singapore-Mobile	1	1	164	0	0
+413	Singapore-Proper	1	1	164	0	0
+202	Slovakia-Mobile	1	1	122	0	0
+201	Slovakia-Proper	1	1	122	0	0
+188	Slovenia-Mobile	1	1	115	0	0
+187	Slovenia-Proper	1	1	115	0	0
+422	Solomon-Proper	1	1	171	0	0
+94	Somalia-Proper	1	1	62	0	0
+124	South Africa-Mobile	1	1	80	0	0
+123	South Africa-Proper	1	1	80	0	0
+140	Spain-Mobile	1	1	90	0	0
+139	Spain-Proper	1	1	90	0	0
+466	Sri Lanka-Mobile	1	1	203	0	0
+465	Sri Lanka-Proper	1	1	203	0	0
+90	Sudan-Mobile	1	1	59	0	0
+89	Sudan-Proper	1	1	59	0	0
+389	Suriname-Proper	1	1	156	0	0
+121	Swaziland-Proper	1	1	78	0	0
+212	Sweden-Mobile	1	1	127	0	0
+211	Sweden-Proper	1	1	127	0	0
+198	Switzerland-Mobile	1	1	120	0	0
+197	Switzerland-Proper	1	1	120	0	0
+475	Syria-Mobile	1	1	208	0	0
+474	Syria-Proper	1	1	208	0	0
+498	Tajikistan-Proper	1	1	222	0	0
+99	Tanzania-Mobile	1	1	65	0	0
+98	Tanzania-Proper	1	1	65	0	0
+416	Thailand-Mobile	1	1	165	0	0
+415	Thailand-Proper	1	1	165	0	0
+62	Togo-Mobile	1	1	39	0	0
+61	Togo-Proper	1	1	39	0	0
+436	Tokelau-Proper	1	1	184	0	0
+421	Tonga-Proper	1	1	170	0	0
+32	Trinidad and Tobago-Proper	1	1	22	0	0
+45	Tunisia-Mobile	1	1	29	0	0
+44	Tunisia-Proper	1	1	29	0	0
+459	Turkey-Mobile	1	1	199	0	0
+458	Turkey-Proper	1	1	199	0	0
+499	Turkmenistan-Proper	1	1	223	0	0
+16	Turks and Caicos Islands-Proper	1	1	12	0	0
+434	Tuvalu-Proper	1	1	182	0	0
+101	Uganda-Mobile	1	1	66	0	0
+100	Uganda-Proper	1	1	66	0	0
+183	Ukraine-Mobile	1	1	112	0	0
+182	Ukraine-Proper	1	1	112	0	0
+485	United Arab Emirates-Mobile	1	1	214	0	0
+484	United Arab Emirates-Proper	1	1	214	0	0
+208	United Kingdom-Mobile	1	1	125	0	0
+207	United Kingdom-Proper	1	1	125	0	0
+392	Uruguay-Canelones	1	1	157	0	0
+394	Uruguay-Colonia	1	1	157	0	0
+393	Uruguay-Maldonado	1	1	157	0	0
+395	Uruguay-Mercedes	1	1	157	0	0
+400	Uruguay-Mobile	1	1	157	0	0
+391	Uruguay-Montevideo	1	1	157	0	0
+397	Uruguay-Paysandu	1	1	157	0	0
+390	Uruguay-Proper	1	1	157	0	0
+396	Uruguay-Rivera	1	1	157	0	0
+398	Uruguay-Salto	1	1	157	0	0
+399	Uruguay-Urtigas	1	1	157	0	0
+10	US Virgin Islands-Proper	1	1	8	0	0
+1	USA-Proper	1	1	1	0	0
+507	Uzbekistan-Mobile	1	1	227	0	0
+506	Uzbekistan-Proper	1	1	227	0	0
+423	Vanuatu-Proper	1	1	172	0	0
+181	Vatican-Proper	1	1	111	0	0
+371	Venezuela-Mobile	1	1	148	0	0
+370	Venezuela-Proper	1	1	148	0	0
+445	Vietnam-Mobile	1	1	191	0	0
+444	Vietnam-Proper	1	1	191	0	0
+426	Wallis and Futuna-Proper	1	1	175	0	0
+431	Western Samoa-Proper	1	1	179	0	0
+482	Yemen-Proper	1	1	212	0	0
+184	Yugoslavia-Proper	1	1	113	0	0
+107	Zambia-Mobile	1	1	70	0	0
+106	Zambia-Proper	1	1	70	0	0
+105	Zanzibar-Proper	1	1	69	0	0
+113	Zimbabwe-Mobile	1	1	73	0	0
+112	Zimbabwe-Proper	1	1	73	0	0

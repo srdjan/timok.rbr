@@ -1,0 +1,51 @@
+..\..\Release\Wizard\Templates\VB - Generics - Write Whole File.tpl
+..\..\Release\Wizard\Templates\VB - Generics - Read Whole File.tpl
+..\..\Release\Wizard\Templates\CS - Generics - Read And Check Errors.tpl
+..\..\Release\Wizard\Templates\VB - Generics - Read Record by Record.tpl
+..\..\Release\Wizard\Templates\CS - Read And Check Errors.tpl
+..\..\Release\Wizard\Templates\VB - Write Whole File.tpl
+..\..\Release\Wizard\Templates\CS - Generics - Write Whole File.tpl
+..\..\Release\Wizard\Templates\CS - Read Record by Record.tpl
+..\..\Release\Wizard\Templates\CS - Generics - Read Whole File.tpl
+..\..\Release\Wizard\Templates\CS - Write Whole File.tpl
+..\..\Release\Wizard\Templates\VB - Read Record by Record.tpl
+..\..\Release\Wizard\Templates\VB - Read Whole File.tpl
+..\..\Release\Wizard\Templates\CS - Generics - Read Record by Record.tpl
+..\..\Release\Wizard\Templates\CS - Read Whole File.tpl
+..\..\Release\Wizard\Templates\VB - Generics - Read and Check Errors.tpl
+..\..\Release\Wizard\Templates\VB - Read and Check Errors.tpl
+..\..\Release\Wizard\FileHelpersWizard.exe
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\FileHelpers.WizardApp.FieldDelimitedControl.resources
+obj\Debug\FileHelpers.WizardApp.FieldBaseControl.resources
+obj\Debug\FileHelpers.WizardApp.FieldFixedControl.resources
+obj\Debug\FileHelpers.WizardApp.frmWizard.resources
+obj\Debug\FileHelpers.WizardApp.Properties.Resources.resources
+obj\Debug\FileHelpers.WizardApp.csproj.GenerateResource.Cache
+obj\Debug\FileHelpersWizard.exe
+obj\Debug\FileHelpersWizard.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\FileHelpers.WizardApp.FieldDelimitedControl.resources
+obj\Release\FileHelpers.WizardApp.FieldBaseControl.resources
+obj\Release\FileHelpers.WizardApp.FieldFixedControl.resources
+obj\Release\FileHelpers.WizardApp.frmWizard.resources
+obj\Release\FileHelpers.WizardApp.Properties.Resources.resources
+obj\Release\FileHelpers.WizardApp.csproj.GenerateResource.Cache
+obj\Release\FileHelpersWizard.exe
+..\Release\Wizard\Templates\VB - Generics - Write Whole File.tpl
+..\Release\Wizard\Templates\VB - Generics - Read Whole File.tpl
+..\Release\Wizard\Templates\CS - Generics - Read And Check Errors.tpl
+..\Release\Wizard\Templates\VB - Generics - Read Record by Record.tpl
+..\Release\Wizard\Templates\CS - Read And Check Errors.tpl
+..\Release\Wizard\Templates\VB - Write Whole File.tpl
+..\Release\Wizard\Templates\CS - Generics - Write Whole File.tpl
+..\Release\Wizard\Templates\CS - Read Record by Record.tpl
+..\Release\Wizard\Templates\CS - Generics - Read Whole File.tpl
+..\Release\Wizard\Templates\CS - Write Whole File.tpl
+..\Release\Wizard\Templates\VB - Read Record by Record.tpl
+..\Release\Wizard\Templates\VB - Read Whole File.tpl
+..\Release\Wizard\Templates\CS - Generics - Read Record by Record.tpl
+..\Release\Wizard\Templates\CS - Read Whole File.tpl
+..\Release\Wizard\Templates\VB - Generics - Read and Check Errors.tpl
+..\Release\Wizard\Templates\VB - Read and Check Errors.tpl
+..\Release\Wizard\FileHelpersWizard.exe

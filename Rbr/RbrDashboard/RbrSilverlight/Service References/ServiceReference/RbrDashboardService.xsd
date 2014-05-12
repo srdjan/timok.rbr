@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RbrData.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RbrData.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ReportContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Partners" nillable="true" type="tns:ArrayOfPartnerRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportContext" nillable="true" type="tns:ReportContext" />
+  <xs:complexType name="ArrayOfPartnerRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerRecord" nillable="true" type="tns:PartnerRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartnerRecord" nillable="true" type="tns:ArrayOfPartnerRecord" />
+  <xs:complexType name="PartnerRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartnerRecord" nillable="true" type="tns:PartnerRecord" />
+  <xs:complexType name="ReportContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerReport" nillable="true" type="tns:ArrayOfCustomerReportRecord" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeReport" nillable="true" type="tns:ArrayOfNodeReportRecord" />
+      <xs:element minOccurs="0" name="RouteReport" nillable="true" type="tns:ArrayOfRouteReportRecord" />
+      <xs:element minOccurs="0" name="TrunkReport" nillable="true" type="tns:ArrayOfTrunkReportRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportContainer" nillable="true" type="tns:ReportContainer" />
+  <xs:complexType name="ArrayOfCustomerReportRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerReportRecord" nillable="true" type="tns:CustomerReportRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerReportRecord" nillable="true" type="tns:ArrayOfCustomerReportRecord" />
+  <xs:complexType name="CustomerReportRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierAcctId" type="xs:short" />
+      <xs:element minOccurs="0" name="CarrierName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Completed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Cost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CustomerAcctId" type="xs:short" />
+      <xs:element minOccurs="0" name="Day" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InMinutes" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NodeId" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="OutMinutes" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RouteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerReportRecord" nillable="true" type="tns:CustomerReportRecord" />
+  <xs:complexType name="ArrayOfNodeReportRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeReportRecord" nillable="true" type="tns:NodeReportRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNodeReportRecord" nillable="true" type="tns:ArrayOfNodeReportRecord" />
+  <xs:complexType name="NodeReportRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Completed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DateHour" type="xs:int" />
+      <xs:element minOccurs="0" name="InMinutes" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NodeId" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="OutMinutes" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Total" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeReportRecord" nillable="true" type="tns:NodeReportRecord" />
+  <xs:complexType name="ArrayOfRouteReportRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RouteReportRecord" nillable="true" type="tns:RouteReportRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRouteReportRecord" nillable="true" type="tns:ArrayOfRouteReportRecord" />
+  <xs:complexType name="RouteReportRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Completed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Cost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InMinutes" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Node" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OutMinutes" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RouteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RouteReportRecord" nillable="true" type="tns:RouteReportRecord" />
+  <xs:complexType name="ArrayOfTrunkReportRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrunkReportRecord" nillable="true" type="tns:TrunkReportRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrunkReportRecord" nillable="true" type="tns:ArrayOfTrunkReportRecord" />
+  <xs:complexType name="TrunkReportRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierAcctId" type="xs:short" />
+      <xs:element minOccurs="0" name="Completed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Cost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CustomerAcctId" type="xs:short" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Day" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InMinutes" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NodeId" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="OutMinutes" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RouteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrunkReportRecord" nillable="true" type="tns:TrunkReportRecord" />
+</xs:schema>

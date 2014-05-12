@@ -1,0 +1,161 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0681DE2-5AAB-471A-9093-BC7481B68203}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timok.Rbr.DOM</RootNamespace>
+    <AssemblyName>Timok.Rbr.DOM</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Timok.Rbr.DOM/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\Timok\Rbr\Release\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Perst.NET, Version=1.0.3421.38027, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExtLibs\Trunk\Perst.NET\bin\Perst.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessNumber.cs" />
+    <Compile Include="CarrierAcct.cs" />
+    <Compile Include="CarrierDialPeer.cs" />
+    <Compile Include="CarrierRoute.cs" />
+    <Compile Include="Cdr.cs" />
+    <Compile Include="CdrAggregate.cs" />
+    <Compile Include="CdrAggrExporter.cs" />
+    <Compile Include="CdrExporter.cs" />
+    <Compile Include="EndpointASR.cs" />
+    <Compile Include="Initializer.cs" />
+    <Compile Include="Interfaces\INumberPortabilityRepository.cs" />
+    <Compile Include="NumberPortability.cs" />
+    <Compile Include="RbrExporter.cs" />
+    <Compile Include="RetailAccount.cs" />
+    <Compile Include="RouteMinutesSummary.cs" />
+    <Compile Include="RoutingInfo.cs" />
+    <Compile Include="SurchargeInfo.cs" />
+    <Compile Include="CurrentNode.cs" />
+    <Compile Include="CustomerAcct.cs" />
+    <Compile Include="CustomerRoute.cs" />
+    <Compile Include="CustomerDialPeer.cs" />
+    <Compile Include="Endpoint.cs" />
+    <Compile Include="InventoryUsage.cs" />
+    <Compile Include="IRetailAccount.cs" />
+    <Compile Include="LCRSorter.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="PhoneCard.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rate.cs" />
+    <Compile Include="RateInfo.cs" />
+    <Compile Include="Repositories\CdrAggregateRepository.cs" />
+    <Compile Include="Repositories\DualRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Residential.cs" />
+    <Compile Include="Route.cs" />
+    <Compile Include="RetailService.cs" />
+    <Compile Include="TypeOfDayEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Logger\Timok.Logger.csproj">
+      <Project>{B45AA208-3EF2-44E2-8A28-75DA26845900}</Project>
+      <Name>Timok.Core.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\Timok.Core.csproj">
+      <Project>{60553581-F39F-4A4F-B11A-61A9E07A2ED4}</Project>
+      <Name>Timok.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Timok.Rbr.Core.csproj">
+      <Project>{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}</Project>
+      <Name>Timok.Rbr.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\Timok.Rbr.DAL.csproj">
+      <Project>{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}</Project>
+      <Name>Timok.Rbr.DAL</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

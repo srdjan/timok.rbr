@@ -1,0 +1,60 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "flooder", "flooder.vcproj", "{F8234FB5-9766-4A50-9097-C64227D3D698}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsp", "libsp.vcproj", "{C0CC15B2-B098-4B8C-8A53-E89F21B25255}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtsp", "libtsp.vcproj", "{F3A60C39-8023-44D4-BCA6-669B518BC71A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "r", "r.vcproj", "{04C77D90-99F0-406A-81CE-083E4BD39B4B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "s", "s.vcproj", "{8AF97EE1-AE0D-4611-B67B-B89EDF0B4C11}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spread", "spread.vcproj", "{A5ABB8AE-6DB9-497D-9C23-222FBD5B1901}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sptmonitor", "sptmonitor.vcproj", "{9F8A0CBE-87C7-426B-9A4D-A4A01A543969}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tuser", "tuser.vcproj", "{F19B1733-054B-43D6-A47E-F6BBDE0110CC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F8234FB5-9766-4A50-9097-C64227D3D698}.Release.ActiveCfg = Release|Win32
+		{F8234FB5-9766-4A50-9097-C64227D3D698}.Release.Build.0 = Release|Win32
+		{C0CC15B2-B098-4B8C-8A53-E89F21B25255}.Release.ActiveCfg = Release|Win32
+		{C0CC15B2-B098-4B8C-8A53-E89F21B25255}.Release.Build.0 = Release|Win32
+		{F3A60C39-8023-44D4-BCA6-669B518BC71A}.Release.ActiveCfg = Release|Win32
+		{F3A60C39-8023-44D4-BCA6-669B518BC71A}.Release.Build.0 = Release|Win32
+		{04C77D90-99F0-406A-81CE-083E4BD39B4B}.Release.ActiveCfg = Release|Win32
+		{04C77D90-99F0-406A-81CE-083E4BD39B4B}.Release.Build.0 = Release|Win32
+		{8AF97EE1-AE0D-4611-B67B-B89EDF0B4C11}.Release.ActiveCfg = Release|Win32
+		{8AF97EE1-AE0D-4611-B67B-B89EDF0B4C11}.Release.Build.0 = Release|Win32
+		{A5ABB8AE-6DB9-497D-9C23-222FBD5B1901}.Release.ActiveCfg = Release|Win32
+		{A5ABB8AE-6DB9-497D-9C23-222FBD5B1901}.Release.Build.0 = Release|Win32
+		{9F8A0CBE-87C7-426B-9A4D-A4A01A543969}.Release.ActiveCfg = Release|Win32
+		{9F8A0CBE-87C7-426B-9A4D-A4A01A543969}.Release.Build.0 = Release|Win32
+		{F19B1733-054B-43D6-A47E-F6BBDE0110CC}.Release.ActiveCfg = Release|Win32
+		{F19B1733-054B-43D6-A47E-F6BBDE0110CC}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

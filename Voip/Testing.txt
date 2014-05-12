@@ -1,0 +1,14 @@
+Test Case (1)
+---------------------------------------------------------------------------------------
+start configured to use 1 channel only (so that repeating calls always use same channel)
+place a call and dont enter PIN, wait for call to complete (disconnect)
+repeat  acouple of times
+
+Current Status: 
+CHardware::Close_and_cleanup_call() throws at:
+if((iResult = sm_channel_datafeed_connect( &feed_connect )) != 0)
+	
+ or throws or stalls during shutdown
+
+Test Case (2)
+---------------------------------------------------------------------------------------

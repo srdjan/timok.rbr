@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Timok.Core.Test">
+</Property><Property Name="Solution File" Value="C:\SvnRepo\Trunk\Core\Timok.Core.Test.sln">
+</Property><Property Name="Date" Value="Monday, August 24, 2009">
+</Property><Property Name="Time" Value="10:12 AM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Timok.Core.Test.sln" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Timok.Core.Test.sln">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Timok.Core.csproj" Description="Project file successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Timok.Core.csproj">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Timok.Core.csproj.user" Description="Project user file successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Timok.Core.csproj.user">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="ObjectFactory.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\ObjectFactory.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="AppConfig.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\AppConfig.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="AssemblyInfo.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="AsyncHelper.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\AsyncHelper.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="BackgroundProcessing\BackgroundWorker.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\BackgroundProcessing\BackgroundWorker.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="BackgroundProcessing\EventArguments.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\BackgroundProcessing\EventArguments.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="BackgroundProcessing\IBackgroundWorker.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\BackgroundProcessing\IBackgroundWorker.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="BackgroundProcessing\ITask.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\BackgroundProcessing\ITask.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="BoundedBlockingQueue.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\BoundedBlockingQueue.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Cloner.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Cloner.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="CMDHelper.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\CMDHelper.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="ConvertEnum.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\ConvertEnum.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="CPSMeter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\CPSMeter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="DataProtection\DataProtector.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\DataProtection\DataProtector.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="DataProtection\SaltHashedPwd.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\DataProtection\SaltHashedPwd.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="DataProtection\SecuredData.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\DataProtection\SecuredData.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="ExtProcess.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\ExtProcess.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="IService.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\IService.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\ILogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\ILogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LoggerFactory.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LoggerFactory.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Md5hash.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Md5hash.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NaturalComparer.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NaturalComparer.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\CommandBase.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\CommandBase.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Rbr.WebAPI.WinService.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Rbr.WebAPI.WinService.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Rbr.WebAPI.WinServiceInstaller.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Rbr.WebAPI.WinServiceInstaller.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="W3CDateTime.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\W3CDateTime.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="DateTimeUtils.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\DateTimeUtils.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="DbLib\BCPExportHelper.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\DbLib\BCPExportHelper.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="DbLib\SqlDateTimeFormatTranslator.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\DbLib\SqlDateTimeFormatTranslator.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="DriveInfo.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\DriveInfo.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="DualFileWriter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\DualFileWriter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Email.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Email.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="EmailValidator.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\EmailValidator.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="FileHelper.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\FileHelper.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="FirewallManager.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\FirewallManager.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="GenericComparer.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\GenericComparer.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Instrumentation\StopWatch.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Instrumentation\StopWatch.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="IOCPCustomThreadPool.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\IOCPCustomThreadPool.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\CompositeLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\CompositeLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\DebugLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\DebugLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\EmailLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\EmailLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\EventLogLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\EventLogLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\FileLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\FileLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\InsistentLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\InsistentLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogEntry.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogEntry.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogEntryCategoryFilter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogEntryCategoryFilter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogEntryFilter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogEntryFilter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogEntryFormatter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogEntryFormatter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogEntryMessageOnlyFormatter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogEntryMessageOnlyFormatter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogEntryPassFilter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogEntryPassFilter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogEntryStandardFormatter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogEntryStandardFormatter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\Logger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\Logger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LoggerTester.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LoggerTester.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogReceiverLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogReceiverLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogReceiverLoggerFactory.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogReceiverLoggerFactory.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogSeverity.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogSeverity.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogSocketReader.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogSocketReader.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\LogSocketReaderReceiver.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\LogSocketReaderReceiver.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\Management\GetLogSeverityLevel.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\Management\GetLogSeverityLevel.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\Management\LoggerAPI.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\Management\LoggerAPI.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\Management\SetLogSeverityLevel.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\Management\SetLogSeverityLevel.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\Management\TimokLogEntryFormatter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\Management\TimokLogEntryFormatter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\MemoryLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\MemoryLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\NullLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\NullLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\RollingFileLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\RollingFileLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\SerialLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\SerialLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\SerialSocketLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\SerialSocketLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\TextWriterLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\TextWriterLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\TimokLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\TimokLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Logger\TraceLogger.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Logger\TraceLogger.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Mod10.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Mod10.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Ftp\FTPAsynchronousConnection.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Ftp\FTPAsynchronousConnection.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Ftp\FTPConnection.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Ftp\FTPConnection.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Ftp\FTPFile.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Ftp\FTPFile.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Ftp\FTPFileTransferType.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Ftp\FTPFileTransferType.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Ftp\FTPMode.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Ftp\FTPMode.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\IPAddressConverter.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\IPAddressConverter.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Tcp\ConnectionTimeoutException.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Tcp\ConnectionTimeoutException.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Tcp\IChannel.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Tcp\IChannel.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Tcp\IPoolableChannel.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Tcp\IPoolableChannel.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Tcp\SocketTimeoutException.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Tcp\SocketTimeoutException.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Tcp\TcpClient.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Tcp\TcpClient.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\CmdContext.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\CmdContext.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\CmdContextCache.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\CmdContextCache.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\ICommand.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\ICommand.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\ICommandFactory.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\ICommandFactory.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\LocalHost.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\LocalHost.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\UdpClient.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\UdpClient.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\UdpMessageParser.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\UdpMessageParser.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="NetworkLib\Udp\UdpServer.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\NetworkLib\Udp\UdpServer.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="ObjectComparer.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\ObjectComparer.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Reflect.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Reflect.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="SequenceGenerator.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\SequenceGenerator.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="SNTPClient.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\SNTPClient.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="StackInfo.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\StackInfo.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="StringLogicalComparer.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\StringLogicalComparer.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="SyncLockList.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\SyncLockList.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="TimokDate.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\TimokDate.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="TimokProcess.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\TimokProcess.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Utils.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\Utils.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="WinServiceHelper.cs" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\WinServiceHelper.cs">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="BackgroundProcessing\readme.txt" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\BackgroundProcessing\readme.txt">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="TimokProcess.resx" Description="File successfully backed up as C:\SvnRepo\Trunk\Core\Backup1\TimokProcess.resx">
+</Event><Event ErrorLevel="0" Project="Timok.Core" Source="Timok.Core.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="Timok.Core" Source="Timok.Core.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="2" Project="Test" Source="Test.Core\Test.csproj" Description="Unable to open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="0" Project="" Source="Timok.Core.Test.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Timok.Core.Test.sln" Description="Converted">
+</Event></UpgradeLog>

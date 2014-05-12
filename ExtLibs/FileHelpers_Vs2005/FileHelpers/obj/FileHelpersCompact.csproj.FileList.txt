@@ -1,0 +1,8 @@
+..\..\Release\DotNet 2.0 PPC\FileHelpersPPC.dll
+..\..\Release\DotNet 2.0 PPC\FileHelpersPPC.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\FileHelpersPPC.dll
+obj\Debug\FileHelpersPPC.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\FileHelpersPPC.dll
+..\..\Release\DotNet 2.0 PPC\FileHelpersPPC.pdb

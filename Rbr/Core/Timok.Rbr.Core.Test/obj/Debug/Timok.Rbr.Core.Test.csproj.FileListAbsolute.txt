@@ -1,0 +1,14 @@
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\obj\Debug\ResolveAssemblyReference.cache
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.Rbr.Core.Test.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.Rbr.Core.Test.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\nunit.framework.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.Core.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.Rbr.Core.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.Rbr.Core.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.Core.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\obj\Debug\Timok.Rbr.Core.Test.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\obj\Debug\Timok.Rbr.Core.Test.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.NetworkLib.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.Logger.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.NetworkLib.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\Core\Timok.Rbr.Core.Test\bin\Debug\Timok.Logger.pdb

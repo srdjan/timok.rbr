@@ -1,0 +1,18 @@
+Rbr.NEXT
+
+2.8
+- H323 ISession interface
+- complete refactoring for more efficient thread usage
+- improve replication
+- port perf improvements from v2.69.1
+
+2.9
+- SIP ISession interface for aculab
+- SIP ISession interface for aculab for other cheaper card (OPAL can be used for both SIP and H323)?
+
+3.0
+- add SL frontend, reports
+
+
+
+OpenSIPStack: http://www.opensourcesip.org:8080/clearspacex/index.jspa

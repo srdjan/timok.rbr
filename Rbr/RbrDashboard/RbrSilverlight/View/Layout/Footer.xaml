@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="RbrSiverlight.View.Layout.Footer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Layout1="clr-namespace:RbrSiverlight.View.Layout"
+    Width="400" Height="30">
+    <Grid x:Name="LayoutRoot">
+        <Rectangle x:Name="toolbarRect" Height="31" Stroke="#FF000000" Canvas.Left="0" Canvas.Top="0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF999898" Offset="0"/>
+                    <GradientStop Color="#FF3F3E3C" Offset="0.826"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Layout1:WaitIndicator x:Name="waitIndicator" Margin="10, 0" HorizontalAlignment="Right" />
+        <TextBlock x:Name="StatusLabel" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="10, 0">[Status]</TextBlock>
+    </Grid>
+</UserControl>

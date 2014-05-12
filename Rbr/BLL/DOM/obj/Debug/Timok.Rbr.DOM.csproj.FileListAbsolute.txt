@@ -1,0 +1,16 @@
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\bin\Debug\Timok.Rbr.DOM.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\bin\Debug\Timok.Rbr.DOM.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\bin\Debug\Perst.NET.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\bin\Debug\Timok.Core.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\bin\Debug\Timok.Core.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\bin\Debug\Perst.NET.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\obj\Debug\ResolveAssemblyReference.cache
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\obj\Debug\Timok.Rbr.DOM.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\obj\Debug\Timok.Rbr.DOM.pdb
+C:\Timok\Rbr\Release\Bin\Timok.Rbr.DOM.dll
+C:\Timok\Rbr\Release\Bin\Timok.Rbr.DOM.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\Bin\Debug\Timok.Core.Logger.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\DOM\Bin\Debug\Timok.Core.Logger.pdb
+C:\SvnRepo\Trunk\Rbr\Trunk\BLL\DOM\obj\Debug\ResolveAssemblyReference.cache
+C:\SvnRepo\Trunk\Rbr\Trunk\BLL\DOM\obj\Debug\Timok.Rbr.DOM.dll
+C:\SvnRepo\Trunk\Rbr\Trunk\BLL\DOM\obj\Debug\Timok.Rbr.DOM.pdb

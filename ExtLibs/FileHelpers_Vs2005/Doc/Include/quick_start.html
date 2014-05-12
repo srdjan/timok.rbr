@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>FileHelpers Library - Copyright 2005-2006 to Marcos Meli</TITLE>
+<LINK href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="global.css" type=text/css 
+rel=stylesheet>
+<link type="text/css" rel="stylesheet" href="SyntaxHighlighter.css"></link>
+
+<meta NAME="Description"        content="An easy to use .NET library to read/write data from fixed length or delimited files or streams. It has support to import/export data from different data sources." />
+<meta name="Author"             content="Marcos Meli" />
+<meta NAME="keywords" Content="FileHelpers,free source code,C#,Programming,File Helpers,Marcos Meli,CSV,Delimited Files,Impor/Export">
+<meta NAME="Copyright" CONTENT="Copyright 2005-2006 to Marcos Meli, All Rights Reserved.">
+
+</HEAD>
+<BODY   text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=0 topMargin=0>
+
+     <FORM method=GET action=http://www.google.com/custom>
+		<table width="100%" cellpadding="0" cellspacing="0">
+			<tr>
+				<td background="up_logo_right.png" width="1" height="51" nowrap><a href="/"><img src="up_logo.png" width="333" height="51" border="0"></a></td><td background="up_logo_right.png" nowrap align=right valign=middle><INPUT TYPE=text name=q size=12 maxlength=200 value="" style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; COLOR: navy; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #f8fcff"> <INPUT type=submit name=sa VALUE="Search" style="BORDER-RIGHT: royalblue 1px solid; BORDER-TOP: royalblue 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: royalblue 1px solid; CURSOR: hand; COLOR: white; BORDER-BOTTOM: royalblue 1px solid; FONT-FAMILY: Verdana; HEIGHT: 21px; BACKGROUND-COLOR: navy">
+                    <INPUT type=hidden name=cof VALUE="S:http://filehelpers.sourceforge.net;AH:center;LH:64;L:http://filehelpers.sourceforge.net/logo_search.png;LW:244;AWFID:82b822b221689c96;"><input type=hidden name=domains value="filehelpers.sourceforge.net"><input type=hidden name=sitesearch value="filehelpers.sourceforge.net" checked>
+<a href="http://www.amazon.com/gp/registry/wishlist/20HRDZWS0NJ6C/104-5286383-8923129?reveal=unpurchased&filter=all&sort=priority&layout=standard&x=10&y=9"><img src="giftsmall.gif" width="23" height="24" border="0" alt="Amazon Wish List"></a> <a href="http://filehelpers.sourceforge.net/forums/"><img src="forums.gif" width="24" height="24" border="0" alt="Browse the Forums"></a> <a href="http://sourceforge.net/export/rss2_projnews.php?group_id=152382&rss_fulltext=1">
+                        <img src="rss2.png" border="0" alt="News RSS feed."></a>
+                    &nbsp; </td></tr>
+			<tr >
+				<td background="button_bar_back.jpg" height="26px" nowrap valign=top colspan=2>
+				<strong>
+                        <span style="color: white">
+                    &nbsp; <a href="/" class="bar_link">Overview</a> -
+							<a href="downloads.html" class="bar_link">Downloads</a> -
+                            <a href="http://filehelpers.sourceforge.net/forums/" class="bar_link">Browse Forums </a> - <a  href="examples.html" class="bar_link">Examples</a> - 
+                            
+                            <a href="http://sourceforge.net/export/rss2_projnews.php?group_id=152382&rss_fulltext=1" class="bar_link" target="_blank">News Feed</a> -
+                            <a href="credits.html" class="bar_link">Contact Info</a>
+                            </span> </strong>
+                            </td><td background="button_bar_right.png" nowrap style="height: 26px">
+                                                      </td></tr>
+		</table>
+		</FORM>
+
+<table width="100%" cellpadding="5" cellspacing="5">
+<tr><td><p>
+    <strong>Note: </strong>VB.NET developers browse the <a href="vb_tips.html">Tips for
+        VB.NET</a> first.</p>
+    <h2>
+        Quick Start Guide (easy <a href="#first"><img src="1.png" width="16" height="16" border="0" align="absbottom"></a><a href="#two"><img src="2.png" width="16" height="16" border="0" align="absbottom"></a><a href="#three"><img src="3.png" width="16" height="16" border="0" align="absbottom" ></a><a href="#four"><img src="4.png" width="16" height="16" border="0" align="absbottom" ></a> steps) 
+    </h2>
+    
+                <a href="FileHelpers_Examples_CSharp_VbNet.zip" ><img src="download32.gif" border=0 alt="Download Example Code"><img src="new.gif" width="31" height="12" border=0 ></a> 
+              <a href="FileHelpers_Examples_CSharp_VbNet.zip" >CLICK HERE TO DOWNLOAD TWO EXAMPLE PROJECTS (C# and VB.NET) </a></p>
+
+    <table width="100%"  border="0">
+      <tr>
+        <td height="123" valign="top"><a name="first"></a><img src="1.png" width="16" height="16" align="left"> </td>
+        <td width="97%" valign="top"><p>To start using the FileHelpers Library you only need to add a reference in your project to the file: <strong>FileHelpers.dll</strong>. you can find it in the Release directory of the distribution. Tip: remember to left the <strong>FileHelpers.xml</strong> file to get Intellisense support. </p>
+          <blockquote>
+            <p><img src="references.png" width="103" height="53"></p>
+          </blockquote></td>
+      </tr>
+      <tr>
+        <td height="163" valign="top"><a name="two"></a><img src="2.png" width="16" height="16" align="left"></td>
+        <td valign="top">
+          <p> Next you need to define a class that maps to the record in the source/detination file.<br>
+            For this example we use a file with this format delimited by a |:</p>
+          <blockquote>
+<textarea name="code" class="c#:nogutter:nocontrols">
+10248|VINET|04071996|32.38
+10249|TOMSP|05071996|11.61
+10250|HANAR|08071996|65.83
+10251|VICTE|08071996|41.34
+...............    
+</textarea>
+          </blockquote></td>
+      </tr>
+      <tr>
+        <td height="259" valign="top">&nbsp;</td>
+        <td valign="top"><p>So you must write this class:</p>
+          <blockquote> <b>C#</b>
+<textarea name="code" class="c#">
+[DelimitedRecord(&quot;|&quot;)]
+public class Orders
+{
+   //No need Converters for primitive types the library provides them</span>.
+   public int OrderID;
+
+   public string CustomerID;
+   
+   [FieldConverter(ConverterKind.Date,&quot;ddMMyyyy&quot;)]
+   public DateTime OrderDate;
+
+   public decimal Freight;
+}
+</textarea>
+          </blockquote>
+                    <blockquote> <b>VB.NET</b>
+<textarea name="code" class="vb">
+DelimitedRecord(&quot;|&quot;)> _
+Public Class Orders
+
+   ' No need Converters for primitive types the library provides them.
+   Public OrderID As Integer;
+
+   Public CustomerID As String;
+
+   &lt;FieldConverter(ConverterKind.Date, &quot;ddMMyyyy&quot;)> _
+   Public OrderDate As DateTime;
+
+   Public Freight As Decimal;
+   
+End Class
+</textarea>
+          </blockquote>
+          </td>
+      </tr>
+      <tr>
+        <td height="185" valign="top"><a name="three"></a><img src="3.png" width="16" height="16" align="left"></td>
+        <td valign="top"><p>Later you need to create a FileHelperEngine and Read/Write files:                        
+            <blockquote><b>C#</b>
+<textarea name="code" class="c#">
+FileHelperEngine engine = new FileHelperEngine(typeof(Orders));
+
+// To Read Use:
+Orders[] res = engine.ReadFile(&quot;FileIn.txt&quot;) as Orders[];
+
+// To Write Use:
+engine.WriteFile(&quot;FileOut.txt&quot;, res);
+</textarea>
+          </blockquote>
+            <blockquote><b>VB.NET</b>
+<textarea name="code" class="vb">
+Dim engine As New FileHelperEngine(GetType(Orders))
+
+' To Read Use:
+Dim res As Orders() = DirectCast(engine.ReadFile(&quot;FileIn.txt&quot;), Orders())
+
+' To Write Use:
+engine.WriteFile(&quot;FileOut.txt&quot;, res)
+</textarea>
+          </blockquote>
+                    </td>
+      </tr>
+      <tr>
+        <td height="163" valign="top"><a name="four"></a><img src="4.png" width="16" height="16" align="left"></td>
+        <td valign="top"><p>Finally we can use the res array to access each item in the file, for example: </p>
+          <blockquote><b>C#</b>
+<textarea name="code" class="c#">
+foreach (Orders order in res)
+ {
+    Console.WriteLine(&quot;Order Info:&quot;);
+    Console.WriteLine(order.CustomerID + &quot; - &quot; +
+                      order.OrderDate.ToString(&quot;dd/MM/yy&quot;));
+ }
+</textarea>
+          </blockquote>
+          <blockquote><b>VB.NET</b>
+<textarea name="code" class="vb">
+For Each order As Orders In res)
+ 
+    Console.WriteLine(&quot;Order Info:&quot;)
+    Console.WriteLine(order.CustomerID + &quot; - &quot; + _
+                      order.OrderDate.ToString(&quot;dd/MM/yy&quot;))
+Next
+</textarea>
+          </blockquote>
+          </td>
+      </tr>
+    </table>      
+                  
+      <h2>See also </h2>
+      <blockquote>
+        <p></p>
+        <a href="default.html">Introduction</a> - <a href="attributes.html">Attributes List</a> - <a href="FAQ.html"> F.A.Q. </a>- <a href="examples.html">Examples of Use</a> - <a href="credits.html">Contacts &amp; Credits </a>
+        </blockquote>
+
+
+<hr align="left" />
+      <div >
+<table width="100%" >
+  <tr><td class="SmallText">
+Copyright &copy; 2005 to <a href="http://www.marcosmeli.com.ar">Marcos Meli</a> <br>
+Contact me: <a href="mailto:marcosdotnet [at] yahoo.com.ar?subject=FileHelpersFeedback">marcosdotnet[at]yahoo.com.ar</a><br>
+Open Source Library. <a href="http://sourceforge.net/projects/filehelpers">FileHelpers Dev Home</a>
+</td>
+    <td valign="middle" > <a href="http://filehelpers.sourceforge.net/forums/feedback.php" target="_top"><img src="feedback.gif" width="189" height="40" border="0" alt="Send your feedback" /></a></td><td><a href="http://filehelpers.sourceforge.net/forums/"><img src="forumsb.gif" width="189" height="40" border="0" alt="Browse the Forums"></a></td>
+  </tr>
+</table>
+
+</div>
+                    <center>Thanks to: <br /><a href="http://sourceforge.net/"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=152382&type=1" width=88 height=31 alt="Source Forge" border="0"></a> <a href="http://www.codeproject.com/useritems/filehelpers.asp"><img src="codeproject.gif" width="100" height="30" border="0" alt="Code Project Article"/></a> <a href="http://www.larkware.com"><img src="larkware.png" width="100" height="30" border="0" alt="Larkware News"/></a> <a href="http://www.cenqua.com/clover.net"><img src="clovernet.gif" border="0" alt="Code Coverage by Clover.NET"/></a> <a href="http://sharptoolbox.com"><img src="sharptoolbox.png" alt="Sharp Toolbox" border="0" width="83" height="30"></a> <a href="http://testdriven.net/Default.aspx?ReferrerId=10181"><img src="testdriven.gif" alt="TestDriven.NET" border="0" width="161" height="29"></a></center>
+  </td>
+</tr>
+</table>
+
+<script class="javascript" src="shCore.js"></script>
+<script class="javascript" src="shBrushCSharp.js"></script>
+<script class="javascript" src="shBrushVb.js"></script>
+<script class="javascript">dp.SyntaxHighlighter.HighlightAll('code');</script>
+</BODY></HTML>

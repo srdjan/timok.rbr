@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureComponents TreeView V2 SRC", "PureComponents TreeView V2 SRC.csproj", "{07620E7A-1355-41BB-A084-B72B24401F4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		BETA Debug|Any CPU = BETA Debug|Any CPU
+		BETA Release|Any CPU = BETA Release|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Trial Fixed Date Debug|Any CPU = Trial Fixed Date Debug|Any CPU
+		Trial Fixed Date Release|Any CPU = Trial Fixed Date Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.BETA Debug|Any CPU.ActiveCfg = BETA Debug|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.BETA Debug|Any CPU.Build.0 = BETA Debug|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.BETA Release|Any CPU.ActiveCfg = BETA Release|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.BETA Release|Any CPU.Build.0 = BETA Release|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.Trial Fixed Date Debug|Any CPU.ActiveCfg = Trial Fixed Date Debug|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.Trial Fixed Date Debug|Any CPU.Build.0 = Trial Fixed Date Debug|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.Trial Fixed Date Release|Any CPU.ActiveCfg = Trial Fixed Date Release|Any CPU
+		{07620E7A-1355-41BB-A084-B72B24401F4B}.Trial Fixed Date Release|Any CPU.Build.0 = Trial Fixed Date Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

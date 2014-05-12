@@ -1,0 +1,55 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Rbr.BLL.Test", "Timok.Rbr.BLL.Test.csproj", "{7EA91628-4CB3-4360-9DA6-1BA750B04FA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Core", "..\..\..\..\Core\Trunk\Timok.Core.csproj", "{60553581-F39F-4A4F-B11A-61A9E07A2ED4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Rbr.Core", "..\..\Core\Timok.Rbr.Core.csproj", "{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Rbr.DAL", "..\..\DAL\Timok.Rbr.DAL.csproj", "{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Rbr.DOM", "..\..\DOM\Timok.Rbr.DOM.csproj", "{A0681DE2-5AAB-471A-9093-BC7481B68203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Rbr.BLL", "..\Timok.Rbr.BLL.csproj", "{F90F4378-541D-40C4-9366-B980D163C8AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timok.Rbr.DTO", "..\DTO\Timok.Rbr.DTO.csproj", "{7487F965-D0AA-4531-9900-AECE45B089F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EA91628-4CB3-4360-9DA6-1BA750B04FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA91628-4CB3-4360-9DA6-1BA750B04FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA91628-4CB3-4360-9DA6-1BA750B04FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EA91628-4CB3-4360-9DA6-1BA750B04FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60553581-F39F-4A4F-B11A-61A9E07A2ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60553581-F39F-4A4F-B11A-61A9E07A2ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60553581-F39F-4A4F-B11A-61A9E07A2ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60553581-F39F-4A4F-B11A-61A9E07A2ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0681DE2-5AAB-471A-9093-BC7481B68203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0681DE2-5AAB-471A-9093-BC7481B68203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0681DE2-5AAB-471A-9093-BC7481B68203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0681DE2-5AAB-471A-9093-BC7481B68203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90F4378-541D-40C4-9366-B980D163C8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90F4378-541D-40C4-9366-B980D163C8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90F4378-541D-40C4-9366-B980D163C8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90F4378-541D-40C4-9366-B980D163C8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7487F965-D0AA-4531-9900-AECE45B089F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7487F965-D0AA-4531-9900-AECE45B089F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7487F965-D0AA-4531-9900-AECE45B089F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7487F965-D0AA-4531-9900-AECE45B089F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

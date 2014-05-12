@@ -1,0 +1,31 @@
+Features, ideas, and other things that might get done.
+Those ending with (*break) break binary,source or client-server compatability
+------------------------------------------------------
+* Allow entire class C subnet to be in config file--as long as no more then 128 are active.
+* Improve stability under high load
+
+* Fix all recv calls in session.c so that they handle partial or EAGAIN 
+  recv calls and store the data received so far and try again.
+* Fix sends (currently they might be ok) to handle EAGAIN, EWOULDBLOCK, EINTR, ENOBUFS
+* Fix sp.c to not close sockets that have errors except in SP_disconnect. (*break)
+
+* Change max buffered message limit to be not just num messages, but also size, or other parameters.
+* Make this runtime configurable.
+
+* Fix partial DOS when someone connects and doesn't send anything (the 1 second delay)
+* Add enhanced alarm() subsystem
+* Merge cleanup of session layer from research branch
+
+* Once ses ids are non-volatile (fix for session_index on windows) have group 
+  struct store ses instead of mbox and then just copy it once in 
+  G_analize_group instead of O(Gsize) Sess_get_session_index() calls.
+
+* Merge Cristinas work. (*break)
+* Veryify that all public defines/functions/datatypes are namespace clean. (*break)
+* Make various binary packages available (rpm, deb, pkg, ...)
+
+* Figure out hanging bug with max ARU window reported by Tom Mornini & co.
+* Decide what to do with multipath patch from Marc Zyngier
+
+* Add Yair's fix for delayed tokens. (*break)
+* Add Cristina's accessor functions for Membership message fields. (*break)

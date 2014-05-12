@@ -1,0 +1,9 @@
+..\..\Release\DotNet 2.0\FileHelpers.ExcelStorage.dll
+..\..\Release\DotNet 2.0\FileHelpers.ExcelStorage.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\FileHelpers.ExcelStorage.dll
+obj\Debug\FileHelpers.ExcelStorage.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\FileHelpers.ExcelStorage.dll
+..\Release\DotNet 2.0\FileHelpers.ExcelStorage.dll
+..\Release\DotNet 2.0\FileHelpers.ExcelStorage.xml

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49A9EACC-7D56-4E08-AFA4-FE5FCDF8B239}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timok.Rbr.Service.Test</RootNamespace>
+    <AssemblyName>Timok.Rbr.Service.Test</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExtLibs\Trunk\NUnit\bin\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Perst.NET, Version=1.0.2399.14873, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExtLibs\Trunk\Perst.NET\bin\Perst.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TestBillingService.cs" />
+    <Compile Include="TestImportExport.cs" />
+    <Compile Include="TestReports.cs" />
+    <Compile Include="TestReportsForm.cs" />
+    <Compile Include="TestRoutingService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestTerminationChoice.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Timok.Core.csproj">
+      <Project>{60553581-F39F-4A4F-B11A-61A9E07A2ED4}</Project>
+      <Name>Timok.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Timok.Rbr.Core.csproj">
+      <Project>{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}</Project>
+      <Name>Timok.Rbr.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\Timok.Rbr.DAL.csproj">
+      <Project>{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}</Project>
+      <Name>Timok.Rbr.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOM\Timok.Rbr.DOM.csproj">
+      <Project>{A0681DE2-5AAB-471A-9093-BC7481B68203}</Project>
+      <Name>Timok.Rbr.DOM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Timok.Rbr.Service.csproj">
+      <Project>{22160C6B-B4E4-4C65-99B7-4585384D1158}</Project>
+      <Name>Timok.Rbr.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

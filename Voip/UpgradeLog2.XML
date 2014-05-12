@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Timok.IVR.Test">
+</Property><Property Name="Solution File" Value="C:\SvnRepo\Trunk\Voip\Timok.IVR.Test.sln">
+</Property><Property Name="User Options File" Value="C:\SvnRepo\Trunk\Voip\Timok.IVR.Test.suo">
+</Property><Property Name="Date" Value="Tuesday, April 20, 2010">
+</Property><Property Name="Time" Value="14:33 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Timok.IVR.Test.sln" Description="File successfully backed up as C:\SvnRepo\Trunk\Voip\Timok.IVR.Test.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="Timok.IVR.Test.suo" Description="File successfully backed up as C:\SvnRepo\Trunk\Voip\Timok.IVR.Test.suo.old">
+</Event><Event ErrorLevel="0" Project="Test.IVR" Source="Test.IVR\Test.IVR.csproj" Description="Project file successfully backed up as C:\SvnRepo\Trunk\Voip\Test.IVR\Test.IVR.csproj.old">
+</Event><Event ErrorLevel="0" Project="Test.IVR" Source="Test.IVR\Test.IVR.csproj.user" Description="Project user file successfully backed up as C:\SvnRepo\Trunk\Voip\Test.IVR\Test.IVR.csproj.user.old">
+</Event><Event ErrorLevel="0" Project="Test.IVR" Source="Test.IVR\Test.IVR.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Test.IVR" Source="Test.IVR\Test.IVR.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Timok.IVR" Source="Timok.IVR.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="Timok.IVR" Source="Timok.IVR.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Timok.IVR.Test.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Timok.IVR.Test.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Test.IVR" Source="Test.IVR\Test.IVR.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

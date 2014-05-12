@@ -1,0 +1,422 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07620E7A-1355-41BB-A084-B72B24401F4B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>PureComponents.TreeViewV2</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PureComponents.TreeView</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE;VERSION2</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;VERSION2</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BETA Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE;BETA_VERSION</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BETA Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;BETA_VERSION</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial Fixed Date Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE;TRIAL_FIXEDDATE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial Fixed Date Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;TRIAL_FIXEDDATE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaPainter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BorderStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckBoxStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColorManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContextMenuSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContextMenuStrings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\ColorChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\ColorManagerWheel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\ColorSchemePickerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ColorUIEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\ColorUIEditorCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\ColorUIEditorCustomCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\ColorUIEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ColorUIEditorHexagonCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\ColorUIEditorPaletteCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\ColorUIEditorPaletteLightCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\ColorUIEditorWheelCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\ColorWheel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\ImageIndexEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\InplaceEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\NodePanelDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\TreeViewDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\TreeViewPathSelectorDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\Win32\ActionMenuNative.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\Win32\Enums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\Win32\Gdi32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\Win32\Structs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\Win32\User32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExpandBoxStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FillStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LineStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Node.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NodeBackgroundStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeDragDrop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeFlag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodePainter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NodeStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeStyleSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeTooltipStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeTooltipWnd.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\CustomScrollBarBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\Internal\Rect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\Internal\ScrollBarInterop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\Internal\ScrollBarParts.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\Internal\ScrollBarStates.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\Internal\ThemeFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\SystemHScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\SystemScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScrollBar\SystemVScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SDUFormatedString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SelectionMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StringDrawUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewPathSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewPathSelectorStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeViewStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeViewStyleFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeViewXML.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeViewXMLBinary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnderlineStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Design\ColorSchemePickerForm.resx">
+      <DependentUpon>ColorSchemePickerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ColorUIEditorCtrl.resx">
+      <DependentUpon>ColorUIEditorCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ColorUIEditorCustomCtrl.resx">
+      <DependentUpon>ColorUIEditorCustomCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ColorUIEditorForm.resx">
+      <DependentUpon>ColorUIEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ColorUIEditorHexagonCtrl.resx">
+      <DependentUpon>ColorUIEditorHexagonCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ColorUIEditorPaletteCtrl.resx">
+      <DependentUpon>ColorUIEditorPaletteCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ColorUIEditorPaletteLightCtrl.resx">
+      <DependentUpon>ColorUIEditorPaletteLightCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ColorUIEditorWheelCtrl.resx">
+      <DependentUpon>ColorUIEditorWheelCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\InplaceEditForm.resx">
+      <DependentUpon>InplaceEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Selector.gif" />
+    <EmbeddedResource Include="Design\TreeViewDesigner.resx">
+      <DependentUpon>TreeViewDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PureComponents.TreeView.bmp" />
+    <EmbeddedResource Include="PureComponents.TreeViewPathSelector.bmp" />
+    <EmbeddedResource Include="TreeView.resx">
+      <DependentUpon>TreeView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

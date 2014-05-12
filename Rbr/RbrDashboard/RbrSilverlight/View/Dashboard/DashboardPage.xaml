@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="RbrSiverlight.View.Dashboard.DashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:grid="clr-namespace:DevExpress.AgDataGrid;assembly=DevExpress.AgDataGrid.v8.2"
+    xmlns:Controls="clr-namespace:Blacklight.Controls;assembly=Blacklight.Controls">
+    <Grid x:Name="LayoutRoot" Background="White">
+       <Controls:DragDockPanelHost Grid.Row="3" x:Name="dragDockPanelHost" Grid.ColumnSpan="3" Margin="0,2,0,0">
+          <Controls:DragDockPanel x:Name="NodesReport" Header="Nodes Report" Maximized="getNodesReport" Margin="2" Style="{StaticResource DragDockPanelStyle}">
+            <StackPanel>
+              <grid:AgDataGrid x:Name="grid" Height="763" DelayScrolling="True" ColumnsAutoWidth="True" ChangeOddRowsAppearance="True" ShowTotals="Visible" ShowGroupPanel="Visible" AutoGenerateColumns="True" >
+                <grid:AgDataGrid.Columns>
+                  <grid:AgDataGridTextColumn FieldName="DateHour" HeaderContent="DateHour"/>
+                  <grid:AgDataGridTextColumn FieldName="NodeId" HeaderContent="Node"/>
+                  <grid:AgDataGridTextColumn FieldName="InMinutes" HeaderContent="Leg1 Minutes" />
+                  <grid:AgDataGridTextColumn FieldName="OutMinutes" HeaderContent="Leg2 Minutes" />
+                  <grid:AgDataGridTextColumn FieldName="Total" HeaderContent="Total Calls" />
+                  <grid:AgDataGridTextColumn FieldName="Completed" HeaderContent="Completed Calls" />
+                </grid:AgDataGrid.Columns>
+                <grid:AgDataGrid.Totals>
+                  <grid:AgDataGridSummaryItem FieldName="InMinutes" SummaryType="Sum" />
+                  <grid:AgDataGridSummaryItem FieldName="OutMinutes" SummaryType="Sum" />
+                </grid:AgDataGrid.Totals>
+              </grid:AgDataGrid>
+            </StackPanel>
+          </Controls:DragDockPanel>
+           
+          <Controls:DragDockPanel x:Name="CustomerReport" Header="Customer Report" Maximized="getCustomerReport" Margin="2" Style="{StaticResource DragDockPanelStyle}">
+                <StackPanel>
+                    <grid:AgDataGrid x:Name="grid1" Height="763" DelayScrolling="True" ColumnsAutoWidth="True" ChangeOddRowsAppearance="True" ShowTotals="Visible" ShowGroupPanel="Visible" AutoGenerateColumns="True" >
+                        <grid:AgDataGrid.Columns>
+                            <grid:AgDataGridTextColumn FieldName="Day" HeaderContent="Day"/>
+                            <grid:AgDataGridTextColumn FieldName="NodeId" HeaderContent="Node"/>
+                            <grid:AgDataGridTextColumn FieldName="CustomerAcctId" HeaderContent="Customer AcctId"/>
+                            <grid:AgDataGridTextColumn FieldName="CarrierAcctId" HeaderContent="Carrier AcctId"/>
+                            <grid:AgDataGridTextColumn FieldName="InMinutes" HeaderContent="Leg1 Minutes" />
+                            <grid:AgDataGridTextColumn FieldName="OutMinutes" HeaderContent="Leg2 Minutes" />
+                            <grid:AgDataGridTextColumn FieldName="Total" HeaderContent="Total Calls" />
+                            <grid:AgDataGridTextColumn FieldName="Completed" HeaderContent="Completed Calls" />
+                            <grid:AgDataGridTextColumn FieldName="Cost" HeaderContent="Cost" />
+                            <grid:AgDataGridTextColumn FieldName="RouteName" HeaderContent="Route Name" />
+                            <grid:AgDataGridTextColumn FieldName="CarrierName" HeaderContent="Carrier Name" />
+                        </grid:AgDataGrid.Columns>
+                        <grid:AgDataGrid.Totals>
+                            <grid:AgDataGridSummaryItem FieldName="InMinutes" SummaryType="Sum" />
+                            <grid:AgDataGridSummaryItem FieldName="OutMinutes" SummaryType="Sum" />
+                            <grid:AgDataGridSummaryItem FieldName="Cost" SummaryType="Sum" />
+                        </grid:AgDataGrid.Totals>
+                    </grid:AgDataGrid>
+                </StackPanel>
+            </Controls:DragDockPanel>
+          
+          <Controls:DragDockPanel x:Name="RouteReport" Header="Routes Report" Maximized="getRouteReport" Margin="2" Style="{StaticResource DragDockPanelStyle}">
+                <StackPanel>
+										<HyperlinkButton Content="Export To Excel" HorizontalAlignment="Left" Click="Button_Click"></HyperlinkButton>	
+                    <grid:AgDataGrid x:Name="grid2" Height="763" DelayScrolling="True" ColumnsAutoWidth="True" ChangeOddRowsAppearance="True" ShowTotals="Visible" ShowGroupPanel="Visible" AutoGenerateColumns="True" >
+                        <grid:AgDataGrid.Columns>
+                            <grid:AgDataGridTextColumn FieldName="Date" HeaderContent="Date"/>
+                            <grid:AgDataGridTextColumn FieldName="Node" HeaderContent="Node"/>
+														<grid:AgDataGridTextColumn FieldName="CustomerName" HeaderContent="Customer" />
+														<grid:AgDataGridTextColumn FieldName="RouteName" HeaderContent="Route" />
+														<grid:AgDataGridTextColumn FieldName="CarrierName" HeaderContent="POP" />
+                            <!--grid:AgDataGridTextColumn FieldName="InMinutes" HeaderContent="Leg1 Minutes" /-->
+                            <grid:AgDataGridTextColumn FieldName="OutMinutes" HeaderContent="Minutes" />
+                            <grid:AgDataGridTextColumn FieldName="Total" HeaderContent="Attempts" />
+														<grid:AgDataGridTextColumn FieldName="Completed" HeaderContent="Completed" />
+														<grid:AgDataGridTextColumn FieldName="ASR" HeaderContent="ASR" />
+														<grid:AgDataGridTextColumn FieldName="ACD" HeaderContent="ACD" />
+														<grid:AgDataGridTextColumn FieldName="Cost" HeaderContent="Cost" />
+                        </grid:AgDataGrid.Columns>
+                        <grid:AgDataGrid.Totals>
+													<grid:AgDataGridSummaryItem FieldName="Minutes" SummaryType="Sum" />
+													<grid:AgDataGridSummaryItem FieldName="ASR" SummaryType="Average" />
+													<grid:AgDataGridSummaryItem FieldName="ACD" SummaryType="Average" />
+													<grid:AgDataGridSummaryItem FieldName="Cost" SummaryType="Sum" />
+                        </grid:AgDataGrid.Totals>
+                    </grid:AgDataGrid>
+                </StackPanel>
+            </Controls:DragDockPanel>
+          
+          <Controls:DragDockPanel x:Name="TrunkReport" Header="Trunk Report" Maximized="getTrunkReport" Margin="2" Style="{StaticResource DragDockPanelStyle}">
+                <StackPanel>
+                    <grid:AgDataGrid x:Name="grid3" Height="763" DelayScrolling="True" ColumnsAutoWidth="True" ChangeOddRowsAppearance="True" ShowTotals="Visible" ShowGroupPanel="Visible" AutoGenerateColumns="True" >
+                        <grid:AgDataGrid.Columns>
+                            <grid:AgDataGridTextColumn FieldName="Day" HeaderContent="Day" />
+                            <grid:AgDataGridTextColumn FieldName="NodeId" HeaderContent="Node" />
+                            <grid:AgDataGridTextColumn FieldName="CustomerAcctId" HeaderContent="Customer AcctId"/>
+                            <grid:AgDataGridTextColumn FieldName="CustomerName" HeaderContent="Customer Name" />
+                            <grid:AgDataGridTextColumn FieldName="CarrierAcctId" HeaderContent="Carrier AcctId"/>
+                            <grid:AgDataGridTextColumn FieldName="InMinutes" HeaderContent="Leg1 Minutes" />
+                            <grid:AgDataGridTextColumn FieldName="OutMinutes" HeaderContent="Leg2 Minutes" />
+                            <grid:AgDataGridTextColumn FieldName="Total" HeaderContent="Total Calls" />
+                            <grid:AgDataGridTextColumn FieldName="Completed" HeaderContent="Completed Calls" />
+                            <grid:AgDataGridTextColumn FieldName="Cost" HeaderContent="Cost" />
+                            <grid:AgDataGridTextColumn FieldName="RouteName" HeaderContent="Route Name" />
+                        </grid:AgDataGrid.Columns>
+                        <grid:AgDataGrid.Totals>
+                            <grid:AgDataGridSummaryItem FieldName="InMinutes" SummaryType="Sum" />
+                            <grid:AgDataGridSummaryItem FieldName="OutMinutes" SummaryType="Sum" />
+                            <grid:AgDataGridSummaryItem FieldName="Cost" SummaryType="Sum" />
+                        </grid:AgDataGrid.Totals>
+                    </grid:AgDataGrid>
+                </StackPanel>
+            </Controls:DragDockPanel>
+      </Controls:DragDockPanelHost>
+    </Grid>
+</UserControl>

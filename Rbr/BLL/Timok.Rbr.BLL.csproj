@@ -1,0 +1,332 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F90F4378-541D-40C4-9366-B980D163C8AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timok.Rbr.BLL</RootNamespace>
+    <AssemblyName>Timok.Rbr.BLL</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Timok.Rbr.BLL/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\Timok\Rbr\Release\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Perst.NET, Version=1.0.2399.14873, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExtLibs\Trunk\Perst.NET\bin\Perst.NET.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpHsql, Version=1.0.3.3, Culture=neutral, PublicKeyToken=b148d53802dd94e4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExtLibs\Trunk\SharpHsql_v1.0.3.3\SharpHSQL\bin\Release\SharpHsql.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormsEx, Version=1.0.2421.29090, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExtLibs\Trunk\WinFormsEx\bin\Release\WinFormsEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CDRController.cs" />
+    <Compile Include="Controllers\CdrExportController.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\NumberPortabilityController.cs" />
+    <Compile Include="Controllers\RoutingController.cs" />
+    <Compile Include="Controllers\VirtualSwitchController.cs" />
+    <Compile Include="Controllers\CustomerSupportController.cs" />
+    <Compile Include="Controllers\ServiceController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DOM\AccessNumber.cs" />
+    <Compile Include="DOM\CarrierAcct.cs" />
+    <Compile Include="DOM\CarrierDialPeer.cs" />
+    <Compile Include="DOM\CarrierRoute.cs" />
+    <Compile Include="DOM\Cdr.cs" />
+    <Compile Include="DOM\CdrAggregate.cs" />
+    <Compile Include="DOM\CdrAggrExporter.cs" />
+    <Compile Include="DOM\CdrExporter.cs" />
+    <Compile Include="DOM\CustomerAcct.cs" />
+    <Compile Include="DOM\CustomerDialPeer.cs" />
+    <Compile Include="DOM\CustomerRoute.cs" />
+    <Compile Include="DOM\Endpoint.cs" />
+    <Compile Include="DOM\EndpointASR.cs" />
+    <Compile Include="DOM\Initializer.cs" />
+    <Compile Include="DOM\InventoryUsage.cs" />
+    <Compile Include="DOM\IRetailAccount.cs" />
+    <Compile Include="DOM\LCRSorter.cs" />
+    <Compile Include="DOM\NumberPortability.cs" />
+    <Compile Include="DOM\PhoneCard.cs" />
+    <Compile Include="DOM\Rate.cs" />
+    <Compile Include="DOM\RateInfo.cs" />
+    <Compile Include="DOM\RbrExporter.cs" />
+    <Compile Include="DOM\Repositories\CdrAggregateRepository.cs" />
+    <Compile Include="DOM\Repositories\DualRepository.cs" />
+    <Compile Include="DOM\Repositories\IRepository.cs" />
+    <Compile Include="DOM\Repositories\RepositoryBase.cs" />
+    <Compile Include="DOM\Residential.cs" />
+    <Compile Include="DOM\RetailAccount.cs" />
+    <Compile Include="DOM\RetailService.cs" />
+    <Compile Include="DOM\Route.cs" />
+    <Compile Include="DOM\RouteMinutesSummary.cs" />
+    <Compile Include="DOM\RoutingInfo.cs" />
+    <Compile Include="DOM\SurchargeInfo.cs" />
+    <Compile Include="DOM\TerminationChoice.cs" />
+    <Compile Include="DOM\TypeOfDayEntity.cs" />
+    <Compile Include="DTO\AccessNumberDto.cs" />
+    <Compile Include="DTO\BalanceAdjustmentReasonDto.cs" />
+    <Compile Include="DTO\BaseRouteDto.cs" />
+    <Compile Include="DTO\Base\DTOBase.cs" />
+    <Compile Include="DTO\Base\IDTO.cs" />
+    <Compile Include="DTO\BatchDto.cs" />
+    <Compile Include="DTO\CabinaDto.cs" />
+    <Compile Include="DTO\CallingPlanDto.cs" />
+    <Compile Include="DTO\CarrierAcctDto.cs" />
+    <Compile Include="DTO\CdrDto.cs" />
+    <Compile Include="DTO\CdrExportMapDetailDto.cs" />
+    <Compile Include="DTO\CdrExportMapDto.cs" />
+    <Compile Include="DTO\ContactInfoDto.cs" />
+    <Compile Include="DTO\CountryDto.cs" />
+    <Compile Include="DTO\CurrentPlatformNodeDto.cs" />
+    <Compile Include="DTO\CustomerAcctDto.cs" />
+    <Compile Include="DTO\CustomerAcctPaymentDto.cs" />
+    <Compile Include="DTO\CustomerAcctSupportMapDto.cs" />
+    <Compile Include="DTO\CustomerSupportGroupDto.cs" />
+    <Compile Include="DTO\CustomerSupportVendorDto.cs" />
+    <Compile Include="DTO\DayTimeDto.cs" />
+    <Compile Include="DTO\DayTypeDto.cs" />
+    <Compile Include="DTO\DialCodeDto.cs" />
+    <Compile Include="DTO\EndpointDto.cs" />
+    <Compile Include="DTO\HolidayListDto.cs" />
+    <Compile Include="DTO\Interfaces\IRatingHistoryEntry.cs" />
+    <Compile Include="DTO\NodeDto.cs" />
+    <Compile Include="DTO\PartnerDto.cs" />
+    <Compile Include="DTO\PayphoneSurchargeDto.cs" />
+    <Compile Include="DTO\PersonDto.cs" />
+    <Compile Include="DTO\PhoneCardDto.cs" />
+    <Compile Include="DTO\PlatformDto.cs" />
+    <Compile Include="DTO\PrefixInTypeDto.cs" />
+    <Compile Include="DTO\RatedRouteDto.cs" />
+    <Compile Include="DTO\RateDto.cs" />
+    <Compile Include="DTO\RatingHistoryDto.cs" />
+    <Compile Include="DTO\RatingInfoDto.cs" />
+    <Compile Include="DTO\RawCDRDto.cs" />
+    <Compile Include="DTO\ResellAccountDto.cs" />
+    <Compile Include="DTO\ResidentialPSTNDto.cs" />
+    <Compile Include="DTO\RetailAccountDto.cs" />
+    <Compile Include="DTO\RetailAccountPaymentDto.cs" />
+    <Compile Include="DTO\RoutingPlanDetail.cs" />
+    <Compile Include="DTO\RoutingPlanDto.cs" />
+    <Compile Include="DTO\RoutingTableDto.cs" />
+    <Compile Include="DTO\ScheduleDto.cs" />
+    <Compile Include="DTO\ServiceDto.cs" />
+    <Compile Include="DTO\TerminationChoiceDto.cs" />
+    <Compile Include="DTO\TerminationRouteDto.cs" />
+    <Compile Include="DTO\TypeOfDayRateEntryDto.cs" />
+    <Compile Include="DTO\VirtualSwitchDto.cs" />
+    <Compile Include="Entities\CurrentNode.cs" />
+    <Compile Include="Entities\EndpointContext.cs" />
+    <Compile Include="Entities\Node.cs" />
+    <Compile Include="ImportExport\Cdr\CarrierCdrExportInfo.cs" />
+    <Compile Include="ImportExport\Cdr\CdrExporter.cs" />
+    <Compile Include="ImportExport\Cdr\CdrExportInfo.cs" />
+    <Compile Include="ImportExport\Cdr\CustomerCdrExportInfo.cs" />
+    <Compile Include="ImportExport\Cdr\ICdrExportInfo.cs" />
+    <Compile Include="ImportExport\Cdr\OrigEndpointCdrExportInfo.cs" />
+    <Compile Include="ImportExport\DialPlan\DialPlanExporter.cs" />
+    <Compile Include="ImportExport\DialPlan\DialPlanFileParser.cs" />
+    <Compile Include="ImportExport\DialPlan\DialPlanImporter.cs" />
+    <Compile Include="ImportExport\DialPlan\DialPlanImportExportBase.cs" />
+    <Compile Include="Inventory\IRetailAccountGenerator.cs" />
+    <Compile Include="Inventory\RetailAccountGeneratorBase.cs" />
+    <Compile Include="Managers\BalanceAdjustmentReasonManager.cs" />
+    <Compile Include="Managers\CallingPlanManager.cs" />
+    <Compile Include="Managers\CustomerRouteManager.cs" />
+    <Compile Include="Managers\CarrierRouteManager.cs" />
+    <Compile Include="Managers\CustomerSupportManager.cs" />
+    <Compile Include="Managers\VirtualSwitchManager.cs" />
+    <Compile Include="Managers\PersonManager.cs" />
+    <Compile Include="Managers\BillingScheduleManager.cs" />
+    <Compile Include="Managers\CarrierAcctManager.cs" />
+    <Compile Include="Managers\ContactInfoManager.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\CallingPlanController.cs" />
+    <Compile Include="Controllers\CarrierAcctController.cs" />
+    <Compile Include="Controllers\CustomerAcctController.cs" />
+    <Compile Include="Controllers\EndpointController.cs" />
+    <Compile Include="Controllers\LoadBalancingMapController.cs" />
+    <Compile Include="Controllers\PartnerController.cs" />
+    <Compile Include="Controllers\PlatformController.cs" />
+    <Compile Include="Controllers\RatingController.cs" />
+    <Compile Include="Controllers\RetailAccountController.cs" />
+    <Compile Include="Managers\CustomerAcctManager.cs" />
+    <Compile Include="Managers\EndpointManager.cs" />
+    <Compile Include="Exceptions\ANIAlreadyInUseException.cs" />
+    <Compile Include="Exceptions\LoginNameAlreadyInUseException.cs" />
+    <Compile Include="ImportExport\Constants.cs" />
+    <Compile Include="ImportExport\DialPlan\CountryRecord.cs" />
+    <Compile Include="ImportExport\DialPlan\DialCodeUtil.cs" />
+    <Compile Include="ImportExport\DialPlan\DialPlanImportExportTask.cs" />
+    <Compile Include="ImportExport\DialPlan\DialPlanImportExportArgs.cs" />
+    <Compile Include="ImportExport\DialPlan\RouteRecord.cs" />
+    <Compile Include="ImportExport\Retail\PhoneCardBatch.cs" />
+    <Compile Include="ImportExport\Retail\PhoneCardImporter.cs" />
+    <Compile Include="ImportExport\Retail\PhoneCardImporterArgs.cs" />
+    <Compile Include="Inventory\InventoryCommandRequest.cs" />
+    <Compile Include="Inventory\InventoryCommandResponse.cs" />
+    <Compile Include="Inventory\InventoryController.cs" />
+    <Compile Include="Inventory\InventorySequenceGenerator.cs" />
+    <Compile Include="Inventory\RetailAccountGenerator.cs" />
+    <Compile Include="Inventory\RetailAccountGenRequest.cs" />
+    <Compile Include="Inventory\RetailAccountGenResponse.cs" />
+    <Compile Include="Inventory\InventoryContextLoader.cs" />
+    <Compile Include="Managers\LoadBalancingMapManager.cs" />
+    <Compile Include="Managers\PartnerManager.cs" />
+    <Compile Include="Managers\PlatformManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Managers\RatingManager.cs" />
+    <Compile Include="Managers\RetailAccountManager.cs" />
+    <Compile Include="Managers\RoutingManager.cs" />
+    <Compile Include="Managers\ServiceManager.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="Setup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DOM\bin\Debug\Perst.NET.dll" />
+    <Content Include="DOM\bin\Debug\Perst.NET.pdb" />
+    <Content Include="DOM\bin\Debug\Timok.Core.dll" />
+    <Content Include="DOM\bin\Debug\Timok.Core.Logger.dll" />
+    <Content Include="DOM\bin\Debug\Timok.Core.Logger.pdb" />
+    <Content Include="DOM\bin\Debug\Timok.Core.pdb" />
+    <Content Include="DOM\bin\Debug\Timok.Rbr.DOM.dll" />
+    <Content Include="DOM\bin\Debug\Timok.Rbr.DOM.pdb" />
+    <Content Include="DOM\bin\Release\Perst.NET.dll" />
+    <Content Include="DOM\bin\Release\Perst.NET.pdb" />
+    <Content Include="DOM\bin\Release\Timok.Rbr.DOM.dll" />
+    <Content Include="DOM\bin\Release\Timok.Rbr.DOM.pdb" />
+    <Content Include="DOM\obj\Debug\Timok.Rbr.DOM.csproj.FileListAbsolute.txt" />
+    <Content Include="DOM\obj\Debug\Timok.Rbr.DOM.dll" />
+    <Content Include="DOM\obj\Debug\Timok.Rbr.DOM.pdb" />
+    <Content Include="DOM\obj\Release\Timok.Rbr.DOM.csproj.FileListAbsolute.txt" />
+    <Content Include="DOM\obj\Release\Timok.Rbr.DOM.dll" />
+    <Content Include="DOM\obj\Release\Timok.Rbr.DOM.pdb" />
+    <Content Include="DOM\Timok.Rbr.DOM.csproj" />
+    <Content Include="DOM\Timok.Rbr.DOM.csproj.user" />
+    <Content Include="ImportExport\DialPlan\sample1.txt" />
+    <Content Include="ImportExport\DialPlan\sample2.txt" />
+    <Content Include="ImportExport\DialPlan\sample4.txt" />
+    <Content Include="ImportExport\Retail\PhoneCardBatch_test1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Timok.Core.csproj">
+      <Project>{60553581-F39F-4A4F-B11A-61A9E07A2ED4}</Project>
+      <Name>Timok.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Logger\Timok.Logger.csproj">
+      <Project>{72269A7C-573B-4E7E-A715-153899A0ED37}</Project>
+      <Name>Timok.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\NetworkLib\Timok.NetworkLib.csproj">
+      <Project>{69DFF1A8-1DB5-4F7C-B319-3DC1F578BAAD}</Project>
+      <Name>Timok.NetworkLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Timok.Rbr.Core.csproj">
+      <Project>{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}</Project>
+      <Name>Timok.Rbr.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\Timok.Rbr.DAL.csproj">
+      <Project>{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}</Project>
+      <Name>Timok.Rbr.DAL</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DOM\obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="DOM\obj\Release\ResolveAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DOM\obj\Debug\TempPE\" />
+    <Folder Include="DOM\obj\Release\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

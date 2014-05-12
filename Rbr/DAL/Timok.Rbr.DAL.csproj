@@ -1,0 +1,892 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA2CB6BA-034A-4D2B-BC60-5BA0B8938845}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Timok.Rbr.DAL</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Timok.Rbr.DAL</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Timok.Rbr.DAL/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>Bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\..\..\..\Timok\Rbr\Release\Bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Build|AnyCPU' ">
+    <OutputPath>bin\Build\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Name>System.Runtime.Serialization.Formatters.Soap</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>system.web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlternateKeyException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\Base\CDRCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\Base\CDRIdentityCollection_Base.cs" />
+    <Compile Include="CdrDatabase\Base\CDRIdentityRow_Base.cs" />
+    <Compile Include="CdrDatabase\Base\CDRRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\Base\CDRViewCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\Base\CDRViewRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\Base\Cdr_Db_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\CDRCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\CdrDbConnections.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\CDRIdentityCollection.cs" />
+    <Compile Include="CdrDatabase\CDRIdentityRow.cs" />
+    <Compile Include="CdrDatabase\CDRRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\CDRViewCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\CDRViewRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\Cdr_Db.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CdrDatabase\EndpointAsrDataTable.cs" />
+    <Compile Include="CdrDatabase\CustomerRoutesTotalMinutesDataTable.cs" />
+    <Compile Include="ConnectionStringExt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConnectionStringInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrimaryKeyException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RbrDatabase\AccessListViewCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\AccessListViewRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\AccessNumberListCollection.cs" />
+    <Compile Include="RbrDatabase\AccessNumberListRow.cs" />
+    <Compile Include="RbrDatabase\BalanceAdjustmentReasonCollection.cs" />
+    <Compile Include="RbrDatabase\BalanceAdjustmentReasonRow.cs" />
+    <Compile Include="RbrDatabase\Base\AccessListViewCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\AccessListViewRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\AccessNumberListCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\AccessNumberListRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\BalanceAdjustmentReasonCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\BalanceAdjustmentReasonRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\BatchCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\BatchRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\BoxCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\BoxRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CallCenterCabinaCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CallCenterCabinaRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CallingPlanCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CallingPlanRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CarrierAcctCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CarrierAcctEPMapCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CarrierAcctEPMapRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CarrierAcctRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CarrierRateHistoryCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CarrierRateHistoryRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CarrierRouteCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CarrierRouteRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CdrAggregateCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CdrAggregateRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CdrExportMapCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CdrExportMapDetailCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CdrExportMapDetailRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CdrExportMapRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\ContactInfoCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\ContactInfoRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CountryCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CountryRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CustomerAcctCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CustomerAcctPaymentCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CustomerAcctPaymentRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CustomerAcctRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\CustomerAcctSupportMapCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CustomerAcctSupportMapRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CustomerSupportGroupCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CustomerSupportGroupRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CustomerSupportVendorCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\CustomerSupportVendorRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\DialCodeCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\DialCodeRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\DialPeerCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\DialPeerRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\DialPeerViewCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\DialPeerViewRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\EndPointCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\EndPointRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\GenerationRequestCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\GenerationRequestRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\HolidayCalendarCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\HolidayCalendarRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\InventoryHistoryCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\InventoryHistoryRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\InventoryLotCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\InventoryLotRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\InventoryUsageCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\InventoryUsageRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\IPAddressCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\IPAddressRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\IPAddressViewCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\IPAddressViewRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\LCRBlackListCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\LCRBlackListRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\LoadBalancingMapCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\LoadBalancingMapRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\LoadBalancingMapViewCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\LoadBalancingMapViewRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\NodeCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\NodeRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\NodeViewCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\NodeViewRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\OutboundANICollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\OutboundANIRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\OutDialPeerViewCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\OutDialPeerViewRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\PartnerCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\PartnerRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\PayphoneSurchargeCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\PayphoneSurchargeRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\PersonCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\PersonRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\PhoneCardCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\PhoneCardRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\PlatformCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\PlatformRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\PrefixInTypeCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\PrefixInTypeRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RateCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RateInfoCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RateInfoRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RateRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\Rbr_Db_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\ResellAcctCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\ResellAcctRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\ResellRateHistoryCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\ResellRateHistoryRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\ResidentialPSTNCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\ResidentialPSTNRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\ResidentialVoIPCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\ResidentialVoIPRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RetailAccountCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RetailAccountPaymentCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RetailAccountPaymentRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RetailAccountRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RetailRateHistoryCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RetailRateHistoryRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RetailRouteBonusMinutesCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RetailRouteBonusMinutesRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RetailRouteCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RetailRouteRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RouteCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RouteRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\RoutingPlanCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RoutingPlanDetailCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RoutingPlanDetailRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\RoutingPlanRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\ScheduleCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\ScheduleRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\ServiceCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\ServiceRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TableSequenceCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\TableSequenceRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\TerminationChoiceCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TerminationChoiceRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TerminationRouteViewCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\TerminationRouteViewRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\TimeOfDayCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TimeOfDayPeriodCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TimeOfDayPeriodRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TimeOfDayPolicyCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TimeOfDayPolicyRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TimeOfDayRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TypeOfDayChoiceCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TypeOfDayChoiceRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TypeOfDayCollection_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\TypeOfDayRow_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Base\VirtualSwitchCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\VirtualSwitchRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\WholesaleRateHistoryCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\WholesaleRateHistoryRow_Base.cs" />
+    <Compile Include="RbrDatabase\Base\WholesaleRouteCollection_Base.cs" />
+    <Compile Include="RbrDatabase\Base\WholesaleRouteRow_Base.cs" />
+    <Compile Include="RbrDatabase\BatchCollection.cs" />
+    <Compile Include="RbrDatabase\BatchRow.cs" />
+    <Compile Include="RbrDatabase\BoxCollection.cs" />
+    <Compile Include="RbrDatabase\BoxRow.cs" />
+    <Compile Include="RbrDatabase\CallCenterCabinaCollection.cs" />
+    <Compile Include="RbrDatabase\CallCenterCabinaRow.cs" />
+    <Compile Include="RbrDatabase\CallingPlanCollection.cs" />
+    <Compile Include="RbrDatabase\CallingPlanRow.cs" />
+    <Compile Include="RbrDatabase\CarrierAcctCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CarrierAcctEPMapCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CarrierAcctEPMapRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CarrierAcctRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CarrierRateHistoryCollection.cs" />
+    <Compile Include="RbrDatabase\CarrierRateHistoryRow.cs" />
+    <Compile Include="RbrDatabase\CarrierRouteCollection.cs" />
+    <Compile Include="RbrDatabase\CarrierRouteRow.cs" />
+    <Compile Include="RbrDatabase\CdrAggregateCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CdrAggregateRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CdrExportMapCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CdrExportMapDetailCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CdrExportMapDetailRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CdrExportMapRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\ContactInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\ContactInfoRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CountryCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CountryRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CustomerAcctCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CustomerAcctPaymentCollection.cs" />
+    <Compile Include="RbrDatabase\CustomerAcctPaymentRow.cs" />
+    <Compile Include="RbrDatabase\CustomerAcctRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\CustomerAcctSupportMapCollection.cs" />
+    <Compile Include="RbrDatabase\CustomerAcctSupportMapRow.cs" />
+    <Compile Include="RbrDatabase\CustomerSupportGroupCollection.cs" />
+    <Compile Include="RbrDatabase\CustomerSupportGroupRow.cs" />
+    <Compile Include="RbrDatabase\CustomerSupportVendorCollection.cs" />
+    <Compile Include="RbrDatabase\CustomerSupportVendorRow.cs" />
+    <Compile Include="RbrDatabase\DialCodeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\DialCodeRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\DialPeerCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\DialPeerRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\DialPeerSave.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\DialPeerViewCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\DialPeerViewRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\EndPointCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\EndPointRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\GenerationRequestCollection.cs" />
+    <Compile Include="RbrDatabase\GenerationRequestRow.cs" />
+    <Compile Include="RbrDatabase\HolidayCalendarCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\HolidayCalendarRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\InventoryHistoryCollection.cs" />
+    <Compile Include="RbrDatabase\InventoryHistoryRow.cs" />
+    <Compile Include="RbrDatabase\InventoryLotCollection.cs" />
+    <Compile Include="RbrDatabase\InventoryLotRow.cs" />
+    <Compile Include="RbrDatabase\InventoryUsageCollection.cs" />
+    <Compile Include="RbrDatabase\InventoryUsageRow.cs" />
+    <Compile Include="RbrDatabase\IPAddressCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\IPAddressRange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\IPAddressRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\IPAddressViewCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\IPAddressViewRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\LCRBlackListCollection.cs" />
+    <Compile Include="RbrDatabase\LCRBlackListRow.cs" />
+    <Compile Include="RbrDatabase\LoadBalancingMapCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\LoadBalancingMapRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\LoadBalancingMapViewCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\LoadBalancingMapViewRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\NodeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\NodeRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\NodeViewCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\NodeViewRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\OutboundANICollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\OutboundANIRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\OutDialPeerViewCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\OutDialPeerViewRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\PartnerCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\PartnerRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\PayphoneSurchargeCollection.cs" />
+    <Compile Include="RbrDatabase\PayphoneSurchargeRow.cs" />
+    <Compile Include="RbrDatabase\PersonCollection.cs" />
+    <Compile Include="RbrDatabase\PersonRow.cs" />
+    <Compile Include="RbrDatabase\PhoneCardCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\PhoneCardRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\PlatformCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\PlatformRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\PrefixInTypeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\PrefixInTypeRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RateCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RateInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RateInfoRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RateRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\Rbr_Db.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\ResellAcctCollection.cs" />
+    <Compile Include="RbrDatabase\ResellAcctRow.cs" />
+    <Compile Include="RbrDatabase\ResellRateHistoryCollection.cs" />
+    <Compile Include="RbrDatabase\ResellRateHistoryRow.cs" />
+    <Compile Include="RbrDatabase\ResidentialPSTNCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\ResidentialPSTNRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\ResidentialVoIPCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\ResidentialVoIPRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RetailAccountCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RetailAccountPaymentCollection.cs" />
+    <Compile Include="RbrDatabase\RetailAccountPaymentRow.cs" />
+    <Compile Include="RbrDatabase\RetailAccountRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RetailRateHistoryCollection.cs" />
+    <Compile Include="RbrDatabase\RetailRateHistoryRow.cs" />
+    <Compile Include="RbrDatabase\RetailRouteBonusMinutesCollection.cs" />
+    <Compile Include="RbrDatabase\RetailRouteBonusMinutesRow.cs" />
+    <Compile Include="RbrDatabase\RetailRouteCollection.cs" />
+    <Compile Include="RbrDatabase\RetailRouteRow.cs" />
+    <Compile Include="RbrDatabase\RouteCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RouteRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\RoutingPlanCollection.cs" />
+    <Compile Include="RbrDatabase\RoutingPlanDetailCollection.cs" />
+    <Compile Include="RbrDatabase\RoutingPlanDetailRow.cs" />
+    <Compile Include="RbrDatabase\RoutingPlanRow.cs" />
+    <Compile Include="RbrDatabase\ScheduleCollection.cs" />
+    <Compile Include="RbrDatabase\ScheduleRow.cs" />
+    <Compile Include="RbrDatabase\ServiceCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\ServiceRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TableSequenceCollection.cs" />
+    <Compile Include="RbrDatabase\TableSequenceRow.cs" />
+    <Compile Include="RbrDatabase\TerminationChoiceCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TerminationChoiceRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TerminationRouteViewCollection.cs" />
+    <Compile Include="RbrDatabase\TerminationRouteViewRow.cs" />
+    <Compile Include="RbrDatabase\TimeOfDayCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TimeOfDayPeriodCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TimeOfDayPeriodRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TimeOfDayPolicyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TimeOfDayPolicyRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TimeOfDayRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TypeOfDayChoiceCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TypeOfDayChoiceRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TypeOfDayCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\TypeOfDayRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RbrDatabase\VirtualSwitchCollection.cs" />
+    <Compile Include="RbrDatabase\VirtualSwitchRow.cs" />
+    <Compile Include="RbrDatabase\WholesaleRateHistoryCollection.cs" />
+    <Compile Include="RbrDatabase\WholesaleRateHistoryRow.cs" />
+    <Compile Include="RbrDatabase\WholesaleRouteCollection.cs" />
+    <Compile Include="RbrDatabase\WholesaleRouteRow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Timok.Core.csproj">
+      <Project>{60553581-F39F-4A4F-B11A-61A9E07A2ED4}</Project>
+      <Name>Timok.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Logger\Timok.Logger.csproj">
+      <Project>{72269A7C-573B-4E7E-A715-153899A0ED37}</Project>
+      <Name>Timok.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\NetworkLib\Timok.NetworkLib.csproj">
+      <Project>{69DFF1A8-1DB5-4F7C-B319-3DC1F578BAAD}</Project>
+      <Name>Timok.NetworkLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Timok.Rbr.Core.csproj">
+      <Project>{54887176-C2B3-4AE0-9A8C-BF253CBDA74A}</Project>
+      <Name>Timok.Rbr.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SQLTemplates\CREATE_NETSERVICE_DB_USER_TEMPLATE.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQLTemplates\CREATE_ASPNET_DB_USER.sql" />
+    <Content Include="SQLTemplates\TCDR\CREATE_CDR_DB.sql" />
+    <None Include="SQLTemplates\TCDR\CREATE_CDR_DB_FUNCTIONS.sql" />
+    <None Include="SQLTemplates\TCDR\CREATE_CDR_DB_TABLES.sql" />
+    <None Include="SQLTemplates\TCDR\CREATE_CDR_DB_VIEWS.sql" />
+    <None Include="SQLTemplates\TCDR\DROP_CDR_DB_VIEWS.sql" />
+    <Content Include="SQLTemplates\TRBR\BACKUP_RBR_DB.sql" />
+    <Content Include="SQLTemplates\TRBR\Country.txt" />
+    <Content Include="SQLTemplates\TRBR\CREATE_RBR_DB.sql" />
+    <Content Include="SQLTemplates\TRBR\DialCode.txt" />
+    <Content Include="SQLTemplates\TRBR\Load_INIT_Data.sql" />
+    <Content Include="SQLTemplates\TRBR\TerminationRouteViewCollection_GetActiveByCustomerDialCode.sql" />
+    <Content Include="SQLTemplates\TRBR\TerminationRouteViewCollection_GetAvailableByCustomerBaseRouteId.sql" />
+    <Content Include="SQLTemplates\TRBR\Route.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SQLTemplates\TRBR\CreateRbrDb.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

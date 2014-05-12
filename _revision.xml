@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="4036">
+<author>srdjan</author>
+<date>2009-09-01T11:31:00.734375Z</date>
+<msg>fixed RbrClient network problem (not connecting on udp channels anymore)</msg>
+</logentry>
+</log>
