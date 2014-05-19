@@ -1,4 +1,4 @@
-timok.rbr
-=========
+timok.rbr archive
+=================
 
-VoIP server
+VoIP server developed on top of Aculab's voice and signaling APIs - 2003-2007
