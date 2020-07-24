@@ -1,4 +1,4 @@
-*.* linguist-language=C
+*.* linguist-language=C++
 # Sources
 *.c     text diff=c
 *.cc    text diff=cpp
